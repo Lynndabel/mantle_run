@@ -8,7 +8,7 @@ import "../src/CeloRunner.sol";
 
 /**
  * @title DeployCeloRunner
- * @dev Deployment script for Celo Runner game contracts
+ * @dev Deployment script for Mantle Run game contracts
  * 
  * Usage:
  * forge script script/DeployCeloRunner.s.sol:DeployCeloRunner --rpc-url <your_rpc_url> --private-key <your_private_key> --broadcast

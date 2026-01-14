@@ -4,7 +4,7 @@ import { Providers } from "@/components/Providers";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Celo Runner - Web3 Gaming on Celo",
+  title: "Mantle Run - Web3 Gaming on Celo",
   description: "Play, learn about Celo, and earn rewards!",
 };
 

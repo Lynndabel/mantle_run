@@ -1,5 +1,5 @@
 /**
- * Badge NFT Metadata for Celo Runner
+ * Badge NFT Metadata for Mantle Run
  * 
  * This metadata matches GameD's badge structure and uses the same IPFS images
  */
@@ -17,7 +17,7 @@ export interface BadgeMetadata {
 export const BADGE_METADATA: Record<string, BadgeMetadata> = {
   "Explorer Badge": {
     name: "Explorer Badge",
-    description: "Awarded to brave explorers who completed Stage 1 of Celo Runner",
+    description: "Awarded to brave explorers who completed Stage 1 of Mantle Run",
     image: "https://orange-geographical-marsupial-110.mypinata.cloud/ipfs/bafkreia7hw6k7blhn7stmrm46arjyxktcqwkoexyaydzdib3dghy6zqyu4",
     attributes: [
       {
@@ -36,7 +36,7 @@ export const BADGE_METADATA: Record<string, BadgeMetadata> = {
   },
   "Adventurer Badge": {
     name: "Adventurer Badge",
-    description: "Awarded to skilled adventurers who conquered Stage 2 of Celo Runner",
+    description: "Awarded to skilled adventurers who conquered Stage 2 of Mantle Run",
     image: "https://orange-geographical-marsupial-110.mypinata.cloud/ipfs/bafkreihqx2cuolkk6wkzjsn632734ajlqt7vgsiy2nxzb2ugq76f3bwrh4",
     attributes: [
       {
@@ -55,7 +55,7 @@ export const BADGE_METADATA: Record<string, BadgeMetadata> = {
   },
   "Master Badge": {
     name: "Master Badge",
-    description: "Awarded to elite masters who triumphed over Stage 3 of Celo Runner",
+    description: "Awarded to elite masters who triumphed over Stage 3 of Mantle Run",
     image: "https://orange-geographical-marsupial-110.mypinata.cloud/ipfs/bafybeibntv4534v2mis4cyyj6owmcnjzjpfswohvtlmta6rzzfjvprekja",
     attributes: [
       {

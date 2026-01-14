@@ -1,4 +1,4 @@
-# Root level gitignore for Celo Runner
+# Root level gitignore for Mantle Run
 /node_modules
 # Environment variables
 .env

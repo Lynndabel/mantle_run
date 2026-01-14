@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 
 /**
  * @title RunnerBadge
- * @dev ERC721 NFT badges for Celo Runner game achievements
+ * @dev ERC721 NFT badges for Mantle Run game achievements
  * Players earn unique badges for completing each stage
  */
 contract RunnerBadge is ERC721, Ownable {
@@ -32,7 +32,7 @@ contract RunnerBadge is ERC721, Ownable {
     event BadgeMinted(address indexed player, uint256 indexed tokenId, uint256 stage, string badgeName);
     event BaseURIUpdated(string newBaseURI);
     
-    constructor() ERC721("Celo Runner Badge", "BADGE") Ownable(msg.sender) {
+    constructor() ERC721("Mantle Run Badge", "BADGE") Ownable(msg.sender) {
         _tokenIdCounter = 1; // Start token IDs from 1
     }
     
@@ -123,7 +123,7 @@ contract RunnerBadge is ERC721, Ownable {
                 badgeName,
                 '","description":"Achievement badge for completing Stage ',
                 stage.toString(),
-                ' in Celo Runner","attributes":[{"trait_type":"Stage","value":"',
+                ' in Mantle Run","attributes":[{"trait_type":"Stage","value":"',
                 stage.toString(),
                 '"}]}'
             )

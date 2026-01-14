@@ -301,7 +301,7 @@ export function NewWalletConnection() {
           }}
         >
           <div className="nes-container with-title is-centered pixel-art" style={{ backgroundColor: 'white', maxWidth: '400px' }}>
-            <p className="title pixel-font text-primary">WELCOME TO CELO RUNNER!</p>
+            <p className="title pixel-font text-primary">WELCOME TO Mantle Run!</p>
             <p className="text-gray-800 mb-4 pixel-font text-sm">Choose your username to start playing:</p>
 
             {registrationStatus === 'waiting' && (

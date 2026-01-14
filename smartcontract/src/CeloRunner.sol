@@ -6,7 +6,7 @@ import "./RunnerBadge.sol";
 
 /**
  * @title CeloRunner
- * @dev Main game contract for Celo Runner - adapted from MindoraRunnerFinal
+ * @dev Main game contract for Mantle Run - adapted from MindoraRunnerFinal
  * Manages player registration, game sessions, stage progression, and rewards
  */
 contract CeloRunner {

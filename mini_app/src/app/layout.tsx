@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: "Celo Runner - Web3 Gaming on Celo",
+  title: "Mantle Run - Web3 Gaming on Celo",
   description: "Play, learn about Celo, and earn rewards!",
 };
 

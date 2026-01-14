@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title QuestToken
- * @dev ERC20 token for Celo Runner game rewards
+ * @dev ERC20 token for Mantle Run game rewards
  * Players earn these tokens by completing game stages
  */
 contract QuestToken is ERC20, Ownable {

@@ -1,6 +1,6 @@
-# Celo Runner Smart Contracts
+# Mantle Run Smart Contracts
 
-Smart contracts for Celo Runner game. Deploy to Celo. Test locally. Verify on Blockscout.
+Smart contracts for Mantle Run game. Deploy to Celo. Test locally. Verify on Blockscout.
 
 ## Quick Links
 

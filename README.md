@@ -1,4 +1,4 @@
-# Celo Runner
+# Mantle Run
 
 Run through stages. Earn tokens. Collect badges. Trade NFTs.
 
@@ -46,7 +46,7 @@ MiniPay users get special features. Automatic wallet detection. cUSD balance dis
 
 ## Mobile First
 
-Celo Runner works on your phone. Responsive design fits any screen. Touch controls work perfectly. Optimized for mobile gameplay.
+Mantle Run works on your phone. Responsive design fits any screen. Touch controls work perfectly. Optimized for mobile gameplay.
 
 ## What You Own
 
@@ -179,7 +179,7 @@ View contracts on Blockscout: https://explorer.celo-sepolia.celo-testnet.org/
 
 ## Built for Hackathon
 
-Celo Runner built for **Celo MiniPay Hackathon 2024** (Nov 14-30). Play to earn mechanics. Mobile first design. Smart contract rewards. NFT marketplace. MiniPay integration. Ready for users.
+Mantle Run built for **Celo MiniPay Hackathon 2024** (Nov 14-30). Play to earn mechanics. Mobile first design. Smart contract rewards. NFT marketplace. MiniPay integration. Ready for users.
 
 **Hackathon Alignment:**
 - Category: Play-to-Earn Games

@@ -90,7 +90,7 @@ export default function Home() {
           <>
             <NewWalletConnection />
           <div className="nes-container with-title is-centered pixel-art relative z-10 max-w-[90%] sm:max-w-md mx-auto" style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
-            <p className="title pixel-font text-primary text-sm sm:text-base">CELO RUNNER</p>
+            <p className="title pixel-font text-primary text-sm sm:text-base">Mantle Run</p>
             <h1 className="pixel-font text-base sm:text-xl mb-4 sm:mb-6 text-gray-800 text-center">
               Run • Learn • Earn
             </h1>

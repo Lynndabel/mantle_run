@@ -49,7 +49,7 @@ export interface GameSession {
   timestamp: bigint;
 }
 
-// Main hook for Celo Runner contract interactions
+// Main hook for Mantle Run contract interactions
 export const useCeloRunner = () => {
   const account = useActiveAccount();
   const [isPending, setIsPending] = useState(false);

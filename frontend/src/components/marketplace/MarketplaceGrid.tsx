@@ -190,7 +190,7 @@ export function MarketplaceGrid() {
               <strong>How to mint NFTs:</strong>
             </p>
             <ul className="pixel-font text-xs text-blue-700 text-left space-y-1">
-              <li>1. Play Celo Runner game</li>
+              <li>1. Play Mantle Run game</li>
               <li>2. Complete Stage 1, 2, or 3</li>
               <li>3. Claim your Badge NFT reward</li>
               <li>4. Your NFT will appear here!</li>

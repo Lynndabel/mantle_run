@@ -1095,7 +1095,7 @@ export function SimpleGameCanvas() {
         {!isPlaying && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/60 p-2 sm:p-4">
             <div className="nes-container with-title is-centered pixel-art w-full max-w-[280px] sm:max-w-sm mx-2" style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
-              <p className="title pixel-font text-primary text-xs sm:text-sm">CELO RUNNER</p>
+              <p className="title pixel-font text-primary text-xs sm:text-sm">Mantle Run</p>
               <h2 className="pixel-font text-xs sm:text-sm md:text-base mb-2 text-gray-800">Ready to Learn & Earn?</h2>
               <p className="text-xs mb-2 sm:mb-3 text-gray-700 pixel-font">
                 <span className="hidden sm:inline">Press SPACE to jump and collect coins!</span>

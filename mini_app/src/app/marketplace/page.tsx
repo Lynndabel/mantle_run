@@ -65,7 +65,7 @@ const Marketplace: NextPage = () => {
           <div className="nes-container pixel-art bg-white">
             <h3 className="pixel-font text-xs sm:text-sm font-bold text-gray-800 mb-2">🎯 How to Earn NFTs</h3>
             <p className="pixel-font text-[10px] sm:text-xs text-gray-600">
-              Complete stages in the Celo Runner game to earn exclusive Badge NFTs for your collection.
+              Complete stages in the Mantle Run game to earn exclusive Badge NFTs for your collection.
             </p>
           </div>
 
