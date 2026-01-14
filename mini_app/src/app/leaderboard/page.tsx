@@ -1,6 +1,6 @@
 'use client';
 
-import { useGeneralLeaderboard } from '@/hooks/useCeloRunner';
+import { useGeneralLeaderboard } from '@/hooks/useMantleRunner';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';

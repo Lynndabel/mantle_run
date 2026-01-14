@@ -1,4 +1,4 @@
-# MiniPay Integration in Celo Runner
+# MiniPay Integration in Mantle Run
 
 ## What is MiniPay?
 
@@ -106,7 +106,7 @@ The integration is automatic - no additional configuration needed. When a user o
 To test MiniPay integration:
 
 1. Open Opera Mini browser on mobile device
-2. Navigate to the Celo Runner app
+2. Navigate to the Mantle Run app
 3. You should see the "MiniPay Detected!" badge
 4. Connect wallet and verify transactions work
 5. Use "Add Cash" button to test funding flow

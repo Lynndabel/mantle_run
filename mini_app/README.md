@@ -1,6 +1,6 @@
-# Celo Runner MiniApp
+# Mantle Run MiniApp
 
-Next.js frontend for Celo Runner game as a Farcaster MiniApp. Built with Farcaster SDK, Wagmi, React, and Tailwind CSS.
+Next.js frontend for Mantle Run game as a Farcaster MiniApp. Built with Farcaster SDK, Wagmi, React, and Tailwind CSS.
 
 ## Features
 
@@ -89,7 +89,7 @@ mini_app/
 │   │   ├── FarcasterWallet.tsx  # Farcaster wallet UI
 │   │   └── marketplace/  # Marketplace components
 │   ├── hooks/            # Custom React hooks
-│   │   ├── useCeloRunner.ts  # Contract interaction hook
+│   │   ├── useMantleRunner.ts  # Contract interaction hook
 │   │   └── useFarcaster*.ts  # Farcaster hooks
 │   ├── store/            # Zustand state management
 │   │   └── gameStore.ts  # Global game state

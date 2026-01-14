@@ -1,6 +1,6 @@
-# Celo Runner Frontend
+# Mantle Run Frontend
 
-Next.js frontend for Celo Runner game. Built with thirdweb, React, and Tailwind CSS.
+Next.js frontend for Mantle Run game. Built with thirdweb, React, and Tailwind CSS.
 
 ## Features
 
@@ -82,7 +82,7 @@ frontend/
 │   │   ├── NewWalletConnection.tsx  # Wallet connection
 │   │   └── marketplace/  # Marketplace components
 │   ├── hooks/            # Custom React hooks
-│   │   └── useCeloRunner.ts  # Contract interaction hook
+│   │   └── useMantleRunner.ts  # Contract interaction hook
 │   ├── store/            # Zustand state management
 │   │   └── gameStore.ts  # Global game state
 │   ├── config/           # Configuration files

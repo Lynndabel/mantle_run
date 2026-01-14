@@ -37,8 +37,8 @@ export interface GameSession {
   timestamp: bigint;
 }
 
-// Main hook for Celo Runner contract interactions
-export const useCeloRunner = () => {
+// Main hook for Mantle Run contract interactions
+export const useMantleRunner = () => {
   const { address, chainId } = useAccount();
   const { data: walletClient } = useWalletClient();
   const [isPending, setIsPending] = useState(false);

@@ -1,4 +1,4 @@
-# Celo Runner
+# Mantle Run
 
 Run through stages. Earn tokens. Collect badges. Trade NFTs.
 
@@ -46,7 +46,7 @@ MiniPay users get special features. Automatic wallet detection. cUSD balance dis
 
 ## Mobile First
 
-Celo Runner works on your phone. Responsive design fits any screen. Touch controls work perfectly. Optimized for mobile gameplay.
+Mantle Run works on your phone. Responsive design fits any screen. Touch controls work perfectly. Optimized for mobile gameplay.
 
 ## What You Own
 
@@ -128,7 +128,7 @@ ETHERSCAN_API_KEY=your_blockscout_api_key
 1. **Deploy Smart Contracts**
    ```bash
    # Deploy to Celo Mainnet
-   forge script script/DeployCeloRunner.s.sol:DeployCeloRunner --rpc-url https://forno.celo.org --broadcast
+   forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://forno.celo.org --broadcast
    
    # Deploy Marketplace
    forge script script/DeployMarketplace.s.sol:DeployMarketplace --rpc-url https://forno.celo.org --broadcast
@@ -161,7 +161,7 @@ QuestToken: 0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861
 
 RunnerBadge: 0x7b72c0e84012f868fe9a4164a8122593d0f38b84
 
-CeloRunner: 0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6
+MantleRunner: 0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6
 
 NFTMarketplace: 0x370f6701cFDECC0A9D744a12b156317AA3CE32D1
 
@@ -179,7 +179,7 @@ View contracts on Blockscout: https://explorer.celo-sepolia.celo-testnet.org/
 
 ## Built for Hackathon
 
-Celo Runner built for **Celo MiniPay Hackathon 2024** (Nov 14-30). Play to earn mechanics. Mobile first design. Smart contract rewards. NFT marketplace. MiniPay integration. Ready for users.
+Mantle Run built for **Celo MiniPay Hackathon 2024** (Nov 14-30). Play to earn mechanics. Mobile first design. Smart contract rewards. NFT marketplace. MiniPay integration. Ready for users.
 
 **Hackathon Alignment:**
 - Category: Play-to-Earn Games

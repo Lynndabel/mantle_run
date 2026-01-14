@@ -1,10 +1,10 @@
 # Farcaster MiniApp Integration Guide
 
-This guide explains how Celo Runner integrates with Farcaster MiniApp to provide a seamless gaming experience within the Farcaster ecosystem.
+This guide explains how Mantle Run integrates with Farcaster MiniApp to provide a seamless gaming experience within the Farcaster ecosystem.
 
 ## Overview
 
-Celo Runner is now available as a Farcaster MiniApp, allowing users to play the game directly within Farcaster clients. The integration includes:
+Mantle Run is now available as a Farcaster MiniApp, allowing users to play the game directly within Farcaster clients. The integration includes:
 
 - Automatic wallet connection via Farcaster Wallet
 - Network selection (Mainnet/Testnet) with Mainnet as default
@@ -207,7 +207,7 @@ The `manifest.json` file defines the MiniApp:
 
 ```json
 {
-  "name": "Celo Runner",
+  "name": "Mantle Run",
   "description": "Play-to-earn runner game on Celo",
   "iconUrl": "https://celo-runner.vercel.app/icon.png",
   "splashImageUrl": "https://celo-runner.vercel.app/splash.png",

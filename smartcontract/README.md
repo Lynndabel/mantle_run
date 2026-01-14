@@ -1,6 +1,6 @@
-# Celo Runner Smart Contracts
+# Mantle Run Smart Contracts
 
-Smart contracts for Celo Runner game. Deploy to Celo. Test locally. Verify on Blockscout.
+Smart contracts for Mantle Run game. Deploy to Celo. Test locally. Verify on Blockscout.
 
 ## Quick Links
 
@@ -14,7 +14,7 @@ Smart contracts for Celo Runner game. Deploy to Celo. Test locally. Verify on Bl
 
 **RunnerBadge**: ERC721 NFT contract. Players earn unique badge NFTs for completing each stage. Badges are collectible and tradeable.
 
-**CeloRunner**: Main game contract. Manages player registration, game sessions, stage progression, leaderboards, and reward distribution. Mints tokens and NFTs to players.
+**MantleRunner**: Main game contract. Manages player registration, game sessions, stage progression, leaderboards, and reward distribution. Mints tokens and NFTs to players.
 
 **NFTMarketplace**: Escrowless marketplace for trading RunnerBadge NFTs. Supports both CELO (native) and cUSD (stablecoin) payments. Sellers keep NFTs until sold.
 
@@ -77,10 +77,10 @@ You need CELO for gas fees.
 Deploy everything to Celo Sepolia:
 
 ```bash
-forge script script/DeployCeloRunner.s.sol:DeployCeloRunner --rpc-url https://forno.celo-sepolia.celo-testnet.org/ --broadcast
+forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://forno.celo-sepolia.celo-testnet.org/ --broadcast
 ```
 
-This deploys QuestToken, RunnerBadge, and CeloRunner. Sets up relationships. Authorizes CeloRunner to mint tokens and NFTs.
+This deploys QuestToken, RunnerBadge, and MantleRunner. Sets up relationships. Authorizes MantleRunner to mint tokens and NFTs.
 
 ### Deploy Marketplace
 
@@ -95,7 +95,7 @@ This deploys NFTMarketplace with cUSD payment support.
 ### Deploy to Mainnet
 
 ```bash
-forge script script/DeployCeloRunner.s.sol:DeployCeloRunner --rpc-url https://forno.celo.org --broadcast
+forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://forno.celo.org --broadcast
 ```
 
 ## Deployed Contracts
@@ -113,7 +113,7 @@ forge script script/DeployCeloRunner.s.sol:DeployCeloRunner --rpc-url https://fo
 - [View on Explorer](https://explorer.celo-sepolia.celo-testnet.org/address/0x7b72c0e84012f868fe9a4164a8122593d0f38b84)
 - ✅ Verified
 
-**CeloRunner**: `0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6`
+**MantleRunner**: `0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6`
 - Main game contract
 - [View on Explorer](https://explorer.celo-sepolia.celo-testnet.org/address/0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6)
 - ✅ Verified
@@ -156,10 +156,10 @@ forge verify-contract 0x7b72c0e84012f868fe9a4164a8122593d0f38b84 \
   --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
-#### CeloRunner (Constructor args: questToken, runnerBadge)
+#### MantleRunner (Constructor args: questToken, runnerBadge)
 ```bash
 forge verify-contract 0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6 \
-  src/CeloRunner.sol:CeloRunner \
+  src/MantleRunner.sol:MantleRunner \
   --chain-id 11142220 \
   --verifier blockscout \
   --verifier-url "https://celo-sepolia.blockscout.com/api" \
@@ -199,7 +199,7 @@ forge verify-contract 0x370f6701cFDECC0A9D744a12b156317AA3CE32D1 \
 
 **RunnerBadge**: `0x` (no constructor args)
 
-**CeloRunner**: `0x00000000000000000000000048e2e16a5cfe127fbfc76f3fd85163bbae64a8610000000000000000000000007b72c0e84012f868fe9a4164a8122593d0f38b84`
+**MantleRunner**: `0x00000000000000000000000048e2e16a5cfe127fbfc76f3fd85163bbae64a8610000000000000000000000007b72c0e84012f868fe9a4164a8122593d0f38b84`
 - QuestToken: `0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861`
 - RunnerBadge: `0x7b72c0e84012f868fe9a4164a8122593d0f38b84`
 
@@ -211,7 +211,7 @@ forge verify-contract 0x370f6701cFDECC0A9D744a12b156317AA3CE32D1 \
 
 ### Register Player
 
-Call `registerPlayer(username)` on CeloRunner contract.
+Call `registerPlayer(username)` on MantleRunner contract.
 
 Players must register before playing. Registration bonus: 100 in-game coins.
 
@@ -223,13 +223,13 @@ Saves player progress. Updates leaderboard. Tracks stage completion.
 
 ### Claim Tokens
 
-Call `claimTokens(stage)` on CeloRunner contract.
+Call `claimTokens(stage)` on MantleRunner contract.
 
 Claims QUEST tokens for completed stage. Can only claim once per stage.
 
 ### Claim NFT Badge
 
-Call `claimNFT(stage)` on CeloRunner contract.
+Call `claimNFT(stage)` on MantleRunner contract.
 
 Mints RunnerBadge NFT for completed stage. Can only claim once per stage.
 
@@ -283,7 +283,7 @@ const celoSepolia = defineChain({
 ```typescript
 import { getContract } from "thirdweb";
 
-const celoRunnerContract = getContract({
+const MantleRunnerContract = getContract({
   client: client,
   chain: celoSepolia,
   address: "0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6"
@@ -296,7 +296,7 @@ const celoRunnerContract = getContract({
 import { prepareContractCall, sendTransaction, waitForReceipt } from "thirdweb";
 
 const transaction = prepareContractCall({
-  contract: celoRunnerContract,
+  contract: MantleRunnerContract,
   method: "registerPlayer",
   params: ["PlayerUsername"]
 });
@@ -384,10 +384,10 @@ smartcontract/
 ├── src/
 │   ├── QuestToken.sol
 │   ├── RunnerBadge.sol
-│   ├── CeloRunner.sol
+│   ├── MantleRunner.sol
 │   └── NFTMarketplace.sol
 ├── script/
-│   ├── DeployCeloRunner.s.sol
+│   ├── DeployMantleRunner.s.sol
 │   └── DeployMarketplace.s.sol
 ├── test/
 │   └── (test files)

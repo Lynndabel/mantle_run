@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title QuestToken
- * @dev ERC20 token for Celo Runner game rewards
+ * @dev ERC20 token for Mantle Run game rewards
  * Players earn these tokens by completing game stages
  */
 contract QuestToken is ERC20, Ownable {
@@ -23,7 +23,7 @@ contract QuestToken is ERC20, Ownable {
     
     /**
      * @dev Set the game contract address that can mint tokens
-     * @param _gameContract Address of the CeloRunner contract
+     * @param _gameContract Address of the MantleRunner contract
      */
     function setGameContract(address _gameContract) external onlyOwner {
         require(_gameContract != address(0), "Invalid address");
