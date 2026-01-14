@@ -38,7 +38,7 @@ export interface GameSession {
 }
 
 // Main hook for Mantle Run contract interactions
-export const useCeloRunner = () => {
+export const useMantleRunner = () => {
   const { address, chainId } = useAccount();
   const { data: walletClient } = useWalletClient();
   const [isPending, setIsPending] = useState(false);

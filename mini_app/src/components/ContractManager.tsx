@@ -7,7 +7,7 @@ import { waitForReceipt } from 'thirdweb';
 import { client } from '@/client';
 import { defineChain } from 'thirdweb';
 import { useGameStore, Player, LeaderboardEntry } from '@/store/gameStore';
-import { useCeloRunner, usePlayerData, useGeneralLeaderboard, useStageCompletion, useTokensClaimed, useNFTClaimed } from '@/hooks/useCeloRunner';
+import { useMantleRunner, usePlayerData, useGeneralLeaderboard, useStageCompletion, useTokensClaimed, useNFTClaimed } from '@/hooks/useMantleRunner';
 import { getContractAddresses } from '@/config/contracts';
 import { checkIsMiniApp } from '@/utils/farcaster';
 
@@ -38,7 +38,7 @@ export function ContractManager() {
   const contracts = getContractAddresses();
   console.log('🏗️ ContractManager - Using contract address:', contracts.Mantle_run);
 
-  const mindoraHook = useCeloRunner();
+  const mindoraHook = useMantleRunner();
   const { registerPlayer, saveGameSession, claimTokens, claimNFT, isPending, isConfirming, isSuccess, hash } = mindoraHook;
   const { player: contractPlayer, refetch: refetchPlayer } = usePlayerData(address);
   // Use general leaderboard (all stages combined)

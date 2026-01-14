@@ -89,7 +89,7 @@ mini_app/
 │   │   ├── FarcasterWallet.tsx  # Farcaster wallet UI
 │   │   └── marketplace/  # Marketplace components
 │   ├── hooks/            # Custom React hooks
-│   │   ├── useCeloRunner.ts  # Contract interaction hook
+│   │   ├── useMantleRunner.ts  # Contract interaction hook
 │   │   └── useFarcaster*.ts  # Farcaster hooks
 │   ├── store/            # Zustand state management
 │   │   └── gameStore.ts  # Global game state

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useActiveAccount } from 'thirdweb/react';
-import { usePlayerData, useCeloRunner } from '@/hooks/useCeloRunner';
+import { usePlayerData, useMantleRunner } from '@/hooks/useMantleRunner';
 import { getStageQuestions } from '@/data/quizzes';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -11,7 +11,7 @@ export default function PlayPage() {
   const account = useActiveAccount();
   const address = account?.address;
   const { player, refetch } = usePlayerData(address);
-  const { saveGameSession, isPending } = useCeloRunner();
+  const { saveGameSession, isPending } = useMantleRunner();
   const router = useRouter();
 
   const [selectedStage, setSelectedStage] = useState<number>(1);

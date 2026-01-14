@@ -4,19 +4,19 @@ pragma solidity ^0.8.19;
 import "forge-std/Script.sol";
 import "../src/QuestToken.sol";
 import "../src/RunnerBadge.sol";
-import "../src/CeloRunner.sol";
+import "../src/MantleRunner.sol";
 
 /**
- * @title DeployCeloRunner
+ * @title DeployMantleRunner
  * @dev Deployment script for Mantle Run game contracts
  * 
  * Usage:
- * forge script script/DeployCeloRunner.s.sol:DeployCeloRunner --rpc-url <your_rpc_url> --private-key <your_private_key> --broadcast
+ * forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url <your_rpc_url> --private-key <your_private_key> --broadcast
  * 
  * For Celo Alfajores testnet:
- * forge script script/DeployCeloRunner.s.sol:DeployCeloRunner --rpc-url https://alfajores-forno.celo-testnet.org --private-key <your_private_key> --broadcast
+ * forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://alfajores-forno.celo-testnet.org --private-key <your_private_key> --broadcast
  */
-contract DeployCeloRunner is Script {
+contract DeployMantleRunner is Script {
     
     function run() external {
         // Get deployer private key from environment or use provided key
@@ -35,23 +35,23 @@ contract DeployCeloRunner is Script {
         RunnerBadge runnerBadge = new RunnerBadge();
         console.log("RunnerBadge deployed at:", address(runnerBadge));
         
-        // 3. Deploy CeloRunner with token addresses
-        console.log("Deploying CeloRunner...");
-        CeloRunner celoRunner = new CeloRunner(
+        // 3. Deploy MantleRunner with token addresses
+        console.log("Deploying MantleRunner...");
+        MantleRunner MantleRunner = new MantleRunner(
             address(questToken),
             address(runnerBadge)
         );
-        console.log("CeloRunner deployed at:", address(celoRunner));
+        console.log("MantleRunner deployed at:", address(MantleRunner));
         
-        // 4. Set CeloRunner as authorized minter for both tokens
-        console.log("Setting CeloRunner as authorized minter...");
-        questToken.setGameContract(address(celoRunner));
-        runnerBadge.setGameContract(address(celoRunner));
+        // 4. Set MantleRunner as authorized minter for both tokens
+        console.log("Setting MantleRunner as authorized minter...");
+        questToken.setGameContract(address(MantleRunner));
+        runnerBadge.setGameContract(address(MantleRunner));
         
         console.log("\n=== Deployment Summary ===");
         console.log("QuestToken:", address(questToken));
         console.log("RunnerBadge:", address(runnerBadge));
-        console.log("CeloRunner:", address(celoRunner));
+        console.log("MantleRunner:", address(MantleRunner));
         console.log("========================\n");
         
         vm.stopBroadcast();

@@ -38,7 +38,7 @@ contract RunnerBadge is ERC721, Ownable {
     
     /**
      * @dev Set the game contract address that can mint NFTs
-     * @param _gameContract Address of the CeloRunner contract
+     * @param _gameContract Address of the MantleRunner contract
      */
     function setGameContract(address _gameContract) external onlyOwner {
         require(_gameContract != address(0), "Invalid address");

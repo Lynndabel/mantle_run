@@ -128,7 +128,7 @@ ETHERSCAN_API_KEY=your_blockscout_api_key
 1. **Deploy Smart Contracts**
    ```bash
    # Deploy to Celo Mainnet
-   forge script script/DeployCeloRunner.s.sol:DeployCeloRunner --rpc-url https://forno.celo.org --broadcast
+   forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://forno.celo.org --broadcast
    
    # Deploy Marketplace
    forge script script/DeployMarketplace.s.sol:DeployMarketplace --rpc-url https://forno.celo.org --broadcast
@@ -161,7 +161,7 @@ QuestToken: 0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861
 
 RunnerBadge: 0x7b72c0e84012f868fe9a4164a8122593d0f38b84
 
-CeloRunner: 0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6
+MantleRunner: 0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6
 
 NFTMarketplace: 0x370f6701cFDECC0A9D744a12b156317AA3CE32D1
 

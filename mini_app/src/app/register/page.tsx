@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useWallet } from '@/context/WalletContext';
-import { useCeloRunner } from '@/hooks/useCeloRunner';
+import { useMantleRunner } from '@/hooks/useMantleRunner';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ConnectButton } from 'thirdweb/react';
@@ -11,7 +11,7 @@ import { celoSepolia } from '@/context/WalletContext';
 
 export default function RegisterPage() {
   const { account, isConnected } = useWallet();
-  const { registerPlayer, isPending, isSuccess } = useCeloRunner();
+  const { registerPlayer, isPending, isSuccess } = useMantleRunner();
   const [username, setUsername] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();

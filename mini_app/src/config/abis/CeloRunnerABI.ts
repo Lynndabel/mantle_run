@@ -348,7 +348,7 @@ export const Mantle_run_ABI =
 							"type": "uint256"
 						}
 					],
-					"internalType": "struct CeloRunner.GameSession[]",
+					"internalType": "struct MantleRunner.GameSession[]",
 					"name": "",
 					"type": "tuple[]"
 				}
@@ -409,7 +409,7 @@ export const Mantle_run_ABI =
 							"type": "uint256"
 						}
 					],
-					"internalType": "struct CeloRunner.Player",
+					"internalType": "struct MantleRunner.Player",
 					"name": "",
 					"type": "tuple"
 				}
@@ -465,7 +465,7 @@ export const Mantle_run_ABI =
 							"type": "uint256"
 						}
 					],
-					"internalType": "struct CeloRunner.GameSession[]",
+					"internalType": "struct MantleRunner.GameSession[]",
 					"name": "",
 					"type": "tuple[]"
 				}

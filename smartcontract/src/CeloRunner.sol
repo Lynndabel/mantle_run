@@ -5,11 +5,11 @@ import "./QuestToken.sol";
 import "./RunnerBadge.sol";
 
 /**
- * @title CeloRunner
+ * @title MantleRunner
  * @dev Main game contract for Mantle Run - adapted from MindoraRunnerFinal
  * Manages player registration, game sessions, stage progression, and rewards
  */
-contract CeloRunner {
+contract MantleRunner {
 
     // ============ CONTRACTS ============
     

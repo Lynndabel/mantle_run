@@ -19,7 +19,7 @@ const celoMainnet = defineChain({
 });
 
 // Get contract instance with ABI
-const getCeloRunnerContract = () => {
+const getMantleRunnerContract = () => {
   return getContract({
     client,
     chain: celoMainnet,
@@ -50,7 +50,7 @@ export interface GameSession {
 }
 
 // Main hook for Mantle Run contract interactions
-export const useCeloRunner = () => {
+export const useMantleRunner = () => {
   const account = useActiveAccount();
   const [isPending, setIsPending] = useState(false);
   const [isConfirming, setIsConfirming] = useState(false);
@@ -67,7 +67,7 @@ export const useCeloRunner = () => {
       setError(null);
       console.log('📝 Registering player:', username);
       
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       const transaction = prepareContractCall({
         contract,
         method: "registerPlayer",
@@ -137,7 +137,7 @@ export const useCeloRunner = () => {
 
       console.log('💾 Validated parameters:', { validStage, validScore, validCoins, validQuestions, stageCompleted });
 
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       const transaction = prepareContractCall({
         contract,
         method: "saveGameSession",
@@ -187,7 +187,7 @@ export const useCeloRunner = () => {
       setError(null);
       console.log('🛒 Purchasing item:', { itemType, cost });
       
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       const transaction = prepareContractCall({
         contract,
         method: "purchaseItem",
@@ -231,7 +231,7 @@ export const useCeloRunner = () => {
       console.log('💰 Claiming tokens for stage:', stage);
       console.log('📤 Submitting transaction to blockchain...');
 
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       const transaction = prepareContractCall({
         contract,
         method: "claimTokens",
@@ -276,7 +276,7 @@ export const useCeloRunner = () => {
       console.log('🎖️ Claiming NFT for stage:', stage);
       console.log('📤 Submitting transaction to blockchain...');
 
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       const transaction = prepareContractCall({
         contract,
         method: "claimNFT",
@@ -353,7 +353,7 @@ export const usePlayerData = (playerAddress?: string) => {
     setError(null);
     
     try {
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       // Use ABI method name instead of signature string for better struct parsing
       const result = await readContract({
         contract,
@@ -454,7 +454,7 @@ export const useLeaderboard = (stage: number, limit: number = 10) => {
     setError(null);
     
     try {
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       // Use ABI method name instead of signature string for better struct parsing
       const result = await readContract({
         contract,
@@ -528,7 +528,7 @@ export const useStageCompletion = (playerAddress?: string, stage?: number) => {
       setError(null);
       
       try {
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       // Use ABI method name instead of signature string
       const result = await readContract({
         contract,
@@ -569,7 +569,7 @@ export const useTokensClaimed = (playerAddress?: string, stage?: number) => {
     setError(null);
     
     try {
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       // Use ABI method name instead of signature string
       const result = await readContract({
         contract,
@@ -616,7 +616,7 @@ export const useNFTClaimed = (playerAddress?: string, stage?: number) => {
     setError(null);
     
     try {
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       // Use ABI method name instead of signature string
       const result = await readContract({
         contract,
@@ -661,7 +661,7 @@ export const useGeneralLeaderboard = (limit: number = 10) => {
     setError(null);
     
     try {
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       // Use ABI method name instead of signature string for better struct parsing
       const result = await readContract({
         contract,
@@ -729,7 +729,7 @@ export const useGameStats = () => {
     setError(null);
     
     try {
-      const contract = getCeloRunnerContract();
+      const contract = getMantleRunnerContract();
       // Use ABI method name instead of signature string
       const result = await readContract({
         contract,

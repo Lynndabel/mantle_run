@@ -1,7 +1,7 @@
 'use client';
 
 import { useActiveAccount } from 'thirdweb/react';
-import { usePlayerData, useTokensClaimed, useNFTClaimed, useCeloRunner } from '@/hooks/useCeloRunner';
+import { usePlayerData, useTokensClaimed, useNFTClaimed, useMantleRunner } from '@/hooks/useMantleRunner';
 import { GAME_CONSTANTS } from '@/config/contracts';
 import { useState } from 'react';
 import Link from 'next/link';
@@ -10,7 +10,7 @@ export default function RewardsPage() {
   const account = useActiveAccount();
   const address = account?.address;
   const { player, refetch: refetchPlayer } = usePlayerData(address);
-  const { claimTokens, claimNFT, isPending } = useCeloRunner();
+  const { claimTokens, claimNFT, isPending } = useMantleRunner();
   const [claimingStage, setClaimingStage] = useState<number | null>(null);
   const [claimType, setClaimType] = useState<'token' | 'nft' | null>(null);
 

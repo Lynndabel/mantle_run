@@ -82,7 +82,7 @@ frontend/
 │   │   ├── NewWalletConnection.tsx  # Wallet connection
 │   │   └── marketplace/  # Marketplace components
 │   ├── hooks/            # Custom React hooks
-│   │   └── useCeloRunner.ts  # Contract interaction hook
+│   │   └── useMantleRunner.ts  # Contract interaction hook
 │   ├── store/            # Zustand state management
 │   │   └── gameStore.ts  # Global game state
 │   ├── config/           # Configuration files
