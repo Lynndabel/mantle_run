@@ -1,4 +1,4 @@
-export const CELO_RUNNER_ABI = 
+export const Mantle_run_ABI = 
 	[
 		{
 			"inputs": [

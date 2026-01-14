@@ -29,7 +29,7 @@ Foundry installation: https://book.getfoundry.sh/getting-started/installation
 Clone the repository. Navigate to smartcontract folder. Install dependencies.
 
 ```bash
-cd Celo_runner/smartcontract
+cd Mantle_run/smartcontract
 forge install
 ```
 

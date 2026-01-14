@@ -4,7 +4,7 @@ import { getContract, readContract, prepareContractCall, sendTransaction, waitFo
 import { defineChain } from 'thirdweb';
 import { client } from '@/client';
 import { CONTRACTS } from '@/config/contracts';
-import { CELO_RUNNER_ABI } from '@/config/abis';
+import { Mantle_run_ABI } from '@/config/abis';
 
 // Define Celo Mainnet chain
 const celoMainnet = defineChain({
@@ -23,8 +23,8 @@ const getCeloRunnerContract = () => {
   return getContract({
     client,
     chain: celoMainnet,
-    address: CONTRACTS.CELO_RUNNER,
-    abi: CELO_RUNNER_ABI,
+    address: CONTRACTS.Mantle_run,
+    abi: Mantle_run_ABI,
   });
 };
 

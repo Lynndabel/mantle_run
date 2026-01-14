@@ -69,8 +69,8 @@ Celo offers low fees. Your rewards stay in your pocket. Fast transactions mean q
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Web3Baddies/Celo_runner.git
-   cd Celo_runner
+   git clone https://github.com/Web3Baddies/Mantle_run.git
+   cd Mantle_run
    ```
 
 2. **Set up the development environment**
@@ -110,7 +110,7 @@ Celo offers low fees. Your rewards stay in your pocket. Fast transactions mean q
 ```env
 NEXT_PUBLIC_QUEST_TOKEN_ADDRESS=0xC3adf32A0C0a70183eab5D1C33B088fFeEecf396
 NEXT_PUBLIC_RUNNER_BADGE_ADDRESS=0x6D939Da699D3AbA5A47662242Ec5e1a091Db617D
-NEXT_PUBLIC_CELO_RUNNER_ADDRESS=0x03c2c7011eE8519D3B0AF49f20D4b6dEF80799A7
+NEXT_PUBLIC_Mantle_run_ADDRESS=0x03c2c7011eE8519D3B0AF49f20D4b6dEF80799A7
 NEXT_PUBLIC_CELO_NFT_MARKETPLACE=0xa3fC9782937F8FFDD9BB59D573b33E9842065013
 NEXT_PUBLIC_CUSD_TOKEN_ADDRESS=
 NEXT_PUBLIC_CHAIN_ID=42220

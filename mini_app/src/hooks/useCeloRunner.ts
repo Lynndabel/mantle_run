@@ -3,7 +3,7 @@ import { createPublicClient, http } from 'viem';
 import { celo, celoSepolia } from 'viem/chains';
 import { useAccount, useWalletClient } from 'wagmi';
 import { getContractAddresses } from '@/config/contracts';
-import { CELO_RUNNER_ABI } from '@/config/abis';
+import { Mantle_run_ABI } from '@/config/abis';
 
 // Helper to pick chain/clients per chainId (force Celo mainnet unless explicit Sepolia)
 const getClients = (chainId?: number) => {
@@ -70,8 +70,8 @@ export const useCeloRunner = () => {
       setIsPending(true);
       setError(null);
       const txHash = await walletClient.writeContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: 'registerPlayer',
         args: [username],
       });
@@ -110,8 +110,8 @@ export const useCeloRunner = () => {
       setError(null);
 
       const txHash = await walletClient.writeContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: 'saveGameSession',
         args: [
           BigInt(stage || 1),
@@ -143,8 +143,8 @@ export const useCeloRunner = () => {
       setIsPending(true);
       setError(null);
       const txHash = await walletClient.writeContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: 'purchaseItem',
         args: [itemType, BigInt(cost)],
       });
@@ -169,8 +169,8 @@ export const useCeloRunner = () => {
       setIsPending(true);
       setError(null);
       const txHash = await walletClient.writeContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: 'claimTokens',
         args: [BigInt(stage)],
       });
@@ -195,8 +195,8 @@ export const useCeloRunner = () => {
       setIsPending(true);
       setError(null);
       const txHash = await walletClient.writeContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: 'claimNFT',
         args: [BigInt(stage)],
       });
@@ -256,8 +256,8 @@ export const usePlayerData = (playerAddress?: string) => {
     
     try {
       const result = await publicClient.readContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: "getPlayer",
         args: [playerAddress as `0x${string}`],
       });
@@ -357,8 +357,8 @@ export const useLeaderboard = (stage: number, limit: number = 10) => {
     
     try {
       const result = await publicClient.readContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: "getStageLeaderboard",
         args: [BigInt(stage), BigInt(limit)],
       });
@@ -432,8 +432,8 @@ export const useStageCompletion = (playerAddress?: string, stage?: number) => {
       
       try {
       const result = await publicClient.readContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: "isStageCompleted",
         args: [playerAddress as `0x${string}`, BigInt(stage)],
       });
@@ -474,8 +474,8 @@ export const useTokensClaimed = (playerAddress?: string, stage?: number) => {
     
     try {
       const result = await publicClient.readContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: "areTokensClaimed",
         args: [playerAddress as `0x${string}`, BigInt(stage)],
       });
@@ -522,8 +522,8 @@ export const useNFTClaimed = (playerAddress?: string, stage?: number) => {
     
     try {
       const result = await publicClient.readContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: "isNFTClaimed",
         args: [playerAddress as `0x${string}`, BigInt(stage)],
       });
@@ -568,8 +568,8 @@ export const useGeneralLeaderboard = (limit: number = 10) => {
     
     try {
       const result = await publicClient.readContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: "getGeneralLeaderboard",
         args: [BigInt(limit)],
       });
@@ -637,8 +637,8 @@ export const useGameStats = () => {
     
     try {
       const result = await publicClient.readContract({
-        address: contracts.CELO_RUNNER,
-        abi: CELO_RUNNER_ABI,
+        address: contracts.Mantle_run,
+        abi: Mantle_run_ABI,
         functionName: "getGameStats",
         args: [],
       });

@@ -36,7 +36,7 @@ export function ContractManager() {
 
   // Get current contract address and log it
   const contracts = getContractAddresses();
-  console.log('🏗️ ContractManager - Using contract address:', contracts.CELO_RUNNER);
+  console.log('🏗️ ContractManager - Using contract address:', contracts.Mantle_run);
 
   const mindoraHook = useCeloRunner();
   const { registerPlayer, saveGameSession, claimTokens, claimNFT, isPending, isConfirming, isSuccess, hash } = mindoraHook;
@@ -142,7 +142,7 @@ export function ContractManager() {
         questTokensEarned: contractPlayer.questTokensEarned,
         inGameCoins: contractPlayer.inGameCoins,
         isRegistered: contractPlayer.isRegistered,
-        contractAddress: contracts.CELO_RUNNER
+        contractAddress: contracts.Mantle_run
       });
       
       // IMPORTANT: New contract deployment means all players start fresh
@@ -455,7 +455,7 @@ export function ContractManager() {
   useEffect(() => {
     const contractAddresses = getContractAddresses();
     
-    console.log('🔧 ContractManager - Celo service initialized with contract:', contractAddresses.CELO_RUNNER);
+    console.log('🔧 ContractManager - Celo service initialized with contract:', contractAddresses.Mantle_run);
   }, []);
 
   // Set up contract callbacks only once when the component mounts
