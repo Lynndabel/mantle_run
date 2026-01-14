@@ -13,8 +13,8 @@ import "../src/MantleRunner.sol";
  * Usage:
  * forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url <your_rpc_url> --private-key <your_private_key> --broadcast
  * 
- * For Celo Alfajores testnet:
- * forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://alfajores-forno.celo-testnet.org --private-key <your_private_key> --broadcast
+ * For Mantle Alfajores testnet:
+ * forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://alfajores-forno.Mantle-testnet.org --private-key <your_private_key> --broadcast
  */
 contract DeployMantleRunner is Script {
     

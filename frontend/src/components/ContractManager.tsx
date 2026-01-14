@@ -9,14 +9,14 @@ import { useGameStore, Player, LeaderboardEntry } from '@/store/gameStore';
 import { useMantleRunner, usePlayerData, useGeneralLeaderboard, useStageCompletion, useTokensClaimed, useNFTClaimed } from '@/hooks/useMantleRunner';
 import { getContractAddresses } from '@/config/contracts';
 
-// Define Celo Sepolia chain
-const celoMainnet = defineChain({
+// Define Mantle Sepolia chain
+const MantleMainnet = defineChain({
   id: 42220,
-  name: "Celo Mainnet",
-  rpc: "https://forno.celo.org/",
+  name: "Mantle Mainnet",
+  rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
-    name: "CELO",
-    symbol: "CELO",
+    name: "Mantle",
+    symbol: "Mantle",
     decimals: 18
   }
 });
@@ -444,11 +444,11 @@ export function ContractManager() {
     }
   }, [isPending, isConfirming, isSuccess, hash, refetchPlayer]);
 
-  // Initialize Celo service with contract address
+  // Initialize Mantle service with contract address
   useEffect(() => {
     const contractAddresses = getContractAddresses();
     
-    console.log('🔧 ContractManager - Celo service initialized with contract:', contractAddresses.Mantle_run);
+    console.log('🔧 ContractManager - Mantle service initialized with contract:', contractAddresses.Mantle_run);
   }, []);
 
   // Set up contract callbacks only once when the component mounts
@@ -799,12 +799,12 @@ export function ContractManager() {
 
           // Try to mint QuestCoin tokens
           console.log(`🪙 Minting ${tokenAmount} QuestCoin tokens...`);
-          // For Celo, minting is handled via contract calls in claimTokens
+          // For Mantle, minting is handled via contract calls in claimTokens
           const questCoinSuccess = true; 
 
           // Try to mint NFT
           console.log(`🎖️ Minting ${badgeName} NFT...`);
-          // For Celo, minting is handled via contract calls in claimNFT
+          // For Mantle, minting is handled via contract calls in claimNFT
           const nftSuccess = true; 
 
           console.log(`✅ ContractManager - Mint results:`, { questCoinSuccess, nftSuccess });
@@ -827,7 +827,7 @@ export function ContractManager() {
           console.log('⏳ Waiting for transaction to be confirmed on blockchain...');
           const receipt = await waitForReceipt({
             client,
-            chain: celoMainnet,
+            chain: MantleMainnet,
             transactionHash: txHash as `0x${string}`,
           });
 
@@ -857,7 +857,7 @@ export function ContractManager() {
           console.log('⏳ Waiting for transaction to be confirmed on blockchain...');
           const receipt = await waitForReceipt({
             client,
-            chain: celoMainnet,
+            chain: MantleMainnet,
             transactionHash: txHash as `0x${string}`,
           });
 
@@ -880,10 +880,10 @@ export function ContractManager() {
       waitForTransactionConfirmation: async (transactionId: string): Promise<boolean> => {
         try {
           console.log(`⏳ Waiting for transaction confirmation: ${transactionId}`);
-          // For Celo, transaction confirmation is handled by thirdweb's waitForReceipt
+          // For Mantle, transaction confirmation is handled by thirdweb's waitForReceipt
           await waitForReceipt({
             client,
-            chain: celoMainnet,
+            chain: MantleMainnet,
             transactionHash: transactionId as `0x${string}`,
           });
           return true; 

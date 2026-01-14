@@ -4,8 +4,8 @@ import { Providers } from "@/components/Providers";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mantle Run - Web3 Gaming on Celo",
-  description: "Play, learn about Celo, and earn rewards!",
+  title: "Mantle Run - Web3 Gaming on Mantle",
+  description: "Play, learn about Mantle, and earn rewards!",
 };
 
 export default function RootLayout({

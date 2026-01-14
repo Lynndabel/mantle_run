@@ -10,13 +10,13 @@ import { RUNNER_BADGE_ABI } from '@/config/abis';
 import { getBadgeImage, getBadgeNameByStage } from '@/config/badgeMetadata';
 import { NFTCard } from './NFTCard';
 
-const celoMainnet = defineChain({
+const MantleMainnet = defineChain({
   id: 42220,
-  name: "Celo Mainnet",
-  rpc: "https://forno.celo.org/",
+  name: "Mantle Mainnet",
+  rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
-    name: "CELO",
-    symbol: "CELO",
+    name: "Mantle",
+    symbol: "Mantle",
     decimals: 18
   }
 });
@@ -45,7 +45,7 @@ export function MarketplaceGrid() {
   const getBadgeContract = () => {
     return getContract({
       client,
-      chain: celoMainnet,
+      chain: MantleMainnet,
       address: CONTRACTS.RUNNER_BADGE,
       abi: RUNNER_BADGE_ABI,
     });
@@ -55,7 +55,7 @@ export function MarketplaceGrid() {
   const fetchAllNFTs = async () => {
     try {
       setIsLoading(true);
-      console.log('🔍 Fetching ALL Badge NFTs from Celo...');
+      console.log('🔍 Fetching ALL Badge NFTs from Mantle...');
 
       const contract = getBadgeContract();
       const allNFTData: NFTData[] = [];

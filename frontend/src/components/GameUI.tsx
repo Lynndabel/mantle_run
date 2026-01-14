@@ -10,7 +10,7 @@ import { useGameSounds } from '@/hooks/useGameSounds';
 import { ConfirmDialog } from '@/components/ConfirmDialog';
 import { getBadgeImage, getBadgeNameByStage } from '@/config/badgeMetadata';
 import { useWallet } from '@/context/WalletContext';
-import { isMiniPayAvailable, checkCUSDBalance } from '@/utils/minipay';
+import { isMiniPayAvailable, checkMNTBalance } from '@/utils/minipay';
 
 export function GameUI() {
   const router = useRouter();
@@ -37,7 +37,7 @@ export function GameUI() {
   const [isMinting, setIsMinting] = useState(false);
   const [isPurchasing, setIsPurchasing] = useState(false);
   const [isMiniPay, setIsMiniPay] = useState(false);
-  const [cUSDBalance, setCUSDBalance] = useState<string>("0");
+  const [MNTBalance, setMNTBalance] = useState<string>("0");
   
   // Confirmation dialog state
   const [confirmDialog, setConfirmDialog] = useState<{
@@ -58,14 +58,14 @@ export function GameUI() {
   const address = account?.address;
   const { disconnect } = useWallet();
 
-  // Check for MiniPay and load cUSD balance
+  // Check for MiniPay and load MNT balance
   useEffect(() => {
     setIsMiniPay(isMiniPayAvailable());
   }, []);
 
   useEffect(() => {
     if (isMiniPay && address) {
-      checkCUSDBalance(address, true).then(setCUSDBalance);
+      checkMNTBalance(address, true).then(setMNTBalance);
     }
   }, [isMiniPay, address]);
 
@@ -86,7 +86,7 @@ export function GameUI() {
     try {
       setIsMinting(true);
       
-      // For Celo, reward status is tracked in the contract via player state
+      // For Mantle, reward status is tracked in the contract via player state
       console.log(`🔍 Checking if Stage ${stage} rewards were already claimed...`);
       
       // Check from player state instead
@@ -172,7 +172,7 @@ export function GameUI() {
       console.log('📜 Using contract addresses:', contracts);
 
       try {
-        console.log('🔄 Minting QUEST tokens through Celo contract...');
+        console.log('🔄 Minting QUEST tokens through Mantle contract...');
 
         // Check what has already been claimed from player state
         const tokensAlreadyClaimed = player?.tokensClaimedStages?.includes(stage) || false;
@@ -191,7 +191,7 @@ export function GameUI() {
         // Only mint tokens if NOT already claimed
         if (!tokensAlreadyClaimed) {
           console.log(`💰 Minting ${tokenAmount} QuestCoins to ${address}...`);
-          // For Celo, minting is handled through contract calls in ContractManager
+          // For Mantle, minting is handled through contract calls in ContractManager
           questCoinSuccess = true; 
 
           if (questCoinSuccess) {
@@ -218,7 +218,7 @@ export function GameUI() {
         // Only mint NFT if NOT already claimed
         if (!nftAlreadyClaimed) {
           console.log(`🏆 Minting ${badgeName} NFT to ${address}...`);
-          // For Celo, minting is handled through contract calls in ContractManager
+          // For Mantle, minting is handled through contract calls in ContractManager
           nftSuccess = true; 
 
           if (nftSuccess) {
@@ -245,11 +245,11 @@ export function GameUI() {
           if (tokensAlreadyClaimed && nftAlreadyClaimed) {
             showNotification('info', 'Already Claimed', `You have already claimed all Stage ${stage} rewards:\n• ${tokenAmount} QuestCoin tokens\n• ${badgeName} NFT badge`, 6000);
           } else if (tokensAlreadyClaimed && !nftAlreadyClaimed) {
-            showNotification('success', 'NFT Badge Minted!', `${badgeName} NFT badge minted ✅\nTokens were already claimed previously\n\nCheck Celo Explorer for transaction details.`, 7000);
+            showNotification('success', 'NFT Badge Minted!', `${badgeName} NFT badge minted ✅\nTokens were already claimed previously\n\nCheck Mantle Explorer for transaction details.`, 7000);
           } else if (!tokensAlreadyClaimed && nftAlreadyClaimed) {
-            showNotification('success', 'Tokens Minted!', `${tokenAmount} QuestCoin tokens minted ✅\nNFT was already claimed previously\n\nCheck Celo Explorer for transaction details.`, 7000);
+            showNotification('success', 'Tokens Minted!', `${tokenAmount} QuestCoin tokens minted ✅\nNFT was already claimed previously\n\nCheck Mantle Explorer for transaction details.`, 7000);
           } else {
-            showNotification('success', 'Rewards Claimed Successfully!', `${tokenAmount} QuestCoin tokens claimed\n${badgeName} NFT badge claimed\n\nCheck Celo Explorer for transaction details.`, 7000);
+            showNotification('success', 'Rewards Claimed Successfully!', `${tokenAmount} QuestCoin tokens claimed\n${badgeName} NFT badge claimed\n\nCheck Mantle Explorer for transaction details.`, 7000);
           }
           setTimeout(() => window.location.reload(), 2000);
         } else if (questCoinSuccess && !nftSuccess) {
@@ -820,7 +820,7 @@ export function GameUI() {
                 <p className="pixel-font text-sm font-bold mb-2">📋 Planned Features:</p>
                 <ul className="pixel-font text-xs text-gray-700 space-y-1 list-none">
                   <li>✅ List your Badge NFTs for sale</li>
-                  <li>✅ Set your own prices in CELO</li>
+                  <li>✅ Set your own prices in Mantle</li>
                   <li>✅ Browse NFTs from other players</li>
                   <li>✅ Instant peer-to-peer trading</li>
                   <li>✅ Secure blockchain transactions</li>

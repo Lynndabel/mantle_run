@@ -27,9 +27,9 @@ MiniPay is a **stablecoin wallet** built into Opera Mini browser and available a
 - Message explaining MiniPay benefits
 - "Add Cash to MiniPay" button for easy funding
 
-### ✅ **cUSD Balance Checking** (Available)
-- Utility function to check cUSD (Celo Dollar) balance
-- Uses Celo's stable token contract
+### ✅ **MNT Balance Checking** (Available)
+- Utility function to check MNT (Mantle Dollar) balance
+- Uses Mantle's stable token contract
 - Supports both testnet and mainnet
 
 ### ✅ **Transaction Support**
@@ -49,7 +49,7 @@ MiniPay is a **stablecoin wallet** built into Opera Mini browser and available a
 1. **`src/utils/minipay.ts`** - Core MiniPay utilities
    - `isMiniPayAvailable()` - Detects MiniPay wallet
    - `getMiniPayAddress()` - Gets connected address from MiniPay
-   - `checkCUSDBalance()` - Checks cUSD balance
+   - `checkMNTBalance()` - Checks MNT balance
    - `openMiniPayAddCash()` - Opens add cash screen
    - `checkTransactionStatus()` - Checks transaction status
 
@@ -82,7 +82,7 @@ User Can:
 2. **Easier Onboarding** - Phone number-based addresses (easier than hex)
 3. **Mobile Gaming Focus** - Perfect for mobile-first design
 4. **Global Reach** - Access to users in emerging markets
-5. **Hackathon Requirement** - Completes Celo hackathon integration step
+5. **Hackathon Requirement** - Completes Mantle hackathon integration step
 
 ## Usage
 
@@ -95,10 +95,10 @@ The integration is automatic - no additional configuration needed. When a user o
 
 ## Future Enhancements (Optional)
 
-- Phone number resolution (using @celo/identity)
-- Direct cUSD payments for rewards
+- Phone number resolution (using @Mantle/identity)
+- Direct MNT payments for rewards
 - MiniPay-specific transaction optimizations
-- cUSD balance display in game UI
+- MNT balance display in game UI
 - Social features using phone numbers
 
 ## Testing

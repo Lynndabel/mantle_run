@@ -10,18 +10,18 @@ Next.js frontend for Mantle Run game as a Farcaster MiniApp. Built with Farcaste
 - Player registration and profile management
 - Stage-based gameplay with quiz integration
 - Token and NFT rewards claiming
-- NFT marketplace (CELO and cUSD payments) with 2.5% platform fees
+- NFT marketplace (Mantle and MNT payments) with 2.5% platform fees
 - Batch transaction support (EIP-5792)
 - Leaderboard system
 - Mobile-responsive design
-- MiniPay integration with cUSD support
+- MiniPay integration with MNT support
 - Haptic feedback for MiniApp
 - Quick Auth for seamless authentication
 
 ## Prerequisites
 
 - Node.js 18+ and npm
-- A Celo wallet (Farcaster Wallet, MetaMask, WalletConnect, or MiniPay)
+- A Mantle wallet (Farcaster Wallet, MetaMask, WalletConnect, or MiniPay)
 
 ## Installation
 
@@ -34,16 +34,16 @@ npm install
 Create a `.env.local` file (or copy from `.env.local.example`):
 
 ```env
-# Contract Addresses (Celo Mainnet)
+# Contract Addresses (Mantle Mainnet)
 NEXT_PUBLIC_QUEST_TOKEN_ADDRESS=0x7B61f8EadD960a2e676f26E6968F5f65FebE1341
 NEXT_PUBLIC_RUNNER_BADGE_ADDRESS=0xe0Aad78b3615ce64469518f4E406B580de5cABaA
 NEXT_PUBLIC_Mantle_run_ADDRESS=0x553efD80A0ADEd286Ed49F78Ba5051846db91B37
 NEXT_PUBLIC_MARKETPLACE_ADDRESS=0x387998f2eA7f6f4F81cc583ba2bDB841d2bB77C6
-NEXT_PUBLIC_CUSD_TOKEN_ADDRESS=0x765DE816845861e75A25fCA122bb6898B8B1282a
+NEXT_PUBLIC_MNT_TOKEN_ADDRESS=0x765DE816845861e75A25fCA122bb6898B8B1282a
 
 # Network Configuration
 NEXT_PUBLIC_CHAIN_ID=42220
-NEXT_PUBLIC_RPC_URL=https://forno.celo.org
+NEXT_PUBLIC_RPC_URL=https://rpc.sepolia.mantle.xyz
 ```
 
 **Note:** The contract addresses are configured in `src/config/contracts.ts` with network-aware support. The app defaults to Mainnet (as required for Farcaster) but supports both Mainnet and Testnet. Use `getContractAddresses(chainId)` to get addresses for a specific network.
@@ -127,8 +127,8 @@ Supports multiple wallet providers:
 ### MiniPay Integration
 
 - Automatic wallet detection
-- cUSD balance display
-- cUSD payment option for marketplace
+- MNT balance display
+- MNT payment option for marketplace
 - Add cash deeplink
 
 See `MINIPAY_INTEGRATION.md` for detailed MiniPay documentation.
@@ -148,7 +148,7 @@ See `FARCASTER_INTEGRATION.md` for detailed Farcaster documentation.
 ### Marketplace
 
 - List NFTs for sale
-- Buy with CELO or cUSD
+- Buy with Mantle or MNT
 - Approve marketplace transactions
 - Cancel listings
 
@@ -170,13 +170,13 @@ See `FARCASTER_INTEGRATION.md` for detailed Farcaster documentation.
 - Clear `.next` folder and rebuild
 
 **Wallet connection issues:**
-- Ensure wallet is connected to Celo network
+- Ensure wallet is connected to Mantle network
 - Check RPC URL in configuration
 - Verify contract addresses are correct
 - For Farcaster MiniApp, ensure SDK is initialized
 
 **Transaction failures:**
-- Check wallet has enough CELO for gas
+- Check wallet has enough Mantle for gas
 - Verify contract addresses match deployed contracts
 - Check network connection
 - Ensure correct network is selected (Mainnet/Testnet)
@@ -217,4 +217,4 @@ For issues or questions:
 - Check smartcontract README for contract details
 - Review Farcaster MiniApp documentation: https://miniapps.farcaster.xyz
 - Review Wagmi documentation: https://wagmi.sh
-- Celo documentation: https://docs.celo.org
+- Mantle documentation: https://docs.Mantle.org

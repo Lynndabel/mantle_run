@@ -1,17 +1,17 @@
 /**
  * Wagmi configuration with Farcaster MiniApp connector
- * Supports both Celo Mainnet (default) and Celo Sepolia Testnet
+ * Supports both Mantle Mainnet (default) and Mantle Sepolia Testnet
  */
 
 import { http, createConfig } from "wagmi";
-import { celo, celoSepolia } from "wagmi/chains";
+import { Mantle, MantleSepolia } from "wagmi/chains";
 import { farcasterMiniApp as miniAppConnector } from "@farcaster/miniapp-wagmi-connector";
 
 export const wagmiConfig = createConfig({
-  chains: [celo, celoSepolia],
+  chains: [Mantle, MantleSepolia],
   transports: {
-    [celo.id]: http(),
-    [celoSepolia.id]: http(),
+    [Mantle.id]: http(),
+    [MantleSepolia.id]: http(),
   },
   connectors: [miniAppConnector()],
   // Default to mainnet
@@ -19,4 +19,4 @@ export const wagmiConfig = createConfig({
 });
 
 // Export default chain (mainnet)
-export const defaultChain = celo;
+export const defaultChain = Mantle;

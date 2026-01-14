@@ -2,10 +2,10 @@
 
 import { ConnectButton } from 'thirdweb/react';
 import { client } from '@/client';
-import { celoMainnet, useWallet } from '@/context/WalletContext';
+import { MantleMainnet, useWallet } from '@/context/WalletContext';
 import { useEffect, useState } from 'react';
 import { useGameStore } from '@/store/gameStore';
-import { isMiniPayAvailable, openMiniPayAddCash, checkCUSDBalance } from '@/utils/minipay';
+import { isMiniPayAvailable, openMiniPayAddCash, checkMNTBalance } from '@/utils/minipay';
 
 export function NewWalletConnection() {
   const { account, isConnected } = useWallet();
@@ -14,7 +14,7 @@ export function NewWalletConnection() {
   const [isRegistering, setIsRegistering] = useState(false);
   const [registrationStatus, setRegistrationStatus] = useState<'idle' | 'pending' | 'waiting' | 'success'>('idle');
   const [isMiniPay, setIsMiniPay] = useState(false);
-  const [cUSDBalance, setCUSDBalance] = useState<string>("0");
+  const [MNTBalance, setMNTBalance] = useState<string>("0");
 
   const {
     setConnected,
@@ -26,14 +26,14 @@ export function NewWalletConnection() {
     player
   } = useGameStore();
 
-  // Check for MiniPay on mount and load cUSD balance
+  // Check for MiniPay on mount and load MNT balance
   useEffect(() => {
     setIsMiniPay(isMiniPayAvailable());
   }, []);
 
   useEffect(() => {
     if (isMiniPay && account?.address) {
-      checkCUSDBalance(account.address, true).then(setCUSDBalance);
+      checkMNTBalance(account.address, true).then(setMNTBalance);
     }
   }, [isMiniPay, account?.address]);
 
@@ -200,16 +200,16 @@ export function NewWalletConnection() {
             <div className="nes-container is-success pixel-font text-xs px-3 py-2 mb-2">
               <div className="mb-1">🎉 MiniPay Detected!</div>
               <div className="text-[10px]">Enjoy seamless, low-cost transactions!</div>
-              {parseFloat(cUSDBalance) > 0 && (
+              {parseFloat(MNTBalance) > 0 && (
                 <div className="mt-1 text-[10px] font-bold">
-                  💵 {parseFloat(cUSDBalance).toFixed(2)} cUSD
+                  💵 {parseFloat(MNTBalance).toFixed(2)} MNT
                 </div>
               )}
             </div>
           )}
           <ConnectButton
             client={client}
-            chain={celoMainnet}
+            chain={MantleMainnet}
             theme="light"
             connectButton={{
               label: "💼 CONNECT WALLET",

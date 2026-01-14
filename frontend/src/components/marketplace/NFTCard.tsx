@@ -23,16 +23,16 @@ import { client } from '@/client';
 import { CONTRACTS } from '@/config/contracts';
 import { RUNNER_BADGE_ABI, NFT_MARKETPLACE_ABI } from '@/config/abis';
 import { useGameStore } from '@/store/gameStore';
-import { isMiniPayAvailable, checkCUSDBalance } from '@/utils/minipay';
-import { stableTokenABI } from '@celo/abis';
+import { isMiniPayAvailable, checkMNTBalance } from '@/utils/minipay';
+import { stableTokenABI } from '@Mantle/abis';
 
-const celoMainnet = defineChain({
+const MantleMainnet = defineChain({
   id: 42220,
-  name: "Celo Mainnet",
-  rpc: "https://forno.celo.org/",
+  name: "Mantle Mainnet",
+  rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
-    name: "CELO",
-    symbol: "CELO",
+    name: "Mantle",
+    symbol: "Mantle",
     decimals: 18
   }
 });
@@ -58,30 +58,30 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   const [isBuyPending, setIsBuyPending] = useState(false);
   const [isCancelPending, setIsCancelPending] = useState(false);
   const [listing, setListing] = useState<{ seller: string; price: bigint; isActive: boolean } | null>(null);
-  const [paymentMethod, setPaymentMethod] = useState<'CELO' | 'cUSD'>('CELO');
+  const [paymentMethod, setPaymentMethod] = useState<'Mantle' | 'MNT'>('Mantle');
   const [isMiniPay, setIsMiniPay] = useState(false);
-  const [cUSDBalance, setCUSDBalance] = useState<string>('0');
-  const [isApprovingCUSD, setIsApprovingCUSD] = useState(false);
-  const [cUSDAllowance, setCUSDAllowance] = useState<bigint>(BigInt(0));
+  const [MNTBalance, setMNTBalance] = useState<string>('0');
+  const [isApprovingMNT, setIsApprovingMNT] = useState(false);
+  const [MNTAllowance, setMNTAllowance] = useState<bigint>(BigInt(0));
 
   const isOwner = isOwnedByUser;
 
-  // Check for MiniPay and load cUSD balance
+  // Check for MiniPay and load MNT balance
   useEffect(() => {
     setIsMiniPay(isMiniPayAvailable());
   }, []);
 
   useEffect(() => {
     if (isMiniPay && connectedAddress) {
-      checkCUSDBalance(connectedAddress, true).then(setCUSDBalance);
-      checkCUSDAllowance();
+      checkMNTBalance(connectedAddress, true).then(setMNTBalance);
+      checkMNTAllowance();
     }
   }, [isMiniPay, connectedAddress, listing]);
 
   // Set default payment method for MiniPay users
   useEffect(() => {
     if (isMiniPay) {
-      setPaymentMethod('cUSD');
+      setPaymentMethod('MNT');
     }
   }, [isMiniPay]);
 
@@ -89,7 +89,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   const getBadgeContract = () => {
     return getContract({
       client,
-      chain: celoMainnet,
+      chain: MantleMainnet,
       address: CONTRACTS.RUNNER_BADGE,
       abi: RUNNER_BADGE_ABI,
     });
@@ -102,40 +102,40 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
     }
     return getContract({
       client,
-      chain: celoMainnet,
+      chain: MantleMainnet,
       address: CONTRACTS.MARKETPLACE,
       abi: NFT_MARKETPLACE_ABI,
     });
   };
 
-  // Get cUSD token contract instance
-  const getCUSDContract = () => {
+  // Get MNT token contract instance
+  const getMNTContract = () => {
     return getContract({
       client,
-      chain: celoMainnet,
-      address: CONTRACTS.CUSD_TOKEN,
+      chain: MantleMainnet,
+      address: CONTRACTS.MNT_TOKEN,
       abi: stableTokenABI,
     });
   };
 
-  // Check cUSD allowance
-  const checkCUSDAllowance = async () => {
+  // Check MNT allowance
+  const checkMNTAllowance = async () => {
     if (!connectedAddress || !listing) return;
     
     try {
-      const cusdContract = getCUSDContract();
+      const MNTContract = getMNTContract();
       const marketplace = getMarketplaceContract();
       if (!marketplace) return;
 
       const allowance = await readContract({
-        contract: cusdContract,
+        contract: MNTContract,
         method: "allowance",
         params: [connectedAddress, CONTRACTS.MARKETPLACE],
       });
 
-      setCUSDAllowance(BigInt(allowance.toString()));
+      setMNTAllowance(BigInt(allowance.toString()));
     } catch (error) {
-      console.error('Error checking cUSD allowance:', error);
+      console.error('Error checking MNT allowance:', error);
     }
   };
 
@@ -209,7 +209,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: celoMainnet,
+        chain: MantleMainnet,
         transactionHash,
       });
 
@@ -226,7 +226,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   // Handle list
   const handleList = async () => {
     if (!listPrice || parseFloat(listPrice) <= 0) {
-      showNotification('warning', 'Invalid Price', 'Please enter a valid price in CELO');
+      showNotification('warning', 'Invalid Price', 'Please enter a valid price in Mantle');
       return;
     }
 
@@ -248,7 +248,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: celoMainnet,
+        chain: MantleMainnet,
         transactionHash,
       });
 
@@ -265,8 +265,8 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
     }
   };
 
-  // Handle buy with CELO
-  const handleBuyWithCELO = async () => {
+  // Handle buy with Mantle
+  const handleBuyWithMantle = async () => {
     if (!listing || !account) return;
 
     const marketplace = getMarketplaceContract();
@@ -288,11 +288,11 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: celoMainnet,
+        chain: MantleMainnet,
         transactionHash,
       });
 
-      showNotification('success', 'Purchased!', 'NFT purchased successfully with CELO!');
+      showNotification('success', 'Purchased!', 'NFT purchased successfully with Mantle!');
       await fetchListing();
       onListingChange?.();
     } catch (error: any) {
@@ -303,24 +303,24 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
     }
   };
 
-  // Handle buy with cUSD
-  const handleBuyWithCUSD = async () => {
+  // Handle buy with MNT
+  const handleBuyWithMNT = async () => {
     if (!listing || !account) return;
 
     const marketplace = getMarketplaceContract();
-    const cusdContract = getCUSDContract();
+    const MNTContract = getMNTContract();
     if (!marketplace) return;
 
     try {
       setIsBuyPending(true);
 
-      // Check if we need to approve cUSD
-      if (cUSDAllowance < listing.price) {
-        setIsApprovingCUSD(true);
-        showNotification('info', 'Approving cUSD', 'Please approve cUSD spending...');
+      // Check if we need to approve MNT
+      if (MNTAllowance < listing.price) {
+        setIsApprovingMNT(true);
+        showNotification('info', 'Approving MNT', 'Please approve MNT spending...');
 
         const approveTx = prepareContractCall({
-          contract: cusdContract,
+          contract: MNTContract,
           method: "approve",
           params: [CONTRACTS.MARKETPLACE, listing.price],
         });
@@ -332,19 +332,19 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
         await waitForReceipt({
           client,
-          chain: celoMainnet,
+          chain: MantleMainnet,
           transactionHash: approveHash,
         });
 
-        setIsApprovingCUSD(false);
-        await checkCUSDAllowance();
-        showNotification('success', 'Approved', 'cUSD approved!');
+        setIsApprovingMNT(false);
+        await checkMNTAllowance();
+        showNotification('success', 'Approved', 'MNT approved!');
       }
 
-      // Buy with cUSD
+      // Buy with MNT
       const buyTx = prepareContractCall({
         contract: marketplace,
-        method: "buyItemWithCUSD",
+        method: "buyItemWithMNT",
         params: [BigInt(tokenId), listing.price],
       });
 
@@ -355,29 +355,29 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: celoMainnet,
+        chain: MantleMainnet,
         transactionHash,
       });
 
-      showNotification('success', 'Purchased!', 'NFT purchased successfully with cUSD!');
+      showNotification('success', 'Purchased!', 'NFT purchased successfully with MNT!');
       await fetchListing();
-      await checkCUSDBalance(connectedAddress!, true).then(setCUSDBalance);
+      await checkMNTBalance(connectedAddress!, true).then(setMNTBalance);
       onListingChange?.();
     } catch (error: any) {
       console.error('Purchase failed:', error);
       showNotification('error', 'Purchase Failed', error.message || 'Could not purchase NFT');
     } finally {
       setIsBuyPending(false);
-      setIsApprovingCUSD(false);
+      setIsApprovingMNT(false);
     }
   };
 
   // Main buy handler
   const handleBuy = async () => {
-    if (paymentMethod === 'CELO') {
-      await handleBuyWithCELO();
+    if (paymentMethod === 'Mantle') {
+      await handleBuyWithMantle();
     } else {
-      await handleBuyWithCUSD();
+      await handleBuyWithMNT();
     }
   };
 
@@ -401,7 +401,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: celoMainnet,
+        chain: MantleMainnet,
         transactionHash,
       });
 
@@ -458,7 +458,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
         <div className="mb-3 bg-green-50 border border-green-300 rounded p-2">
           <p className="pixel-font text-xs text-green-800 font-bold">📍 Listed for Sale</p>
           <p className="pixel-font text-lg font-bold text-green-600">
-            {formatEther(listing.price)} CELO
+            {formatEther(listing.price)} Mantle
           </p>
           {listing.seller && (
             <p className="pixel-font text-xs text-gray-600 truncate">
@@ -482,39 +482,39 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
                 <p className="pixel-font text-[10px] text-green-800 mb-1 font-bold">💵 Payment Method:</p>
                 <div className="flex gap-1">
                   <button
-                    onClick={() => setPaymentMethod('CELO')}
+                    onClick={() => setPaymentMethod('Mantle')}
                     className={`nes-btn pixel-font text-[10px] px-2 py-1 flex-1 ${
-                      paymentMethod === 'CELO' ? 'is-primary' : 'is-disabled'
+                      paymentMethod === 'Mantle' ? 'is-primary' : 'is-disabled'
                     }`}
                   >
-                    CELO
+                    Mantle
                   </button>
                   <button
-                    onClick={() => setPaymentMethod('cUSD')}
+                    onClick={() => setPaymentMethod('MNT')}
                     className={`nes-btn pixel-font text-[10px] px-2 py-1 flex-1 ${
-                      paymentMethod === 'cUSD' ? 'is-success' : 'is-disabled'
+                      paymentMethod === 'MNT' ? 'is-success' : 'is-disabled'
                     }`}
                   >
-                    cUSD
+                    MNT
                   </button>
                 </div>
-                {paymentMethod === 'cUSD' && (
+                {paymentMethod === 'MNT' && (
                   <p className="pixel-font text-[9px] text-green-700 mt-1">
-                    Balance: {parseFloat(cUSDBalance).toFixed(2)} cUSD
+                    Balance: {parseFloat(MNTBalance).toFixed(2)} MNT
                   </p>
                 )}
               </div>
             )}
             <button
               onClick={handleBuy}
-              disabled={isBuyPending || isApprovingCUSD || (paymentMethod === 'cUSD' && parseFloat(cUSDBalance) < parseFloat(formatEther(listing.price)))}
+              disabled={isBuyPending || isApprovingMNT || (paymentMethod === 'MNT' && parseFloat(MNTBalance) < parseFloat(formatEther(listing.price)))}
               className="nes-btn is-primary pixel-font w-full text-xs"
             >
-              {isApprovingCUSD ? 'APPROVING...' : isBuyPending ? 'BUYING...' : `BUY NOW (${paymentMethod})`}
+              {isApprovingMNT ? 'APPROVING...' : isBuyPending ? 'BUYING...' : `BUY NOW (${paymentMethod})`}
             </button>
-            {paymentMethod === 'cUSD' && parseFloat(cUSDBalance) < parseFloat(formatEther(listing.price)) && (
+            {paymentMethod === 'MNT' && parseFloat(MNTBalance) < parseFloat(formatEther(listing.price)) && (
               <p className="pixel-font text-[10px] text-red-600 mt-1 text-center">
-                Insufficient cUSD balance
+                Insufficient MNT balance
               </p>
             )}
           </>
@@ -569,7 +569,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
             <h3 className="pixel-font text-xl font-bold text-gray-800 mb-4">List {badgeName}</h3>
 
             <div className="mb-4">
-              <label className="pixel-font text-sm text-gray-700 block mb-2">Price in CELO</label>
+              <label className="pixel-font text-sm text-gray-700 block mb-2">Price in Mantle</label>
               <input
                 type="number"
                 step="0.1"
@@ -579,7 +579,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
                 onChange={(e) => setListPrice(e.target.value)}
               />
               <p className="pixel-font text-xs text-gray-500 mt-1">
-                Minimum: 0.1 CELO
+                Minimum: 0.1 Mantle
               </p>
             </div>
 

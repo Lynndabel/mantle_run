@@ -41,16 +41,16 @@ FarcasterErrorBoundary
 
 ### Default Network
 
-**Mainnet (Celo)** is set as the default network (Chain ID: 42220). Users can switch to Testnet (Celo Sepolia, Chain ID: 11142220) using the NetworkSelector component.
+**Mainnet (Mantle)** is set as the default network (Chain ID: 42220). Users can switch to Testnet (Mantle Sepolia, Chain ID: 11142220) using the NetworkSelector component.
 
 ### Supported Networks
 
-- **Celo Mainnet**: Chain ID `42220`
-  - cUSD: `0x765DE816845861e75A25fCA122bb6898B8B1282a`
+- **Mantle Mainnet**: Chain ID `42220`
+  - MNT: `0x765DE816845861e75A25fCA122bb6898B8B1282a`
   - Production environment
 
-- **Celo Sepolia Testnet**: Chain ID `11142220`
-  - cUSD: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
+- **Mantle Sepolia Testnet**: Chain ID `11142220`
+  - MNT: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
   - Testing environment
 
 ## Wallet Integration
@@ -208,11 +208,11 @@ The `manifest.json` file defines the MiniApp:
 ```json
 {
   "name": "Mantle Run",
-  "description": "Play-to-earn runner game on Celo",
-  "iconUrl": "https://celo-runner.vercel.app/icon.png",
-  "splashImageUrl": "https://celo-runner.vercel.app/splash.png",
+  "description": "Play-to-earn runner game on Mantle",
+  "iconUrl": "https://Mantle-runner.vercel.app/icon.png",
+  "splashImageUrl": "https://Mantle-runner.vercel.app/splash.png",
   "splashBackgroundColor": "#000000",
-  "url": "https://celo-runner.vercel.app",
+  "url": "https://Mantle-runner.vercel.app",
   "requiredChains": [42220, 11142220],
   "requiredCapabilities": ["wallet", "transactions"]
 }
@@ -339,7 +339,7 @@ function SendButton() {
 - [Farcaster MiniApp Documentation](https://miniapps.farcaster.xyz/)
 - [Farcaster MiniApp SDK Reference](https://miniapps.farcaster.xyz/docs/sdk)
 - [Wagmi Documentation](https://wagmi.sh)
-- [Celo Documentation](https://docs.celo.org)
+- [Mantle Documentation](https://docs.Mantle.org)
 
 ## Support
 

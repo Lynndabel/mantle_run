@@ -1,6 +1,6 @@
 # Mantle Run Smart Contracts
 
-Smart contracts for Mantle Run game. Deploy to Celo. Test locally. Verify on Blockscout.
+Smart contracts for Mantle Run game. Deploy to Mantle. Test locally. Verify on Blockscout.
 
 ## Quick Links
 
@@ -16,11 +16,11 @@ Smart contracts for Mantle Run game. Deploy to Celo. Test locally. Verify on Blo
 
 **MantleRunner**: Main game contract. Manages player registration, game sessions, stage progression, leaderboards, and reward distribution. Mints tokens and NFTs to players.
 
-**NFTMarketplace**: Escrowless marketplace for trading RunnerBadge NFTs. Supports both CELO (native) and cUSD (stablecoin) payments. Sellers keep NFTs until sold.
+**NFTMarketplace**: Escrowless marketplace for trading RunnerBadge NFTs. Supports both Mantle (native) and MNT (stablecoin) payments. Sellers keep NFTs until sold.
 
 ## Prerequisites
 
-Install Foundry. Get CELO for gas fees. Have a wallet ready.
+Install Foundry. Get Mantle for gas fees. Have a wallet ready.
 
 Foundry installation: https://book.getfoundry.sh/getting-started/installation
 
@@ -58,77 +58,77 @@ ETHERSCAN_API_KEY=your_blockscout_api_key
 
 Important notes:
 - Private key must include 0x prefix
-- Etherscan API key works for Blockscout (Celo Sepolia)
-- Get API key from: https://explorer.celo-sepolia.celo-testnet.org/
+- Etherscan API key works for Blockscout (Mantle Sepolia)
+- Get API key from: https://explorer.Mantle-sepolia.Mantle-testnet.org/
 
 ## Get Testnet Tokens
 
 Get testnet tokens before deploying:
 
-- Celo Sepolia Faucet: https://faucet.celo.org/celo-sepolia
-- Google Cloud Faucet: https://cloud.google.com/application/web3/faucet/celo/sepolia
+- Mantle Sepolia Faucet: https://faucet.Mantle.org/Mantle-sepolia
+- Google Cloud Faucet: https://cloud.google.com/application/web3/faucet/Mantle/sepolia
 
-You need CELO for gas fees.
+You need Mantle for gas fees.
 
 ## Deployment
 
 ### Deploy All Contracts
 
-Deploy everything to Celo Sepolia:
+Deploy everything to Mantle Sepolia:
 
 ```bash
-forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://forno.celo-sepolia.celo-testnet.org/ --broadcast
+forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://forno.Mantle-sepolia.Mantle-testnet.org/ --broadcast
 ```
 
 This deploys QuestToken, RunnerBadge, and MantleRunner. Sets up relationships. Authorizes MantleRunner to mint tokens and NFTs.
 
 ### Deploy Marketplace
 
-Deploy marketplace with cUSD support:
+Deploy marketplace with MNT support:
 
 ```bash
-forge script script/DeployMarketplace.s.sol:DeployMarketplace --rpc-url https://forno.celo-sepolia.celo-testnet.org/ --broadcast
+forge script script/DeployMarketplace.s.sol:DeployMarketplace --rpc-url https://forno.Mantle-sepolia.Mantle-testnet.org/ --broadcast
 ```
 
-This deploys NFTMarketplace with cUSD payment support.
+This deploys NFTMarketplace with MNT payment support.
 
 ### Deploy to Mainnet
 
 ```bash
-forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://forno.celo.org --broadcast
+forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://rpc.sepolia.mantle.xyz --broadcast
 ```
 
 ## Deployed Contracts
 
-### Celo Sepolia Testnet
+### Mantle Sepolia Testnet
 
 **QuestToken**: `0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861`
 - Symbol: QUEST
 - Decimals: 18
-- [View on Explorer](https://explorer.celo-sepolia.celo-testnet.org/address/0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861)
+- [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861)
 - ✅ Verified
 
 **RunnerBadge**: `0x7b72c0e84012f868fe9a4164a8122593d0f38b84`
 - Symbol: BADGE
-- [View on Explorer](https://explorer.celo-sepolia.celo-testnet.org/address/0x7b72c0e84012f868fe9a4164a8122593d0f38b84)
+- [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x7b72c0e84012f868fe9a4164a8122593d0f38b84)
 - ✅ Verified
 
 **MantleRunner**: `0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6`
 - Main game contract
-- [View on Explorer](https://explorer.celo-sepolia.celo-testnet.org/address/0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6)
+- [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6)
 - ✅ Verified
 
 **NFTMarketplace**: `0x370f6701cFDECC0A9D744a12b156317AA3CE32D1`
-- Supports CELO and cUSD payments
-- cUSD Token: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
-- [View on Explorer](https://explorer.celo-sepolia.celo-testnet.org/address/0x370f6701cFDECC0A9D744a12b156317AA3CE32D1)
+- Supports Mantle and MNT payments
+- MNT Token: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
+- [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x370f6701cFDECC0A9D744a12b156317AA3CE32D1)
 - ✅ Verified
 
-**cUSD Token**: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
-- Celo Sepolia stablecoin
-- [View on Explorer](https://explorer.celo-sepolia.celo-testnet.org/address/0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b)
+**MNT Token**: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
+- Mantle Sepolia stablecoin
+- [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b)
 
-View all contracts on Blockscout: https://explorer.celo-sepolia.celo-testnet.org/
+View all contracts on Blockscout: https://explorer.Mantle-sepolia.Mantle-testnet.org/
 
 ## Contract Verification
 
@@ -142,7 +142,7 @@ forge verify-contract 0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861 \
   src/QuestToken.sol:QuestToken \
   --chain-id 11142220 \
   --verifier blockscout \
-  --verifier-url "https://celo-sepolia.blockscout.com/api" \
+  --verifier-url "https://Mantle-sepolia.blockscout.com/api" \
   --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
@@ -152,7 +152,7 @@ forge verify-contract 0x7b72c0e84012f868fe9a4164a8122593d0f38b84 \
   src/RunnerBadge.sol:RunnerBadge \
   --chain-id 11142220 \
   --verifier blockscout \
-  --verifier-url "https://celo-sepolia.blockscout.com/api" \
+  --verifier-url "https://Mantle-sepolia.blockscout.com/api" \
   --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
@@ -162,18 +162,18 @@ forge verify-contract 0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6 \
   src/MantleRunner.sol:MantleRunner \
   --chain-id 11142220 \
   --verifier blockscout \
-  --verifier-url "https://celo-sepolia.blockscout.com/api" \
+  --verifier-url "https://Mantle-sepolia.blockscout.com/api" \
   --constructor-args 0x00000000000000000000000048e2e16a5cfe127fbfc76f3fd85163bbae64a8610000000000000000000000007b72c0e84012f868fe9a4164a8122593d0f38b84 \
   --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
-#### NFTMarketplace (Constructor args: runnerBadge, cUSD token)
+#### NFTMarketplace (Constructor args: runnerBadge, MNT token)
 ```bash
 forge verify-contract 0x370f6701cFDECC0A9D744a12b156317AA3CE32D1 \
   src/NFTMarketplace.sol:NFTMarketplace \
   --chain-id 11142220 \
   --verifier blockscout \
-  --verifier-url "https://celo-sepolia.blockscout.com/api" \
+  --verifier-url "https://Mantle-sepolia.blockscout.com/api" \
   --constructor-args 0x0000000000000000000000007b72c0e84012f868fe9a4164a8122593d0f38b84000000000000000000000000de9e4c3ce781b4ba68120d6261cbad65ce0ab00b \
   --etherscan-api-key $ETHERSCAN_API_KEY
 ```
@@ -205,7 +205,7 @@ forge verify-contract 0x370f6701cFDECC0A9D744a12b156317AA3CE32D1 \
 
 **NFTMarketplace**: `0x0000000000000000000000007b72c0e84012f868fe9a4164a8122593d0f38b84000000000000000000000000de9e4c3ce781b4ba68120d6261cbad65ce0ab00b`
 - RunnerBadge: `0x7B72c0E84012f868fe9a4164a8122593d0F38B84`
-- cUSD Token: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
+- MNT Token: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
 
 ## Usage
 
@@ -238,20 +238,20 @@ Mints RunnerBadge NFT for completed stage. Can only claim once per stage.
 1. Approve marketplace to transfer NFT
 2. Call `listItem(tokenId, price)` on NFTMarketplace
 
-Price is in wei (CELO). NFT stays with seller until sold.
+Price is in wei (Mantle). NFT stays with seller until sold.
 
-### Buy NFT with CELO
+### Buy NFT with Mantle
 
 Call `buyItem(tokenId)` on NFTMarketplace with `value: price`.
 
-Sends CELO to seller. Transfers NFT to buyer.
+Sends Mantle to seller. Transfers NFT to buyer.
 
-### Buy NFT with cUSD
+### Buy NFT with MNT
 
-1. Approve marketplace to spend cUSD
-2. Call `buyItemWithCUSD(tokenId, cusdAmount)` on NFTMarketplace
+1. Approve marketplace to spend MNT
+2. Call `buyItemWithMNT(tokenId, MNTAmount)` on NFTMarketplace
 
-Sends cUSD to seller. Transfers NFT to buyer. Only available for MiniPay users.
+Sends MNT to seller. Transfers NFT to buyer. Only available for MiniPay users.
 
 ### Cancel Listing
 
@@ -261,18 +261,18 @@ Only seller can cancel. Removes listing from marketplace.
 
 ## Frontend Integration
 
-### Connect to Celo Network
+### Connect to Mantle Network
 
 ```typescript
 import { defineChain } from "thirdweb/chains";
 
-const celoSepolia = defineChain({
+const MantleSepolia = defineChain({
   id: 42220,
-  name: "Celo Sepolia",
-  rpc: "https://forno.celo.org/",
+  name: "Mantle Sepolia",
+  rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
-    name: "CELO",
-    symbol: "CELO",
+    name: "Mantle",
+    symbol: "Mantle",
     decimals: 18
   }
 });
@@ -285,7 +285,7 @@ import { getContract } from "thirdweb";
 
 const MantleRunnerContract = getContract({
   client: client,
-  chain: celoSepolia,
+  chain: MantleSepolia,
   address: "0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6"
 });
 ```
@@ -308,17 +308,17 @@ const { transactionHash } = await sendTransaction({
 
 await waitForReceipt({
   client,
-  chain: celoSepolia,
+  chain: MantleSepolia,
   transactionHash,
 });
 ```
 
-### Buy NFT with CELO
+### Buy NFT with Mantle
 
 ```typescript
 const marketplaceContract = getContract({
   client: client,
-  chain: celoSepolia,
+  chain: MantleSepolia,
   address: "0x370f6701cFDECC0A9D744a12b156317AA3CE32D1"
 });
 
@@ -335,28 +335,28 @@ const { transactionHash } = await sendTransaction({
 });
 ```
 
-### Buy NFT with cUSD
+### Buy NFT with MNT
 
 ```typescript
-// First approve cUSD spending
-const cusdContract = getContract({
+// First approve MNT spending
+const MNTContract = getContract({
   client: client,
-  chain: celoSepolia,
+  chain: MantleSepolia,
   address: "0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b"
 });
 
 const approveTx = prepareContractCall({
-  contract: cusdContract,
+  contract: MNTContract,
   method: "approve",
   params: [marketplaceAddress, listingPrice],
 });
 
 await sendTransaction({ account, transaction: approveTx });
 
-// Then buy with cUSD
+// Then buy with MNT
 const buyTx = prepareContractCall({
   contract: marketplaceContract,
-  method: "buyItemWithCUSD",
+  method: "buyItemWithMNT",
   params: [BigInt(tokenId), listingPrice],
 });
 
@@ -365,17 +365,17 @@ await sendTransaction({ account, transaction: buyTx });
 
 ## Network Configuration
 
-**Celo Sepolia Testnet:**
+**Mantle Sepolia Testnet:**
 - Chain ID: 11142220
-- RPC: https://forno.celo-sepolia.celo-testnet.org/
-- Explorer: https://explorer.celo-sepolia.celo-testnet.org/
-- cUSD: 0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b
+- RPC: https://forno.Mantle-sepolia.Mantle-testnet.org/
+- Explorer: https://explorer.Mantle-sepolia.Mantle-testnet.org/
+- MNT: 0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b
 
-**Celo Mainnet:**
+**Mantle Mainnet:**
 - Chain ID: 42220
-- RPC: https://forno.celo.org
-- Explorer: https://celoscan.io/
-- cUSD: 0x765DE816845861e75A25fCA122bb6898B8B1282a
+- RPC: https://rpc.sepolia.mantle.xyz
+- Explorer: https://Mantlescan.io/
+- MNT: 0x765DE816845861e75A25fCA122bb6898B8B1282a
 
 ## Project Structure
 
@@ -409,7 +409,7 @@ Contracts include security features:
 
 **Deployment fails:**
 - Check `.env` file has correct values
-- Ensure you have enough CELO for gas fees
+- Ensure you have enough Mantle for gas fees
 - Verify network connectivity
 - Check contract compilation: `forge build`
 
@@ -431,11 +431,11 @@ After deploying new contracts:
 - Update frontend with new contract addresses
 - Verify all contracts on Blockscout
 - Test full flow: register, play, save session, claim rewards
-- Test marketplace: list, buy with CELO, buy with cUSD
+- Test marketplace: list, buy with Mantle, buy with MNT
 
 ## Support
 
 For issues or questions:
-- Celo Documentation: https://docs.celo.org
+- Mantle Documentation: https://docs.Mantle.org
 - Foundry Book: https://book.getfoundry.sh
 - OpenZeppelin Contracts: https://docs.openzeppelin.com/contracts

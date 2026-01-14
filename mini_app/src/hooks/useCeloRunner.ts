@@ -1,13 +1,13 @@
 import { useState, useEffect, useMemo } from 'react';
 import { createPublicClient, http } from 'viem';
-import { celo, celoSepolia } from 'viem/chains';
+import { Mantle, MantleSepolia } from 'viem/chains';
 import { useAccount, useWalletClient } from 'wagmi';
 import { getContractAddresses } from '@/config/contracts';
 import { Mantle_run_ABI } from '@/config/abis';
 
-// Helper to pick chain/clients per chainId (force Celo mainnet unless explicit Sepolia)
+// Helper to pick chain/clients per chainId (force Mantle mainnet unless explicit Sepolia)
 const getClients = (chainId?: number) => {
-  const chain = chainId === celoSepolia.id ? celoSepolia : celo; // force mainnet as default
+  const chain = chainId === MantleSepolia.id ? MantleSepolia : Mantle; // force mainnet as default
   const contracts = getContractAddresses(chain.id);
   const publicClient = createPublicClient({
     chain,

@@ -11,14 +11,14 @@ import {
 import { Wallet, Account } from "thirdweb/wallets";
 import { defineChain } from "thirdweb";
 
-// Define Celo Sepolia chain
-export const celoMainnet = defineChain({
+// Define Mantle Sepolia chain
+export const MantleMainnet = defineChain({
   id: 42220,
-  name: "Celo Mainnet",
-  rpc: "https://forno.celo.org/",
+  name: "Mantle Mainnet",
+  rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
-    name: "CELO",
-    symbol: "CELO",
+    name: "Mantle",
+    symbol: "Mantle",
     decimals: 18
   }
 });
@@ -47,11 +47,11 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
     setIsConnected(!!account);
   }, [account]);
 
-  // Auto-switch to Celo Mainnet if connected to wrong chain
+  // Auto-switch to Mantle Mainnet if connected to wrong chain
   useEffect(() => {
-    if (isConnected && activeChain && activeChain.id !== celoMainnet.id) {
-      console.log(`Wrong chain detected (${activeChain.id}). Switching to Celo Mainnet...`);
-      switchChain(celoMainnet).catch((err) => {
+    if (isConnected && activeChain && activeChain.id !== MantleMainnet.id) {
+      console.log(`Wrong chain detected (${activeChain.id}). Switching to Mantle Mainnet...`);
+      switchChain(MantleMainnet).catch((err) => {
         console.error("Failed to switch chain:", err);
       });
     }

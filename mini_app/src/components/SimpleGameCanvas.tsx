@@ -137,8 +137,8 @@ export function SimpleGameCanvas() {
           { x: 3000, y: 390, id: 10, type: 'spike' as const }
         ],
         knowledgeWalls: [
-          { x: 2000, y: 100, id: 1, question: "What is CELO used for?", answered: false },
-          { x: 3500, y: 100, id: 2, question: "What is Celo?", answered: false }
+          { x: 2000, y: 100, id: 1, question: "What is Mantle used for?", answered: false },
+          { x: 3500, y: 100, id: 2, question: "What is Mantle?", answered: false }
         ],
         speed: 2,
         length: 4000
@@ -171,7 +171,7 @@ export function SimpleGameCanvas() {
         ],
         knowledgeWalls: [
           { x: 2500, y: 100, id: 1, question: "What is a smart contract?", answered: false },
-          { x: 4500, y: 100, id: 2, question: "What is Celo's consensus mechanism?", answered: false },
+          { x: 4500, y: 100, id: 2, question: "What is Mantle's consensus mechanism?", answered: false },
           { x: 6000, y: 100, id: 3, question: "What is Valora?", answered: false }
         ],
         speed: 3,
@@ -242,10 +242,10 @@ export function SimpleGameCanvas() {
           { x: 8100, y: 390, id: 40, type: 'spike' as const }
         ],
         knowledgeWalls: [
-          { x: 3000, y: 100, id: 1, question: "What is cUSD?", answered: false },
+          { x: 3000, y: 100, id: 1, question: "What is MNT?", answered: false },
           { x: 5500, y: 100, id: 2, question: "What is ReFi?", answered: false },
-          { x: 7000, y: 100, id: 3, question: "What is Celo's gas fee?", answered: false },
-          { x: 8500, y: 100, id: 4, question: "What makes Celo unique?", answered: false }
+          { x: 7000, y: 100, id: 3, question: "What is Mantle's gas fee?", answered: false },
+          { x: 8500, y: 100, id: 4, question: "What makes Mantle unique?", answered: false }
         ],
         speed: 4,
         length: 9000
