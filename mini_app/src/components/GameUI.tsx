@@ -10,7 +10,7 @@ import { useGameSounds } from '@/hooks/useGameSounds';
 import { ConfirmDialog } from '@/components/ConfirmDialog';
 import { getBadgeImage, getBadgeNameByStage } from '@/config/badgeMetadata';
 import { useWallet } from '@/context/WalletContext';
-import { isMiniPayAvailable, checkCUSDBalance } from '@/utils/minipay';
+import { isMiniPayAvailable, checkMNTBalance } from '@/utils/minipay';
 import { hapticSelection, hapticImpact } from '@/utils/haptics';
 import { NetworkSelector } from '@/components/NetworkSelector';
 
@@ -39,7 +39,7 @@ export function GameUI() {
   const [isMinting, setIsMinting] = useState(false);
   const [isPurchasing, setIsPurchasing] = useState(false);
   const [isMiniPay, setIsMiniPay] = useState(false);
-  const [cUSDBalance, setCUSDBalance] = useState<string>("0");
+  const [MNTBalance, setMNTBalance] = useState<string>("0");
   
   // Confirmation dialog state
   const [confirmDialog, setConfirmDialog] = useState<{
@@ -60,14 +60,14 @@ export function GameUI() {
   const address = account?.address;
   const { disconnect } = useWallet();
 
-  // Check for MiniPay and load cUSD balance
+  // Check for MiniPay and load MNT balance
   useEffect(() => {
     setIsMiniPay(isMiniPayAvailable());
   }, []);
 
   useEffect(() => {
     if (isMiniPay && address) {
-      checkCUSDBalance(address, true).then(setCUSDBalance);
+      checkMNTBalance(address, true).then(setMNTBalance);
     }
   }, [isMiniPay, address]);
 

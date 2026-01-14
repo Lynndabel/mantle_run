@@ -16,7 +16,7 @@ Smart contracts for Mantle Run game. Deploy to Mantle. Test locally. Verify on B
 
 **MantleRunner**: Main game contract. Manages player registration, game sessions, stage progression, leaderboards, and reward distribution. Mints tokens and NFTs to players.
 
-**NFTMarketplace**: Escrowless marketplace for trading RunnerBadge NFTs. Supports both Mantle (native) and cUSD (stablecoin) payments. Sellers keep NFTs until sold.
+**NFTMarketplace**: Escrowless marketplace for trading RunnerBadge NFTs. Supports both Mantle (native) and MNT (stablecoin) payments. Sellers keep NFTs until sold.
 
 ## Prerequisites
 
@@ -84,13 +84,13 @@ This deploys QuestToken, RunnerBadge, and MantleRunner. Sets up relationships. A
 
 ### Deploy Marketplace
 
-Deploy marketplace with cUSD support:
+Deploy marketplace with MNT support:
 
 ```bash
 forge script script/DeployMarketplace.s.sol:DeployMarketplace --rpc-url https://forno.Mantle-sepolia.Mantle-testnet.org/ --broadcast
 ```
 
-This deploys NFTMarketplace with cUSD payment support.
+This deploys NFTMarketplace with MNT payment support.
 
 ### Deploy to Mainnet
 
@@ -119,12 +119,12 @@ forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https:
 - ✅ Verified
 
 **NFTMarketplace**: `0x370f6701cFDECC0A9D744a12b156317AA3CE32D1`
-- Supports Mantle and cUSD payments
-- cUSD Token: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
+- Supports Mantle and MNT payments
+- MNT Token: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
 - [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x370f6701cFDECC0A9D744a12b156317AA3CE32D1)
 - ✅ Verified
 
-**cUSD Token**: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
+**MNT Token**: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
 - Mantle Sepolia stablecoin
 - [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b)
 
@@ -167,7 +167,7 @@ forge verify-contract 0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6 \
   --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
-#### NFTMarketplace (Constructor args: runnerBadge, cUSD token)
+#### NFTMarketplace (Constructor args: runnerBadge, MNT token)
 ```bash
 forge verify-contract 0x370f6701cFDECC0A9D744a12b156317AA3CE32D1 \
   src/NFTMarketplace.sol:NFTMarketplace \
@@ -205,7 +205,7 @@ forge verify-contract 0x370f6701cFDECC0A9D744a12b156317AA3CE32D1 \
 
 **NFTMarketplace**: `0x0000000000000000000000007b72c0e84012f868fe9a4164a8122593d0f38b84000000000000000000000000de9e4c3ce781b4ba68120d6261cbad65ce0ab00b`
 - RunnerBadge: `0x7B72c0E84012f868fe9a4164a8122593d0F38B84`
-- cUSD Token: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
+- MNT Token: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
 
 ## Usage
 
@@ -246,12 +246,12 @@ Call `buyItem(tokenId)` on NFTMarketplace with `value: price`.
 
 Sends Mantle to seller. Transfers NFT to buyer.
 
-### Buy NFT with cUSD
+### Buy NFT with MNT
 
-1. Approve marketplace to spend cUSD
-2. Call `buyItemWithCUSD(tokenId, cusdAmount)` on NFTMarketplace
+1. Approve marketplace to spend MNT
+2. Call `buyItemWithMNT(tokenId, MNTAmount)` on NFTMarketplace
 
-Sends cUSD to seller. Transfers NFT to buyer. Only available for MiniPay users.
+Sends MNT to seller. Transfers NFT to buyer. Only available for MiniPay users.
 
 ### Cancel Listing
 
@@ -335,28 +335,28 @@ const { transactionHash } = await sendTransaction({
 });
 ```
 
-### Buy NFT with cUSD
+### Buy NFT with MNT
 
 ```typescript
-// First approve cUSD spending
-const cusdContract = getContract({
+// First approve MNT spending
+const MNTContract = getContract({
   client: client,
   chain: MantleSepolia,
   address: "0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b"
 });
 
 const approveTx = prepareContractCall({
-  contract: cusdContract,
+  contract: MNTContract,
   method: "approve",
   params: [marketplaceAddress, listingPrice],
 });
 
 await sendTransaction({ account, transaction: approveTx });
 
-// Then buy with cUSD
+// Then buy with MNT
 const buyTx = prepareContractCall({
   contract: marketplaceContract,
-  method: "buyItemWithCUSD",
+  method: "buyItemWithMNT",
   params: [BigInt(tokenId), listingPrice],
 });
 
@@ -369,13 +369,13 @@ await sendTransaction({ account, transaction: buyTx });
 - Chain ID: 11142220
 - RPC: https://forno.Mantle-sepolia.Mantle-testnet.org/
 - Explorer: https://explorer.Mantle-sepolia.Mantle-testnet.org/
-- cUSD: 0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b
+- MNT: 0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b
 
 **Mantle Mainnet:**
 - Chain ID: 42220
 - RPC: https://rpc.sepolia.mantle.xyz
 - Explorer: https://Mantlescan.io/
-- cUSD: 0x765DE816845861e75A25fCA122bb6898B8B1282a
+- MNT: 0x765DE816845861e75A25fCA122bb6898B8B1282a
 
 ## Project Structure
 
@@ -431,7 +431,7 @@ After deploying new contracts:
 - Update frontend with new contract addresses
 - Verify all contracts on Blockscout
 - Test full flow: register, play, save session, claim rewards
-- Test marketplace: list, buy with Mantle, buy with cUSD
+- Test marketplace: list, buy with Mantle, buy with MNT
 
 ## Support
 

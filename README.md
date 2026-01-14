@@ -12,7 +12,7 @@ Connect your wallet. Register your username. Play through three stages. Complete
 
 ## Your First Game
 
-Step one: Connect your wallet. Use MetaMask, WalletConnect, or MiniPay. MiniPay users get cUSD payment options.
+Step one: Connect your wallet. Use MetaMask, WalletConnect, or MiniPay. MiniPay users get MNT payment options.
 
 Step two: Register your username. Choose a unique name. Get 100 bonus coins. Start your journey.
 
@@ -20,7 +20,7 @@ Step three: Play Stage 1. Run through obstacles. Answer quiz questions. Complete
 
 Step four: Claim your rewards. Claim tokens for completed stages. Claim badge NFTs. View your collection.
 
-Step five: Trade badges. List your badges on marketplace. Buy badges from others. Use Mantle or cUSD.
+Step five: Trade badges. List your badges on marketplace. Buy badges from others. Use Mantle or MNT.
 
 ## Stages
 
@@ -42,7 +42,7 @@ Leaderboard: Compete for top positions. See your rank.
 
 ## MiniPay Integration
 
-MiniPay users get special features. Automatic wallet detection. cUSD balance display. cUSD payment option for marketplace. Low transaction fees. Add cash button for quick funding.
+MiniPay users get special features. Automatic wallet detection. MNT balance display. MNT payment option for marketplace. Low transaction fees. Add cash button for quick funding.
 
 ## Mobile First
 
@@ -112,7 +112,7 @@ NEXT_PUBLIC_QUEST_TOKEN_ADDRESS=0xC3adf32A0C0a70183eab5D1C33B088fFeEecf396
 NEXT_PUBLIC_RUNNER_BADGE_ADDRESS=0x6D939Da699D3AbA5A47662242Ec5e1a091Db617D
 NEXT_PUBLIC_Mantle_run_ADDRESS=0x03c2c7011eE8519D3B0AF49f20D4b6dEF80799A7
 NEXT_PUBLIC_Mantle_NFT_MARKETPLACE=0xa3fC9782937F8FFDD9BB59D573b33E9842065013
-NEXT_PUBLIC_CUSD_TOKEN_ADDRESS=
+NEXT_PUBLIC_MNT_TOKEN_ADDRESS=
 NEXT_PUBLIC_CHAIN_ID=42220
 NEXT_PUBLIC_RPC_URL=https://rpc.sepolia.mantle.xyz
 ```
@@ -145,7 +145,7 @@ ETHERSCAN_API_KEY=your_blockscout_api_key
 
 For development on Mantle Sepolia testnet:
 1. Get test Mantle from the [Mantle Sepolia Faucet](https://faucet.Mantle.org/Mantle-sepolia)
-2. Get test cUSD from the [Mantle Faucet](https://faucet.Mantle.org/)
+2. Get test MNT from the [Mantle Faucet](https://faucet.Mantle.org/)
 
 ## Getting Started
 
@@ -183,7 +183,7 @@ Mantle Run built for **Mantle MiniPay Hackathon 2024** (Nov 14-30). Play to earn
 
 **Hackathon Alignment:**
 - Category: Play-to-Earn Games
-- MiniPay Integration: Full cUSD support for marketplace
+- MiniPay Integration: Full MNT support for marketplace
 - Farcaster MiniApp: Complete Farcaster MiniApp integration
 - All Contracts Verified: Source code on Blockscout
 - Mobile-First: Responsive design for all devices

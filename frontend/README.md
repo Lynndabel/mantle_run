@@ -8,10 +8,10 @@ Next.js frontend for Mantle Run game. Built with thirdweb, React, and Tailwind C
 - Player registration and profile management
 - Stage-based gameplay with quiz integration
 - Token and NFT rewards claiming
-- NFT marketplace (Mantle and cUSD payments) with 2.5% platform fees
+- NFT marketplace (Mantle and MNT payments) with 2.5% platform fees
 - Leaderboard system
 - Mobile-responsive design
-- MiniPay integration with cUSD support
+- MiniPay integration with MNT support
 - Network support for Mainnet and Testnet
 
 ## Prerequisites
@@ -35,7 +35,7 @@ NEXT_PUBLIC_QUEST_TOKEN_ADDRESS=0x7B61f8EadD960a2e676f26E6968F5f65FebE1341
 NEXT_PUBLIC_RUNNER_BADGE_ADDRESS=0xe0Aad78b3615ce64469518f4E406B580de5cABaA
 NEXT_PUBLIC_Mantle_run_ADDRESS=0x553efD80A0ADEd286Ed49F78Ba5051846db91B37
 NEXT_PUBLIC_MARKETPLACE_ADDRESS=0x387998f2eA7f6f4F81cc583ba2bDB841d2bB77C6
-NEXT_PUBLIC_CUSD_TOKEN_ADDRESS=0x765DE816845861e75A25fCA122bb6898B8B1282a
+NEXT_PUBLIC_MNT_TOKEN_ADDRESS=0x765DE816845861e75A25fCA122bb6898B8B1282a
 NEXT_PUBLIC_CHAIN_ID=42220
 NEXT_PUBLIC_RPC_URL=https://rpc.sepolia.mantle.xyz
 ```
@@ -114,8 +114,8 @@ Supports multiple wallet providers:
 ### MiniPay Integration
 
 - Automatic wallet detection
-- cUSD balance display
-- cUSD payment option for marketplace
+- MNT balance display
+- MNT payment option for marketplace
 - Add cash deeplink
 
 See `MINIPAY_INTEGRATION.md` for detailed MiniPay documentation.
@@ -123,7 +123,7 @@ See `MINIPAY_INTEGRATION.md` for detailed MiniPay documentation.
 ### Marketplace
 
 - List NFTs for sale
-- Buy with Mantle or cUSD
+- Buy with Mantle or MNT
 - Approve marketplace transactions
 - Cancel listings
 

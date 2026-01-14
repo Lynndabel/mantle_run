@@ -6,7 +6,7 @@ const CONTRACTS_BY_NETWORK = {
     RUNNER_BADGE: '0xe0Aad78b3615ce64469518f4E406B580de5cABaA' as `0x${string}`,
     Mantle_run: '0x553efD80A0ADEd286Ed49F78Ba5051846db91B37' as `0x${string}`,
     MARKETPLACE: '0x387998f2eA7f6f4F81cc583ba2bDB841d2bB77C6' as `0x${string}`, // Platform fee: 2.5%
-    CUSD_TOKEN: '0x765DE816845861e75A25fCA122bb6898B8B1282a' as `0x${string}`, // Mantle Mainnet cUSD
+    MNT_TOKEN: '0x765DE816845861e75A25fCA122bb6898B8B1282a' as `0x${string}`, // Mantle Mainnet MNT
   },
   // Mantle Sepolia Testnet (Chain ID: 11142220)
   TESTNET: {
@@ -14,7 +14,7 @@ const CONTRACTS_BY_NETWORK = {
     RUNNER_BADGE: '0x7b72c0e84012f868fe9a4164a8122593d0f38b84' as `0x${string}`,
     Mantle_run: '0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6' as `0x${string}`,
     MARKETPLACE: '0x2d133d0E526193C17AA0Cb0ceD0D9081fbc6Ad73' as `0x${string}`, // Updated with platform fees (2.5%)
-    CUSD_TOKEN: '0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b' as `0x${string}`, // Mantle Sepolia cUSD
+    MNT_TOKEN: '0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b' as `0x${string}`, // Mantle Sepolia MNT
   },
 } as const;
 

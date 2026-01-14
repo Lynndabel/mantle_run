@@ -39,8 +39,8 @@ export async function getMiniPayAddress(): Promise<string | null> {
   }
 }
 
-// Check cUSD balance using viem
-export async function checkCUSDBalance(
+// Check MNT balance using viem
+export async function checkMNTBalance(
   address: string,
   isTestnet: boolean = false
 ): Promise<string> {
@@ -49,7 +49,7 @@ export async function checkCUSDBalance(
     const { Mantle, MantleSepolia } = await import("viem/chains");
     const { stableTokenABI } = await import("@Mantle/abis");
 
-    // cUSD addresses
+    // MNT addresses
     const STABLE_TOKEN_ADDRESS_TESTNET = "0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b"; // Mantle Sepolia
     const STABLE_TOKEN_ADDRESS_MAINNET = "0x765DE816845861e75A25fCA122bb6898B8B1282a"; // Mantle Mainnet
 
@@ -76,7 +76,7 @@ export async function checkCUSDBalance(
 
     return balanceInEthers;
   } catch (error) {
-    console.error("Error checking cUSD balance:", error);
+    console.error("Error checking MNT balance:", error);
     return "0";
   }
 }

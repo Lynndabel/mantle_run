@@ -242,7 +242,7 @@ export function SimpleGameCanvas() {
           { x: 8100, y: 390, id: 40, type: 'spike' as const }
         ],
         knowledgeWalls: [
-          { x: 3000, y: 100, id: 1, question: "What is cUSD?", answered: false },
+          { x: 3000, y: 100, id: 1, question: "What is MNT?", answered: false },
           { x: 5500, y: 100, id: 2, question: "What is ReFi?", answered: false },
           { x: 7000, y: 100, id: 3, question: "What is Mantle's gas fee?", answered: false },
           { x: 8500, y: 100, id: 4, question: "What makes Mantle unique?", answered: false }

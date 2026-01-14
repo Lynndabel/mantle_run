@@ -46,11 +46,11 @@ FarcasterErrorBoundary
 ### Supported Networks
 
 - **Mantle Mainnet**: Chain ID `42220`
-  - cUSD: `0x765DE816845861e75A25fCA122bb6898B8B1282a`
+  - MNT: `0x765DE816845861e75A25fCA122bb6898B8B1282a`
   - Production environment
 
 - **Mantle Sepolia Testnet**: Chain ID `11142220`
-  - cUSD: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
+  - MNT: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
   - Testing environment
 
 ## Wallet Integration

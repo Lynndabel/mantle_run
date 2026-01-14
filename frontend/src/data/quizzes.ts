@@ -33,7 +33,7 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
     {
       question: "What is Mantle's native token?",
       options: [
-        "CUSD",
+        "MNT",
         "CEUR",
         "Mantle",
         "GOLD"
@@ -45,12 +45,12 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
       question: "What type of stablecoins does Mantle support?",
       options: [
         "Only USD stablecoins",
-        "Multiple fiat-pegged stablecoins like cUSD, cEUR, cREAL",
+        "Multiple fiat-pegged stablecoins like MNT, cEUR, cREAL",
         "Only cryptocurrency-backed stablecoins",
         "No stablecoins"
       ],
       correctAnswer: 1,
-      explanation: "Mantle supports multiple fiat-pegged stablecoins including cUSD (US Dollar), cEUR (Euro), and cREAL (Brazilian Real)."
+      explanation: "Mantle supports multiple fiat-pegged stablecoins including MNT (US Dollar), cEUR (Euro), and cREAL (Brazilian Real)."
     },
     {
       question: "What consensus mechanism does Mantle use?",

@@ -27,8 +27,8 @@ MiniPay is a **stablecoin wallet** built into Opera Mini browser and available a
 - Message explaining MiniPay benefits
 - "Add Cash to MiniPay" button for easy funding
 
-### ✅ **cUSD Balance Checking** (Available)
-- Utility function to check cUSD (Mantle Dollar) balance
+### ✅ **MNT Balance Checking** (Available)
+- Utility function to check MNT (Mantle Dollar) balance
 - Uses Mantle's stable token contract
 - Supports both testnet and mainnet
 
@@ -49,7 +49,7 @@ MiniPay is a **stablecoin wallet** built into Opera Mini browser and available a
 1. **`src/utils/minipay.ts`** - Core MiniPay utilities
    - `isMiniPayAvailable()` - Detects MiniPay wallet
    - `getMiniPayAddress()` - Gets connected address from MiniPay
-   - `checkCUSDBalance()` - Checks cUSD balance
+   - `checkMNTBalance()` - Checks MNT balance
    - `openMiniPayAddCash()` - Opens add cash screen
    - `checkTransactionStatus()` - Checks transaction status
 
@@ -96,9 +96,9 @@ The integration is automatic - no additional configuration needed. When a user o
 ## Future Enhancements (Optional)
 
 - Phone number resolution (using @Mantle/identity)
-- Direct cUSD payments for rewards
+- Direct MNT payments for rewards
 - MiniPay-specific transaction optimizations
-- cUSD balance display in game UI
+- MNT balance display in game UI
 - Social features using phone numbers
 
 ## Testing

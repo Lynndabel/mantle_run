@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
  * @title NFTMarketplace
  * @notice Simple escrowless NFT marketplace for RunnerBadge contract
  * @dev Sellers keep NFTs until sold, marketplace only needs approval
- * @dev Supports both Mantle (native) and cUSD (ERC20) payments
+ * @dev Supports both Mantle (native) and MNT (ERC20) payments
  */
 contract NFTMarketplace is ReentrancyGuard {
     using SafeERC20 for IERC20;
@@ -25,8 +25,8 @@ contract NFTMarketplace is ReentrancyGuard {
     // RunnerBadge contract address
     IERC721 public nftContract;
     
-    // cUSD token contract address
-    IERC20 public cUSDToken;
+    // MNT token contract address
+    IERC20 public MNTToken;
 
     // Mapping from token ID to listing
     mapping(uint256 => Listing) public listings;
@@ -34,19 +34,19 @@ contract NFTMarketplace is ReentrancyGuard {
     // Events
     event ItemListed(uint256 indexed tokenId, address indexed seller, uint256 price);
     event ItemSold(uint256 indexed tokenId, address indexed buyer, address indexed seller, uint256 price);
-    event ItemSoldWithCUSD(uint256 indexed tokenId, address indexed buyer, address indexed seller, uint256 price);
+    event ItemSoldWithMNT(uint256 indexed tokenId, address indexed buyer, address indexed seller, uint256 price);
     event ItemCanceled(uint256 indexed tokenId, address indexed seller);
 
     /**
-     * @notice Constructor sets the NFT contract address and cUSD token address
+     * @notice Constructor sets the NFT contract address and MNT token address
      * @param _nftContract Address of the RunnerBadge contract
-     * @param _cusdToken Address of the cUSD token contract (0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b for Mantle Sepolia)
+     * @param _MNTToken Address of the MNT token contract (0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b for Mantle Sepolia)
      */
-    constructor(address _nftContract, address _cusdToken) {
+    constructor(address _nftContract, address _MNTToken) {
         require(_nftContract != address(0), "Invalid NFT contract address");
-        require(_cusdToken != address(0), "Invalid cUSD token address");
+        require(_MNTToken != address(0), "Invalid MNT token address");
         nftContract = IERC721(_nftContract);
-        cUSDToken = IERC20(_cusdToken);
+        MNTToken = IERC20(_MNTToken);
     }
 
     /**
@@ -104,15 +104,15 @@ contract NFTMarketplace is ReentrancyGuard {
     }
 
     /**
-     * @notice Buy a listed NFT with cUSD
+     * @notice Buy a listed NFT with MNT
      * @param tokenId The ID of the NFT to buy
-     * @param cusdAmount The amount of cUSD to pay (must match listing price)
+     * @param MNTAmount The amount of MNT to pay (must match listing price)
      */
-    function buyItemWithCUSD(uint256 tokenId, uint256 cusdAmount) external nonReentrant {
+    function buyItemWithMNT(uint256 tokenId, uint256 MNTAmount) external nonReentrant {
         Listing memory listing = listings[tokenId];
 
         require(listing.isActive, "Item not listed");
-        require(cusdAmount >= listing.price, "Insufficient payment");
+        require(MNTAmount >= listing.price, "Insufficient payment");
         require(nftContract.ownerOf(tokenId) == listing.seller, "Seller no longer owns NFT");
 
         // Mark as sold before transfer (reentrancy protection)
@@ -121,15 +121,15 @@ contract NFTMarketplace is ReentrancyGuard {
         // Transfer NFT from seller to buyer
         nftContract.safeTransferFrom(listing.seller, msg.sender, tokenId);
 
-        // Transfer cUSD from buyer to seller (exact amount)
-        cUSDToken.safeTransferFrom(msg.sender, listing.seller, listing.price);
+        // Transfer MNT from buyer to seller (exact amount)
+        MNTToken.safeTransferFrom(msg.sender, listing.seller, listing.price);
 
         // Refund excess payment if any (transfer back to buyer)
-        if (cusdAmount > listing.price) {
-            cUSDToken.safeTransfer(msg.sender, cusdAmount - listing.price);
+        if (MNTAmount > listing.price) {
+            MNTToken.safeTransfer(msg.sender, MNTAmount - listing.price);
         }
 
-        emit ItemSoldWithCUSD(tokenId, msg.sender, listing.seller, listing.price);
+        emit ItemSoldWithMNT(tokenId, msg.sender, listing.seller, listing.price);
     }
 
     /**
