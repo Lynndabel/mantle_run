@@ -29,7 +29,7 @@ import { stableTokenABI } from '@celo/abis';
 const celoMainnet = defineChain({
   id: 42220,
   name: "Celo Mainnet",
-  rpc: "https://forno.celo.org/",
+  rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
     name: "CELO",
     symbol: "CELO",

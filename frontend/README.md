@@ -37,7 +37,7 @@ NEXT_PUBLIC_Mantle_run_ADDRESS=0x553efD80A0ADEd286Ed49F78Ba5051846db91B37
 NEXT_PUBLIC_MARKETPLACE_ADDRESS=0x387998f2eA7f6f4F81cc583ba2bDB841d2bB77C6
 NEXT_PUBLIC_CUSD_TOKEN_ADDRESS=0x765DE816845861e75A25fCA122bb6898B8B1282a
 NEXT_PUBLIC_CHAIN_ID=42220
-NEXT_PUBLIC_RPC_URL=https://forno.celo.org
+NEXT_PUBLIC_RPC_URL=https://rpc.sepolia.mantle.xyz
 ```
 
 **Note:** The contract addresses are configured in `src/config/contracts.ts` with network-aware support. The app defaults to Mainnet (Chain ID: 42220) but supports both Mainnet and Testnet. Use `getContractAddresses(chainId)` to get addresses for a specific network.

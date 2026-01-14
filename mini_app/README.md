@@ -43,7 +43,7 @@ NEXT_PUBLIC_CUSD_TOKEN_ADDRESS=0x765DE816845861e75A25fCA122bb6898B8B1282a
 
 # Network Configuration
 NEXT_PUBLIC_CHAIN_ID=42220
-NEXT_PUBLIC_RPC_URL=https://forno.celo.org
+NEXT_PUBLIC_RPC_URL=https://rpc.sepolia.mantle.xyz
 ```
 
 **Note:** The contract addresses are configured in `src/config/contracts.ts` with network-aware support. The app defaults to Mainnet (as required for Farcaster) but supports both Mainnet and Testnet. Use `getContractAddresses(chainId)` to get addresses for a specific network.

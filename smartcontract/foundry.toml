@@ -8,7 +8,7 @@ optimizer = false
 # Celo network configuration
 [rpc_endpoints]
 celo-sepolia = "https://forno.celo-sepolia.celo-testnet.org/"
-celo = "https://forno.celo.org"
+celo = "https://rpc.sepolia.mantle.xyz"
 
 [etherscan]
 celo = { key = "${ETHERSCAN_API_KEY}", url = "https://api.celoscan.io/api" }

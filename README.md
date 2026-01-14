@@ -114,7 +114,7 @@ NEXT_PUBLIC_Mantle_run_ADDRESS=0x03c2c7011eE8519D3B0AF49f20D4b6dEF80799A7
 NEXT_PUBLIC_CELO_NFT_MARKETPLACE=0xa3fC9782937F8FFDD9BB59D573b33E9842065013
 NEXT_PUBLIC_CUSD_TOKEN_ADDRESS=
 NEXT_PUBLIC_CHAIN_ID=42220
-NEXT_PUBLIC_RPC_URL=https://forno.celo.org
+NEXT_PUBLIC_RPC_URL=https://rpc.sepolia.mantle.xyz
 ```
 
 #### Smart Contracts (`.env`)
@@ -128,10 +128,10 @@ ETHERSCAN_API_KEY=your_blockscout_api_key
 1. **Deploy Smart Contracts**
    ```bash
    # Deploy to Celo Mainnet
-   forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://forno.celo.org --broadcast
+   forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://rpc.sepolia.mantle.xyz --broadcast
    
    # Deploy Marketplace
-   forge script script/DeployMarketplace.s.sol:DeployMarketplace --rpc-url https://forno.celo.org --broadcast
+   forge script script/DeployMarketplace.s.sol:DeployMarketplace --rpc-url https://rpc.sepolia.mantle.xyz --broadcast
    ```
 
 2. **Build Frontend for Production**

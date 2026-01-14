@@ -95,7 +95,7 @@ This deploys NFTMarketplace with cUSD payment support.
 ### Deploy to Mainnet
 
 ```bash
-forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://forno.celo.org --broadcast
+forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://rpc.sepolia.mantle.xyz --broadcast
 ```
 
 ## Deployed Contracts
@@ -269,7 +269,7 @@ import { defineChain } from "thirdweb/chains";
 const celoSepolia = defineChain({
   id: 42220,
   name: "Celo Sepolia",
-  rpc: "https://forno.celo.org/",
+  rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
     name: "CELO",
     symbol: "CELO",
@@ -373,7 +373,7 @@ await sendTransaction({ account, transaction: buyTx });
 
 **Celo Mainnet:**
 - Chain ID: 42220
-- RPC: https://forno.celo.org
+- RPC: https://rpc.sepolia.mantle.xyz
 - Explorer: https://celoscan.io/
 - cUSD: 0x765DE816845861e75A25fCA122bb6898B8B1282a
 

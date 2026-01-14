@@ -10,7 +10,7 @@ import { Mantle_run_ABI } from '@/config/abis';
 const celoMainnet = defineChain({
   id: 42220,
   name: "Celo Mainnet",
-  rpc: "https://forno.celo.org/",
+  rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
     name: "CELO",
     symbol: "CELO",
