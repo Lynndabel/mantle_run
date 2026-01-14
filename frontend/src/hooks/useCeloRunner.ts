@@ -6,14 +6,14 @@ import { client } from '@/client';
 import { CONTRACTS } from '@/config/contracts';
 import { Mantle_run_ABI } from '@/config/abis';
 
-// Define Celo Mainnet chain
-const celoMainnet = defineChain({
+// Define Mantle Mainnet chain
+const MantleMainnet = defineChain({
   id: 42220,
-  name: "Celo Mainnet",
+  name: "Mantle Mainnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
-    name: "CELO",
-    symbol: "CELO",
+    name: "Mantle",
+    symbol: "Mantle",
     decimals: 18
   }
 });
@@ -22,7 +22,7 @@ const celoMainnet = defineChain({
 const getMantleRunnerContract = () => {
   return getContract({
     client,
-    chain: celoMainnet,
+    chain: MantleMainnet,
     address: CONTRACTS.Mantle_run,
     abi: Mantle_run_ABI,
   });
@@ -85,7 +85,7 @@ export const useMantleRunner = () => {
 
       await waitForReceipt({
         client,
-        chain: celoMainnet,
+        chain: MantleMainnet,
         transactionHash,
       });
 
@@ -162,7 +162,7 @@ export const useMantleRunner = () => {
 
       await waitForReceipt({
         client,
-        chain: celoMainnet,
+        chain: MantleMainnet,
         transactionHash,
       });
 
@@ -205,7 +205,7 @@ export const useMantleRunner = () => {
 
       await waitForReceipt({
         client,
-        chain: celoMainnet,
+        chain: MantleMainnet,
         transactionHash,
       });
 
@@ -250,7 +250,7 @@ export const useMantleRunner = () => {
 
       await waitForReceipt({
         client,
-        chain: celoMainnet,
+        chain: MantleMainnet,
         transactionHash,
       });
 
@@ -295,7 +295,7 @@ export const useMantleRunner = () => {
 
       await waitForReceipt({
         client,
-        chain: celoMainnet,
+        chain: MantleMainnet,
         transactionHash,
       });
 

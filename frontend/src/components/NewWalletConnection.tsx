@@ -2,7 +2,7 @@
 
 import { ConnectButton } from 'thirdweb/react';
 import { client } from '@/client';
-import { celoMainnet, useWallet } from '@/context/WalletContext';
+import { MantleMainnet, useWallet } from '@/context/WalletContext';
 import { useEffect, useState } from 'react';
 import { useGameStore } from '@/store/gameStore';
 import { isMiniPayAvailable, openMiniPayAddCash, checkCUSDBalance } from '@/utils/minipay';
@@ -209,7 +209,7 @@ export function NewWalletConnection() {
           )}
           <ConnectButton
             client={client}
-            chain={celoMainnet}
+            chain={MantleMainnet}
             theme="light"
             connectButton={{
               label: "💼 CONNECT WALLET",

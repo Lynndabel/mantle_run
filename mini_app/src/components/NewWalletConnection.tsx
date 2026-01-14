@@ -2,7 +2,7 @@
 
 import { ConnectButton } from 'thirdweb/react';
 import { client } from '@/client';
-import { celoSepolia, useWallet } from '@/context/WalletContext';
+import { MantleSepolia, useWallet } from '@/context/WalletContext';
 import { useEffect, useState } from 'react';
 import { useGameStore } from '@/store/gameStore';
 import { isMiniPayAvailable, openMiniPayAddCash, checkCUSDBalance } from '@/utils/minipay';
@@ -268,7 +268,7 @@ export function NewWalletConnection() {
             )}
             <ConnectButton
               client={client}
-              chain={celoSepolia}
+              chain={MantleSepolia}
               theme="light"
               connectButton={{
                 label: "💼 CONNECT WALLET",

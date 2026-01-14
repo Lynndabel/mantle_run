@@ -28,8 +28,8 @@ MiniPay is a **stablecoin wallet** built into Opera Mini browser and available a
 - "Add Cash to MiniPay" button for easy funding
 
 ### ✅ **cUSD Balance Checking** (Available)
-- Utility function to check cUSD (Celo Dollar) balance
-- Uses Celo's stable token contract
+- Utility function to check cUSD (Mantle Dollar) balance
+- Uses Mantle's stable token contract
 - Supports both testnet and mainnet
 
 ### ✅ **Transaction Support**
@@ -82,7 +82,7 @@ User Can:
 2. **Easier Onboarding** - Phone number-based addresses (easier than hex)
 3. **Mobile Gaming Focus** - Perfect for mobile-first design
 4. **Global Reach** - Access to users in emerging markets
-5. **Hackathon Requirement** - Completes Celo hackathon integration step
+5. **Hackathon Requirement** - Completes Mantle hackathon integration step
 
 ## Usage
 
@@ -95,7 +95,7 @@ The integration is automatic - no additional configuration needed. When a user o
 
 ## Future Enhancements (Optional)
 
-- Phone number resolution (using @celo/identity)
+- Phone number resolution (using @Mantle/identity)
 - Direct cUSD payments for rewards
 - MiniPay-specific transaction optimizations
 - cUSD balance display in game UI

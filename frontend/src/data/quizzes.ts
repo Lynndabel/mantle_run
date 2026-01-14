@@ -1,4 +1,4 @@
-// Celo-themed quiz questions for each stage
+// Mantle-themed quiz questions for each stage
 export interface QuizQuestion {
   question: string;
   options: string[];
@@ -9,7 +9,7 @@ export interface QuizQuestion {
 export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
   1: [
     {
-      question: "What is Celo's mission?",
+      question: "What is Mantle's mission?",
       options: [
         "To create the fastest blockchain",
         "To build a financial system that creates conditions of prosperity for everyone",
@@ -17,10 +17,10 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "To mine Bitcoin faster"
       ],
       correctAnswer: 1,
-      explanation: "Celo's mission is to build a financial system that creates the conditions of prosperity for everyone."
+      explanation: "Mantle's mission is to build a financial system that creates the conditions of prosperity for everyone."
     },
     {
-      question: "What makes Celo unique for mobile users?",
+      question: "What makes Mantle unique for mobile users?",
       options: [
         "It only works on iPhones",
         "Mobile-first design with phone number mapping to wallet addresses",
@@ -28,21 +28,21 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "It has the best mobile games"
       ],
       correctAnswer: 1,
-      explanation: "Celo is designed mobile-first and allows users to send crypto using phone numbers instead of complex addresses."
+      explanation: "Mantle is designed mobile-first and allows users to send crypto using phone numbers instead of complex addresses."
     },
     {
-      question: "What is Celo's native token?",
+      question: "What is Mantle's native token?",
       options: [
         "CUSD",
         "CEUR",
-        "CELO",
+        "Mantle",
         "GOLD"
       ],
       correctAnswer: 2,
-      explanation: "CELO is the native asset of the Celo platform, used for transaction fees, governance, and staking."
+      explanation: "Mantle is the native asset of the Mantle platform, used for transaction fees, governance, and staking."
     },
     {
-      question: "What type of stablecoins does Celo support?",
+      question: "What type of stablecoins does Mantle support?",
       options: [
         "Only USD stablecoins",
         "Multiple fiat-pegged stablecoins like cUSD, cEUR, cREAL",
@@ -50,10 +50,10 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "No stablecoins"
       ],
       correctAnswer: 1,
-      explanation: "Celo supports multiple fiat-pegged stablecoins including cUSD (US Dollar), cEUR (Euro), and cREAL (Brazilian Real)."
+      explanation: "Mantle supports multiple fiat-pegged stablecoins including cUSD (US Dollar), cEUR (Euro), and cREAL (Brazilian Real)."
     },
     {
-      question: "What consensus mechanism does Celo use?",
+      question: "What consensus mechanism does Mantle use?",
       options: [
         "Proof of Work",
         "Proof of Stake",
@@ -61,12 +61,12 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "Proof of Authority"
       ],
       correctAnswer: 1,
-      explanation: "Celo uses a Proof of Stake (PoS) consensus mechanism, making it energy-efficient and environmentally friendly."
+      explanation: "Mantle uses a Proof of Stake (PoS) consensus mechanism, making it energy-efficient and environmentally friendly."
     }
   ],
   2: [
     {
-      question: "What is Celo's approach to carbon neutrality?",
+      question: "What is Mantle's approach to carbon neutrality?",
       options: [
         "It ignores environmental concerns",
         "Carbon-negative through offsetting and natural capital backing",
@@ -74,32 +74,32 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "Plants one tree per transaction"
       ],
       correctAnswer: 1,
-      explanation: "Celo is carbon-negative, offsetting more carbon than it produces and backing its reserve with natural capital assets."
+      explanation: "Mantle is carbon-negative, offsetting more carbon than it produces and backing its reserve with natural capital assets."
     },
     {
-      question: "What is the Celo Reserve?",
+      question: "What is the Mantle Reserve?",
       options: [
         "A backup of all blockchain data",
-        "A pool of assets backing Celo stablecoins",
+        "A pool of assets backing Mantle stablecoins",
         "A savings account for users",
         "A mining pool"
       ],
       correctAnswer: 1,
-      explanation: "The Celo Reserve is a diversified portfolio of crypto assets that backs and stabilizes the value of Celo stablecoins."
+      explanation: "The Mantle Reserve is a diversified portfolio of crypto assets that backs and stabilizes the value of Mantle stablecoins."
     },
     {
       question: "What is Valora?",
       options: [
-        "A Celo validator",
-        "A mobile wallet for Celo",
+        "A Mantle validator",
+        "A mobile wallet for Mantle",
         "A stablecoin",
         "A smart contract language"
       ],
       correctAnswer: 1,
-      explanation: "Valora is a mobile-first wallet designed for the Celo ecosystem, making crypto accessible to everyone."
+      explanation: "Valora is a mobile-first wallet designed for the Mantle ecosystem, making crypto accessible to everyone."
     },
     {
-      question: "What programming language is used for Celo smart contracts?",
+      question: "What programming language is used for Mantle smart contracts?",
       options: [
         "Python",
         "JavaScript",
@@ -107,10 +107,10 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "Rust"
       ],
       correctAnswer: 2,
-      explanation: "Celo smart contracts are written in Solidity, the same language used for Ethereum, making it easy for developers to build on Celo."
+      explanation: "Mantle smart contracts are written in Solidity, the same language used for Ethereum, making it easy for developers to build on Mantle."
     },
     {
-      question: "What is Celo's block time?",
+      question: "What is Mantle's block time?",
       options: [
         "10 minutes",
         "1 minute",
@@ -118,12 +118,12 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "15 seconds"
       ],
       correctAnswer: 2,
-      explanation: "Celo has a fast block time of approximately 5 seconds, enabling quick transaction confirmations."
+      explanation: "Mantle has a fast block time of approximately 5 seconds, enabling quick transaction confirmations."
     }
   ],
   3: [
     {
-      question: "What is the Celo Alliance for Prosperity?",
+      question: "What is the Mantle Alliance for Prosperity?",
       options: [
         "A mining pool",
         "A coalition of organizations building financial inclusion",
@@ -131,10 +131,10 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "A validator group"
       ],
       correctAnswer: 1,
-      explanation: "The Alliance for Prosperity is a coalition of over 150 organizations working to build financial inclusion using Celo."
+      explanation: "The Alliance for Prosperity is a coalition of over 150 organizations working to build financial inclusion using Mantle."
     },
     {
-      question: "What is unique about Celo's identity protocol?",
+      question: "What is unique about Mantle's identity protocol?",
       options: [
         "It requires government ID",
         "It maps phone numbers to wallet addresses",
@@ -142,21 +142,21 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "It doesn't have identity features"
       ],
       correctAnswer: 1,
-      explanation: "Celo's identity protocol allows users to map their phone numbers to wallet addresses, making it easy to send money to contacts."
+      explanation: "Mantle's identity protocol allows users to map their phone numbers to wallet addresses, making it easy to send money to contacts."
     },
     {
-      question: "What is Celo's approach to governance?",
+      question: "What is Mantle's approach to governance?",
       options: [
         "Centralized control by founders",
-        "On-chain governance where CELO holders can vote on proposals",
+        "On-chain governance where Mantle holders can vote on proposals",
         "No governance system",
         "Governance by miners only"
       ],
       correctAnswer: 1,
-      explanation: "Celo uses on-chain governance where CELO token holders can propose and vote on protocol changes."
+      explanation: "Mantle uses on-chain governance where Mantle token holders can propose and vote on protocol changes."
     },
     {
-      question: "What is the Celo Community Fund?",
+      question: "What is the Mantle Community Fund?",
       options: [
         "A charity organization",
         "On-chain fund for ecosystem development and public goods",
@@ -164,10 +164,10 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "A user rewards program"
       ],
       correctAnswer: 1,
-      explanation: "The Community Fund is an on-chain fund that supports projects building on Celo and contributing to financial inclusion."
+      explanation: "The Community Fund is an on-chain fund that supports projects building on Mantle and contributing to financial inclusion."
     },
     {
-      question: "What makes Celo EVM-compatible?",
+      question: "What makes Mantle EVM-compatible?",
       options: [
         "It's a fork of Ethereum",
         "It can run Ethereum smart contracts and tools work seamlessly",
@@ -175,7 +175,7 @@ export const STAGE_QUIZZES: Record<number, QuizQuestion[]> = {
         "It's not EVM-compatible"
       ],
       correctAnswer: 1,
-      explanation: "Celo is fully EVM-compatible, meaning Ethereum smart contracts and development tools work on Celo with minimal changes."
+      explanation: "Mantle is fully EVM-compatible, meaning Ethereum smart contracts and development tools work on Mantle with minimal changes."
     }
   ]
 };

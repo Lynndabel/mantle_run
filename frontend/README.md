@@ -8,7 +8,7 @@ Next.js frontend for Mantle Run game. Built with thirdweb, React, and Tailwind C
 - Player registration and profile management
 - Stage-based gameplay with quiz integration
 - Token and NFT rewards claiming
-- NFT marketplace (CELO and cUSD payments) with 2.5% platform fees
+- NFT marketplace (Mantle and cUSD payments) with 2.5% platform fees
 - Leaderboard system
 - Mobile-responsive design
 - MiniPay integration with cUSD support
@@ -17,7 +17,7 @@ Next.js frontend for Mantle Run game. Built with thirdweb, React, and Tailwind C
 ## Prerequisites
 
 - Node.js 18+ and npm
-- A Celo wallet (MetaMask, WalletConnect, or MiniPay)
+- A Mantle wallet (MetaMask, WalletConnect, or MiniPay)
 
 ## Installation
 
@@ -30,7 +30,7 @@ npm install
 Create a `.env.local` file (or copy from `.env.local.example`):
 
 ```env
-# Contract Addresses (Celo Mainnet)
+# Contract Addresses (Mantle Mainnet)
 NEXT_PUBLIC_QUEST_TOKEN_ADDRESS=0x7B61f8EadD960a2e676f26E6968F5f65FebE1341
 NEXT_PUBLIC_RUNNER_BADGE_ADDRESS=0xe0Aad78b3615ce64469518f4E406B580de5cABaA
 NEXT_PUBLIC_Mantle_run_ADDRESS=0x553efD80A0ADEd286Ed49F78Ba5051846db91B37
@@ -123,7 +123,7 @@ See `MINIPAY_INTEGRATION.md` for detailed MiniPay documentation.
 ### Marketplace
 
 - List NFTs for sale
-- Buy with CELO or cUSD
+- Buy with Mantle or cUSD
 - Approve marketplace transactions
 - Cancel listings
 
@@ -143,12 +143,12 @@ See `MINIPAY_INTEGRATION.md` for detailed MiniPay documentation.
 - Clear `.next` folder and rebuild
 
 **Wallet connection issues:**
-- Ensure wallet is connected to Celo Sepolia network
+- Ensure wallet is connected to Mantle Sepolia network
 - Check RPC URL in configuration
 - Verify contract addresses are correct
 
 **Transaction failures:**
-- Check wallet has enough CELO for gas
+- Check wallet has enough Mantle for gas
 - Verify contract addresses match deployed contracts
 - Check network connection
 
@@ -172,4 +172,4 @@ vercel
 For issues or questions:
 - Check smartcontract README for contract details
 - Review thirdweb documentation: https://portal.thirdweb.com
-- Celo documentation: https://docs.celo.org
+- Mantle documentation: https://docs.Mantle.org

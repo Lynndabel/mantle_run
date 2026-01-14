@@ -1,7 +1,7 @@
 'use client';
 
 import { useChainId, useSwitchChain } from 'wagmi';
-import { celo, celoSepolia } from 'wagmi/chains';
+import { Mantle, MantleSepolia } from 'wagmi/chains';
 import { useState } from 'react';
 
 export function NetworkSelector() {
@@ -25,10 +25,10 @@ export function NetworkSelector() {
   return (
     <div className="flex gap-2 items-center">
       <button
-        onClick={() => handleSwitch(celo.id)}
-        disabled={isSwitching || chainId === celo.id}
+        onClick={() => handleSwitch(Mantle.id)}
+        disabled={isSwitching || chainId === Mantle.id}
         className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-          chainId === celo.id
+          chainId === Mantle.id
             ? 'bg-purple-600 text-white'
             : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
         }`}
@@ -36,10 +36,10 @@ export function NetworkSelector() {
         Mainnet
       </button>
       <button
-        onClick={() => handleSwitch(celoSepolia.id)}
-        disabled={isSwitching || chainId === celoSepolia.id}
+        onClick={() => handleSwitch(MantleSepolia.id)}
+        disabled={isSwitching || chainId === MantleSepolia.id}
         className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-          chainId === celoSepolia.id
+          chainId === MantleSepolia.id
             ? 'bg-purple-600 text-white'
             : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
         }`}

@@ -193,7 +193,7 @@ export function GameOverModal() {
           <div className="nes-container mb-3 text-center" style={{ backgroundColor: '#28a745', border: '3px solid #155724' }}>
             <div className="pixel-font text-white text-sm sm:text-base" style={{ fontWeight: 'bold' }}>
               ✅ SAVED TO BLOCKCHAIN!
-              <div className="mt-1 text-xs">🎉 Progress permanently saved on Celo!</div>
+              <div className="mt-1 text-xs">🎉 Progress permanently saved on Mantle!</div>
             </div>
           </div>
         ) : isSavingSession ? (

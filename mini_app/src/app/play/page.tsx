@@ -99,7 +99,7 @@ export default function PlayPage() {
     return (
       <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-purple-900 via-blue-900 to-black">
         <div className="nes-container with-title is-centered pixel-art max-w-2xl w-full" style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
-          <p className="title pixel-font text-primary">CELO QUIZ</p>
+          <p className="title pixel-font text-primary">Mantle QUIZ</p>
           
           <div className="mb-4">
             <p className="text-sm text-gray-600">Question {currentQuestionIndex + 1} of {quizQuestions.length}</p>

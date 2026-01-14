@@ -31,7 +31,7 @@ const Marketplace: NextPage = () => {
           </h1>
           <div className="mt-3 sm:mt-4 inline-flex items-center gap-2 bg-green-50 border-2 border-green-300 rounded px-3 sm:px-4 py-2">
             <span className="pixel-font text-xs sm:text-sm text-green-800 font-bold">
-              ✅ CELO SEPOLIA
+              ✅ Mantle SEPOLIA
             </span>
           </div>
         </div>
@@ -72,7 +72,7 @@ const Marketplace: NextPage = () => {
           <div className="nes-container pixel-art bg-white">
             <h3 className="pixel-font text-xs sm:text-sm font-bold text-gray-800 mb-2">💰 List for Sale</h3>
             <p className="pixel-font text-[10px] sm:text-xs text-gray-600">
-              Set your own price in CELO and list your Badge NFTs for other players to purchase.
+              Set your own price in Mantle and list your Badge NFTs for other players to purchase.
             </p>
           </div>
 

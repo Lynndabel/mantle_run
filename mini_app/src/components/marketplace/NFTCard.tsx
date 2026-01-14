@@ -24,15 +24,15 @@ import { CONTRACTS } from '@/config/contracts';
 import { RUNNER_BADGE_ABI, NFT_MARKETPLACE_ABI } from '@/config/abis';
 import { useGameStore } from '@/store/gameStore';
 import { isMiniPayAvailable, checkCUSDBalance } from '@/utils/minipay';
-import { stableTokenABI } from '@celo/abis';
+import { stableTokenABI } from '@Mantle/abis';
 
-const celoSepolia = defineChain({
+const MantleSepolia = defineChain({
   id: 11142220,
-  name: "Celo Sepolia",
-  rpc: "https://forno.celo-sepolia.celo-testnet.org/",
+  name: "Mantle Sepolia",
+  rpc: "https://forno.Mantle-sepolia.Mantle-testnet.org/",
   nativeCurrency: {
-    name: "CELO",
-    symbol: "CELO",
+    name: "Mantle",
+    symbol: "Mantle",
     decimals: 18
   }
 });
@@ -58,7 +58,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   const [isBuyPending, setIsBuyPending] = useState(false);
   const [isCancelPending, setIsCancelPending] = useState(false);
   const [listing, setListing] = useState<{ seller: string; price: bigint; isActive: boolean } | null>(null);
-  const [paymentMethod, setPaymentMethod] = useState<'CELO' | 'cUSD'>('CELO');
+  const [paymentMethod, setPaymentMethod] = useState<'Mantle' | 'cUSD'>('Mantle');
   const [isMiniPay, setIsMiniPay] = useState(false);
   const [cUSDBalance, setCUSDBalance] = useState<string>('0');
   const [isApprovingCUSD, setIsApprovingCUSD] = useState(false);
@@ -89,7 +89,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   const getBadgeContract = () => {
     return getContract({
       client,
-      chain: celoSepolia,
+      chain: MantleSepolia,
       address: CONTRACTS.RUNNER_BADGE,
       abi: RUNNER_BADGE_ABI,
     });
@@ -102,7 +102,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
     }
     return getContract({
       client,
-      chain: celoSepolia,
+      chain: MantleSepolia,
       address: CONTRACTS.MARKETPLACE,
       abi: NFT_MARKETPLACE_ABI,
     });
@@ -112,7 +112,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   const getCUSDContract = () => {
     return getContract({
       client,
-      chain: celoSepolia,
+      chain: MantleSepolia,
       address: CONTRACTS.CUSD_TOKEN,
       abi: stableTokenABI,
     });
@@ -209,7 +209,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: celoSepolia,
+        chain: MantleSepolia,
         transactionHash,
       });
 
@@ -226,7 +226,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   // Handle list
   const handleList = async () => {
     if (!listPrice || parseFloat(listPrice) <= 0) {
-      showNotification('warning', 'Invalid Price', 'Please enter a valid price in CELO');
+      showNotification('warning', 'Invalid Price', 'Please enter a valid price in Mantle');
       return;
     }
 
@@ -248,7 +248,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: celoSepolia,
+        chain: MantleSepolia,
         transactionHash,
       });
 
@@ -265,8 +265,8 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
     }
   };
 
-  // Handle buy with CELO
-  const handleBuyWithCELO = async () => {
+  // Handle buy with Mantle
+  const handleBuyWithMantle = async () => {
     if (!listing || !account) return;
 
     const marketplace = getMarketplaceContract();
@@ -288,11 +288,11 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: celoSepolia,
+        chain: MantleSepolia,
         transactionHash,
       });
 
-      showNotification('success', 'Purchased!', 'NFT purchased successfully with CELO!');
+      showNotification('success', 'Purchased!', 'NFT purchased successfully with Mantle!');
       await fetchListing();
       onListingChange?.();
     } catch (error: any) {
@@ -332,7 +332,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
         await waitForReceipt({
           client,
-          chain: celoSepolia,
+          chain: MantleSepolia,
           transactionHash: approveHash,
         });
 
@@ -355,7 +355,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: celoSepolia,
+        chain: MantleSepolia,
         transactionHash,
       });
 
@@ -374,8 +374,8 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
   // Main buy handler
   const handleBuy = async () => {
-    if (paymentMethod === 'CELO') {
-      await handleBuyWithCELO();
+    if (paymentMethod === 'Mantle') {
+      await handleBuyWithMantle();
     } else {
       await handleBuyWithCUSD();
     }
@@ -401,7 +401,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: celoSepolia,
+        chain: MantleSepolia,
         transactionHash,
       });
 
@@ -458,7 +458,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
         <div className="mb-3 bg-green-50 border border-green-300 rounded p-2">
           <p className="pixel-font text-xs text-green-800 font-bold">📍 Listed for Sale</p>
           <p className="pixel-font text-lg font-bold text-green-600">
-            {formatEther(listing.price)} CELO
+            {formatEther(listing.price)} Mantle
           </p>
           {listing.seller && (
             <p className="pixel-font text-xs text-gray-600 truncate">
@@ -482,12 +482,12 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
                 <p className="pixel-font text-[10px] text-green-800 mb-1 font-bold">💵 Payment Method:</p>
                 <div className="flex gap-1">
                   <button
-                    onClick={() => setPaymentMethod('CELO')}
+                    onClick={() => setPaymentMethod('Mantle')}
                     className={`nes-btn pixel-font text-[10px] px-2 py-1 flex-1 ${
-                      paymentMethod === 'CELO' ? 'is-primary' : 'is-disabled'
+                      paymentMethod === 'Mantle' ? 'is-primary' : 'is-disabled'
                     }`}
                   >
-                    CELO
+                    Mantle
                   </button>
                   <button
                     onClick={() => setPaymentMethod('cUSD')}
@@ -569,7 +569,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
             <h3 className="pixel-font text-xl font-bold text-gray-800 mb-4">List {badgeName}</h3>
 
             <div className="mb-4">
-              <label className="pixel-font text-sm text-gray-700 block mb-2">Price in CELO</label>
+              <label className="pixel-font text-sm text-gray-700 block mb-2">Price in Mantle</label>
               <input
                 type="number"
                 step="0.1"
@@ -579,7 +579,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
                 onChange={(e) => setListPrice(e.target.value)}
               />
               <p className="pixel-font text-xs text-gray-500 mt-1">
-                Minimum: 0.1 CELO
+                Minimum: 0.1 Mantle
               </p>
             </div>
 

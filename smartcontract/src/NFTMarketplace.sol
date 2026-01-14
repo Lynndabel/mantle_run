@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
  * @title NFTMarketplace
  * @notice Simple escrowless NFT marketplace for RunnerBadge contract
  * @dev Sellers keep NFTs until sold, marketplace only needs approval
- * @dev Supports both CELO (native) and cUSD (ERC20) payments
+ * @dev Supports both Mantle (native) and cUSD (ERC20) payments
  */
 contract NFTMarketplace is ReentrancyGuard {
     using SafeERC20 for IERC20;
@@ -40,7 +40,7 @@ contract NFTMarketplace is ReentrancyGuard {
     /**
      * @notice Constructor sets the NFT contract address and cUSD token address
      * @param _nftContract Address of the RunnerBadge contract
-     * @param _cusdToken Address of the cUSD token contract (0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b for Celo Sepolia)
+     * @param _cusdToken Address of the cUSD token contract (0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b for Mantle Sepolia)
      */
     constructor(address _nftContract, address _cusdToken) {
         require(_nftContract != address(0), "Invalid NFT contract address");
@@ -52,7 +52,7 @@ contract NFTMarketplace is ReentrancyGuard {
     /**
      * @notice List an NFT for sale
      * @param tokenId The ID of the NFT to list
-     * @param price The price in wei (CELO)
+     * @param price The price in wei (Mantle)
      */
     function listItem(uint256 tokenId, uint256 price) external {
         require(price > 0, "Price must be greater than 0");
@@ -90,7 +90,7 @@ contract NFTMarketplace is ReentrancyGuard {
         // Transfer NFT from seller to buyer
         nftContract.safeTransferFrom(listing.seller, msg.sender, tokenId);
 
-        // Transfer CELO to seller
+        // Transfer Mantle to seller
         (bool success, ) = payable(listing.seller).call{value: listing.price}("");
         require(success, "Transfer failed");
 

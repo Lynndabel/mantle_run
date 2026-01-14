@@ -5,9 +5,9 @@ import {Script, console} from "forge-std/Script.sol";
 import {NFTMarketplace} from "../src/NFTMarketplace.sol";
 
 contract DeployMarketplace is Script {
-    // RunnerBadge contract address on Celo Sepolia
+    // RunnerBadge contract address on Mantle Sepolia
     address constant RUNNER_BADGE = 0x7B72c0E84012f868fe9a4164a8122593d0F38B84;
-    // cUSD token address on Celo Sepolia
+    // cUSD token address on Mantle Sepolia
     address constant CUSD_TOKEN = 0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b;
 
     function run() external {

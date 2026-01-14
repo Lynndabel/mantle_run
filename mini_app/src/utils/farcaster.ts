@@ -54,8 +54,8 @@ export function getFarcasterProvider() {
  * Network detection utilities
  */
 export const FARCASTER_NETWORKS = {
-  MAINNET: 42220, // Celo Mainnet
-  TESTNET: 11142220, // Celo Sepolia Testnet
+  MAINNET: 42220, // Mantle Mainnet
+  TESTNET: 11142220, // Mantle Sepolia Testnet
 } as const;
 
 export type FarcasterNetwork = typeof FARCASTER_NETWORKS[keyof typeof FARCASTER_NETWORKS];

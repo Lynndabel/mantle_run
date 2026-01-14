@@ -98,7 +98,7 @@ export default function Home() {
               <div className="text-4xl sm:text-6xl mb-3 sm:mb-4">�‍♂️</div>
               <p className="pixel-font text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4">
                 Jump obstacles, answer questions,<br/>
-                earn tokens & NFTs on Celo!
+                earn tokens & NFTs on Mantle!
               </p>
             </div>
 

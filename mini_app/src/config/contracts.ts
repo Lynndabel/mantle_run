@@ -1,20 +1,20 @@
 // Contract addresses by network
 const CONTRACTS_BY_NETWORK = {
-  // Celo Mainnet (Chain ID: 42220)
+  // Mantle Mainnet (Chain ID: 42220)
   MAINNET: {
     QUEST_TOKEN: '0x7B61f8EadD960a2e676f26E6968F5f65FebE1341' as `0x${string}`,
     RUNNER_BADGE: '0xe0Aad78b3615ce64469518f4E406B580de5cABaA' as `0x${string}`,
     Mantle_run: '0x553efD80A0ADEd286Ed49F78Ba5051846db91B37' as `0x${string}`,
     MARKETPLACE: '0x387998f2eA7f6f4F81cc583ba2bDB841d2bB77C6' as `0x${string}`, // Platform fee: 2.5%
-    CUSD_TOKEN: '0x765DE816845861e75A25fCA122bb6898B8B1282a' as `0x${string}`, // Celo Mainnet cUSD
+    CUSD_TOKEN: '0x765DE816845861e75A25fCA122bb6898B8B1282a' as `0x${string}`, // Mantle Mainnet cUSD
   },
-  // Celo Sepolia Testnet (Chain ID: 11142220)
+  // Mantle Sepolia Testnet (Chain ID: 11142220)
   TESTNET: {
     QUEST_TOKEN: '0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861' as `0x${string}`,
     RUNNER_BADGE: '0x7b72c0e84012f868fe9a4164a8122593d0f38b84' as `0x${string}`,
     Mantle_run: '0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6' as `0x${string}`,
     MARKETPLACE: '0x2d133d0E526193C17AA0Cb0ceD0D9081fbc6Ad73' as `0x${string}`, // Updated with platform fees (2.5%)
-    CUSD_TOKEN: '0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b' as `0x${string}`, // Celo Sepolia cUSD
+    CUSD_TOKEN: '0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b' as `0x${string}`, // Mantle Sepolia cUSD
   },
 } as const;
 
@@ -30,27 +30,27 @@ export function getContractAddresses(chainId?: number) {
 export const CONTRACTS = CONTRACTS_BY_NETWORK.MAINNET;
 
 // Network configuration
-export const CELO_SEPOLIA = {
+export const Mantle_SEPOLIA = {
   id: 11142220,
-  name: 'Celo Sepolia Testnet',
-  network: 'celo-sepolia',
+  name: 'Mantle Sepolia Testnet',
+  network: 'Mantle-sepolia',
   nativeCurrency: {
     decimals: 18,
-    name: 'CELO',
-    symbol: 'CELO',
+    name: 'Mantle',
+    symbol: 'Mantle',
   },
   rpcUrls: {
     default: {
-      http: ['https://forno.celo-sepolia.celo-testnet.org/'],
+      http: ['https://forno.Mantle-sepolia.Mantle-testnet.org/'],
     },
     public: {
-      http: ['https://forno.celo-sepolia.celo-testnet.org/'],
+      http: ['https://forno.Mantle-sepolia.Mantle-testnet.org/'],
     },
   },
   blockExplorers: {
     default: {
-      name: 'Celo Explorer',
-      url: 'https://explorer.celo-sepolia.celo-testnet.org',
+      name: 'Mantle Explorer',
+      url: 'https://explorer.Mantle-sepolia.Mantle-testnet.org',
     },
   },
   testnet: true,
