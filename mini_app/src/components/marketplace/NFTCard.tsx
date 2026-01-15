@@ -27,7 +27,8 @@ import { isMiniPayAvailable, checkMNTBalance } from '@/utils/minipay';
 import { stableTokenABI } from '@Mantle/abis';
 
 const MantleSepolia = defineChain({
-  id: 1115003,
+  id: 5003
+,
   name: "Mantle Sepolia",
   rpc: "https://forno.Mantle-sepolia.Mantle-testnet.org/",
   nativeCurrency: {

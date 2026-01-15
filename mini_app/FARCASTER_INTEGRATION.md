@@ -41,7 +41,8 @@ FarcasterErrorBoundary
 
 ### Default Network
 
-**Mainnet (Mantle)** is set as the default network (Chain ID: 5003). Users can switch to Testnet (Mantle Sepolia, Chain ID: 1115003) using the NetworkSelector component.
+**Mainnet (Mantle)** is set as the default network (Chain ID: 5003). Users can switch to Testnet (Mantle Sepolia, Chain ID: 5003
+) using the NetworkSelector component.
 
 ### Supported Networks
 
@@ -49,7 +50,8 @@ FarcasterErrorBoundary
   - MNT: `0x765DE816845861e75A25fCA122bb6898B8B1282a`
   - Production environment
 
-- **Mantle Sepolia Testnet**: Chain ID `1115003`
+- **Mantle Sepolia Testnet**: Chain ID `5003
+`
   - MNT: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
   - Testing environment
 
@@ -213,7 +215,8 @@ The `manifest.json` file defines the MiniApp:
   "splashImageUrl": "https://Mantle-runner.vercel.app/splash.png",
   "splashBackgroundColor": "#000000",
   "url": "https://Mantle-runner.vercel.app",
-  "requiredChains": [5003, 1115003],
+  "requiredChains": [5003, 5003
+],
   "requiredCapabilities": ["wallet", "transactions"]
 }
 ```
@@ -276,7 +279,8 @@ The `manifest.json` file defines the MiniApp:
 
 ### Network Issues
 
-- Verify chain IDs are correct (5003 for Mainnet, 1115003 for Testnet)
+- Verify chain IDs are correct (5003 for Mainnet, 5003
+ for Testnet)
 - Check RPC endpoints are accessible
 - Ensure contract addresses match the selected network
 

@@ -11,7 +11,8 @@ import { getBadgeImage, getBadgeNameByStage } from '@/config/badgeMetadata';
 import { NFTCard } from './NFTCard';
 
 const MantleSepolia = defineChain({
-  id: 1115003,
+  id: 5003
+,
   name: "Mantle Sepolia",
   rpc: "https://forno.Mantle-sepolia.Mantle-testnet.org/",
   nativeCurrency: {
