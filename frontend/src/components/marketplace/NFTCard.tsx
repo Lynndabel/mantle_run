@@ -26,7 +26,7 @@ import { useGameStore } from '@/store/gameStore';
 import { isMiniPayAvailable, checkMNTBalance } from '@/utils/minipay';
 import { stableTokenABI } from '@mantle/abis';
 
-const MantleSepolia Testnet = defineChain({
+const MantleSepolia Testnet = defineChain({ 
   id: 5003,
   name: "Mantle Sepolia Testnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
