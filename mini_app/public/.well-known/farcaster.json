@@ -12,7 +12,7 @@
     "splashBackgroundColor": "#2d334a",
     "homeUrl": "https://Mantle-runner-iv4y.vercel.app",
     "requiredChains": [
-      "eip155:42220"
+      "eip155:5003"
     ],
     "requiredCapabilities": [
       "wallet.getEthereumProvider",

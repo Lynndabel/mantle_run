@@ -140,7 +140,7 @@ Set your ETHERSCAN_API_KEY in `.env` file, then run:
 ```bash
 forge verify-contract 0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861 \
   src/QuestToken.sol:QuestToken \
-  --chain-id 11142220 \
+  --chain-id 1115003 \
   --verifier blockscout \
   --verifier-url "https://Mantle-sepolia.blockscout.com/api" \
   --etherscan-api-key $ETHERSCAN_API_KEY
@@ -150,7 +150,7 @@ forge verify-contract 0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861 \
 ```bash
 forge verify-contract 0x7b72c0e84012f868fe9a4164a8122593d0f38b84 \
   src/RunnerBadge.sol:RunnerBadge \
-  --chain-id 11142220 \
+  --chain-id 1115003 \
   --verifier blockscout \
   --verifier-url "https://Mantle-sepolia.blockscout.com/api" \
   --etherscan-api-key $ETHERSCAN_API_KEY
@@ -160,7 +160,7 @@ forge verify-contract 0x7b72c0e84012f868fe9a4164a8122593d0f38b84 \
 ```bash
 forge verify-contract 0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6 \
   src/MantleRunner.sol:MantleRunner \
-  --chain-id 11142220 \
+  --chain-id 1115003 \
   --verifier blockscout \
   --verifier-url "https://Mantle-sepolia.blockscout.com/api" \
   --constructor-args 0x00000000000000000000000048e2e16a5cfe127fbfc76f3fd85163bbae64a8610000000000000000000000007b72c0e84012f868fe9a4164a8122593d0f38b84 \
@@ -171,7 +171,7 @@ forge verify-contract 0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6 \
 ```bash
 forge verify-contract 0x370f6701cFDECC0A9D744a12b156317AA3CE32D1 \
   src/NFTMarketplace.sol:NFTMarketplace \
-  --chain-id 11142220 \
+  --chain-id 1115003 \
   --verifier blockscout \
   --verifier-url "https://Mantle-sepolia.blockscout.com/api" \
   --constructor-args 0x0000000000000000000000007b72c0e84012f868fe9a4164a8122593d0f38b84000000000000000000000000de9e4c3ce781b4ba68120d6261cbad65ce0ab00b \
@@ -267,7 +267,7 @@ Only seller can cancel. Removes listing from marketplace.
 import { defineChain } from "thirdweb/chains";
 
 const MantleSepolia = defineChain({
-  id: 42220,
+  id: 5003,
   name: "Mantle Sepolia",
   rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
@@ -366,13 +366,13 @@ await sendTransaction({ account, transaction: buyTx });
 ## Network Configuration
 
 **Mantle Sepolia Testnet:**
-- Chain ID: 11142220
+- Chain ID: 1115003
 - RPC: https://forno.Mantle-sepolia.Mantle-testnet.org/
 - Explorer: https://explorer.Mantle-sepolia.Mantle-testnet.org/
 - MNT: 0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b
 
 **Mantle Mainnet:**
-- Chain ID: 42220
+- Chain ID: 5003
 - RPC: https://rpc.sepolia.mantle.xyz
 - Explorer: https://Mantlescan.io/
 - MNT: 0x765DE816845861e75A25fCA122bb6898B8B1282a

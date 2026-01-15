@@ -20,7 +20,7 @@ export function useFarcasterWallet() {
     balance: balance?.value ?? BigInt(0),
     balanceFormatted: balance?.formatted ?? '0',
     symbol: balance?.symbol ?? 'Mantle',
-    network: chainId === 42220 ? 'mainnet' : 'testnet',
+    network: chainId === 5003 ? 'mainnet' : 'testnet',
   };
 }
 

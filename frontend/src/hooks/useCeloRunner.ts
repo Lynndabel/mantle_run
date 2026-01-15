@@ -8,7 +8,7 @@ import { Mantle_run_ABI } from '@/config/abis';
 
 // Define Mantle Mainnet chain
 const MantleMainnet = defineChain({
-  id: 42220,
+  id: 5003,
   name: "Mantle Mainnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {

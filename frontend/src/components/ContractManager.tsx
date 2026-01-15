@@ -11,7 +11,7 @@ import { getContractAddresses } from '@/config/contracts';
 
 // Define Mantle Sepolia chain
 const MantleMainnet = defineChain({
-  id: 42220,
+  id: 5003,
   name: "Mantle Mainnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
