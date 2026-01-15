@@ -1,6 +1,6 @@
 // Contract addresses by network
 const CONTRACTS_BY_NETWORK = {
-  // Mantle Mainnet (Chain ID: 42220)
+  // Mantle Mainnet (Chain ID: 5003)
   MAINNET: {
     QUEST_TOKEN: '0x7B61f8EadD960a2e676f26E6968F5f65FebE1341' as `0x${string}`,
     RUNNER_BADGE: '0xe0Aad78b3615ce64469518f4E406B580de5cABaA' as `0x${string}`,
@@ -8,7 +8,7 @@ const CONTRACTS_BY_NETWORK = {
     MARKETPLACE: '0x387998f2eA7f6f4F81cc583ba2bDB841d2bB77C6' as `0x${string}`, // Platform fee: 2.5%
     MNT_TOKEN: '0x765DE816845861e75A25fCA122bb6898B8B1282a' as `0x${string}`, // Mantle Mainnet MNT
   },
-  // Mantle Sepolia Testnet (Chain ID: 11142220)
+  // Mantle Sepolia Testnet (Chain ID: 1115003)
   TESTNET: {
     QUEST_TOKEN: '0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861' as `0x${string}`,
     RUNNER_BADGE: '0x7b72c0e84012f868fe9a4164a8122593d0f38b84' as `0x${string}`,
@@ -20,8 +20,8 @@ const CONTRACTS_BY_NETWORK = {
 
 // Helper function to get contract addresses for a specific network
 export function getContractAddresses(chainId?: number) {
-  // Default to mainnet (42220)
-  const isMainnet = chainId === undefined || chainId === 42220;
+  // Default to mainnet (5003)
+  const isMainnet = chainId === undefined || chainId === 5003;
   return isMainnet ? CONTRACTS_BY_NETWORK.MAINNET : CONTRACTS_BY_NETWORK.TESTNET;
 }
 
@@ -31,7 +31,7 @@ export const CONTRACTS = CONTRACTS_BY_NETWORK.MAINNET;
 
 // Network configuration
 export const Mantle_SEPOLIA = {
-  id: 11142220,
+  id: 1115003,
   name: 'Mantle Sepolia Testnet',
   network: 'Mantle-sepolia',
   nativeCurrency: {
