@@ -247,7 +247,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: MantleSepolia Testnet,
+        chain: MantleSepolia,
         transactionHash,
       });
 
