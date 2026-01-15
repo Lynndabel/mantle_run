@@ -7,7 +7,7 @@ optimizer = false
 
 # Mantle network configuration
 [rpc_endpoints]
-Mantle-sepolia = "https://forno.Mantle-sepolia.Mantle-testnet.org/"
+Mantle-sepolia = "https://rpc.sepolia.mantle.xyz"
 Mantle = "https://rpc.sepolia.mantle.xyz"
 
 [etherscan]
