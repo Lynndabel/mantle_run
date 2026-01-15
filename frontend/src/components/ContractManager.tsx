@@ -857,7 +857,7 @@ export function ContractManager() {
           console.log('⏳ Waiting for transaction to be confirmed on blockchain...');
           const receipt = await waitForReceipt({
             client,
-            chain: MantleSepoliaTestnet,
+            chain: MantleSepolia,
             transactionHash: txHash as `0x${string}`,
           });
 

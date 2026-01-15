@@ -45,7 +45,7 @@ export function MarketplaceGrid() {
   const getBadgeContract = () => {
     return getContract({
       client,
-      chain: MantleSepolia Testnet,
+      chain: MantleSepolia,
       address: CONTRACTS.RUNNER_BADGE,
       abi: RUNNER_BADGE_ABI,
     });
