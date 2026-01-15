@@ -1,3 +1,5 @@
+import { STABLE_TOKEN_ABI } from '@/config/abis';
+
 /**
  * MiniPay Integration Utilities
  * Detects MiniPay wallet and provides utilities for MiniPay-specific features
