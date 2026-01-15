@@ -1,4 +1,4 @@
-export const Mantle_run_ABI = 
+export const Mantle_Run_ABI = 
 	[
 		{
 			"inputs": [
