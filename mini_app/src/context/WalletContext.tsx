@@ -16,7 +16,7 @@ export const MantleSepolia = defineChain({
   id: 5003
 ,
   name: "Mantle Sepolia",
-  rpc: "https://forno.Mantle-sepolia.Mantle-testnet.org/",
+  rpc: "https://rpc.sepolia.mantle.xyz",
   nativeCurrency: {
     name: "Mantle",
     symbol: "Mantle",

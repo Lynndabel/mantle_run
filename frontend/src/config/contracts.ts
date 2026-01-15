@@ -43,10 +43,10 @@ export const Mantle_SEPOLIA = {
   },
   rpcUrls: {
     default: {
-      http: ['https://forno.Mantle-sepolia.Mantle-testnet.org/'],
+      http: ['https://rpc.sepolia.mantle.xyz'],
     },
     public: {
-      http: ['https://forno.Mantle-sepolia.Mantle-testnet.org/'],
+      http: ['https://rpc.sepolia.mantle.xyz'],
     },
   },
   blockExplorers: {

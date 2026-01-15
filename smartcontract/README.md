@@ -77,7 +77,7 @@ You need Mantle for gas fees.
 Deploy everything to Mantle Sepolia:
 
 ```bash
-forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://forno.Mantle-sepolia.Mantle-testnet.org/ --broadcast
+forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://rpc.sepolia.mantle.xyz --broadcast
 ```
 
 This deploys QuestToken, RunnerBadge, and MantleRunner. Sets up relationships. Authorizes MantleRunner to mint tokens and NFTs.
@@ -87,7 +87,7 @@ This deploys QuestToken, RunnerBadge, and MantleRunner. Sets up relationships. A
 Deploy marketplace with MNT support:
 
 ```bash
-forge script script/DeployMarketplace.s.sol:DeployMarketplace --rpc-url https://forno.Mantle-sepolia.Mantle-testnet.org/ --broadcast
+forge script script/DeployMarketplace.s.sol:DeployMarketplace --rpc-url https://rpc.sepolia.mantle.xyz --broadcast
 ```
 
 This deploys NFTMarketplace with MNT payment support.
@@ -372,7 +372,7 @@ await sendTransaction({ account, transaction: buyTx });
 **Mantle Sepolia Testnet:**
 - Chain ID: 5003
 
-- RPC: https://forno.Mantle-sepolia.Mantle-testnet.org/
+- RPC: https://rpc.sepolia.mantle.xyz
 - Explorer: https://explorer.Mantle-sepolia.Mantle-testnet.org/
 - MNT: 0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b
 
