@@ -7,7 +7,7 @@ import { CONTRACTS } from '@/config/contracts';
 import { Mantle_run_ABI } from '@/config/abis';
 
 // Define Mantle Sepolia Testnet chain
-const MantleSepolia Testnet = defineChain({
+const MantleSepolia = defineChain({
   id: 5003,
   name: "Mantle Sepolia Testnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
@@ -22,7 +22,7 @@ const MantleSepolia Testnet = defineChain({
 const getMantleRunnerContract = () => {
   return getContract({
     client,
-    chain: MantleSepolia Testnet,
+    chain: MantleSepolia,
     address: CONTRACTS.Mantle_run,
     abi: Mantle_run_ABI,
   });
@@ -85,7 +85,7 @@ export const useMantleRunner = () => {
 
       await waitForReceipt({
         client,
-        chain: MantleSepolia Testnet,
+        chain: MantleSepolia,
         transactionHash,
       });
 
