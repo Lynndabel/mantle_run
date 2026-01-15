@@ -5,6 +5,7 @@
   "splashImageUrl": "https://Mantle-runner-iv4y.vercel.app/splash.png",
   "splashBackgroundColor": "#000000",
   "url": "https://Mantle-runner-iv4y.vercel.app",
-  "requiredChains": [5003, 1115003],
+  "requiredChains": [5003, 5003
+],
   "requiredCapabilities": ["wallet", "transactions"]
 }

@@ -55,7 +55,8 @@ export function getFarcasterProvider() {
  */
 export const FARCASTER_NETWORKS = {
   MAINNET: 5003, // Mantle Mainnet
-  TESTNET: 1115003, // Mantle Sepolia Testnet
+  TESTNET: 5003
+, // Mantle Sepolia Testnet
 } as const;
 
 export type FarcasterNetwork = typeof FARCASTER_NETWORKS[keyof typeof FARCASTER_NETWORKS];

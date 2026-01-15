@@ -8,7 +8,8 @@ const CONTRACTS_BY_NETWORK = {
     MARKETPLACE: '0x387998f2eA7f6f4F81cc583ba2bDB841d2bB77C6' as `0x${string}`, // Platform fee: 2.5%
     MNT_TOKEN: '0x765DE816845861e75A25fCA122bb6898B8B1282a' as `0x${string}`, // Mantle Mainnet MNT
   },
-  // Mantle Sepolia Testnet (Chain ID: 1115003)
+  // Mantle Sepolia Testnet (Chain ID: 5003
+)
   TESTNET: {
     QUEST_TOKEN: '0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861' as `0x${string}`,
     RUNNER_BADGE: '0x7b72c0e84012f868fe9a4164a8122593d0f38b84' as `0x${string}`,
@@ -31,7 +32,8 @@ export const CONTRACTS = CONTRACTS_BY_NETWORK.MAINNET;
 
 // Network configuration
 export const Mantle_SEPOLIA = {
-  id: 1115003,
+  id: 5003
+,
   name: 'Mantle Sepolia Testnet',
   network: 'Mantle-sepolia',
   nativeCurrency: {
