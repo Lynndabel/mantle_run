@@ -92,7 +92,7 @@ forge script script/DeployMarketplace.s.sol:DeployMarketplace --rpc-url https://
 
 This deploys NFTMarketplace with MNT payment support.
 
-### Deploy to Mainnet
+### Deploy to Sepolia Testnet
 
 ```bash
 forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://rpc.sepolia.mantle.xyz --broadcast
@@ -376,7 +376,7 @@ await sendTransaction({ account, transaction: buyTx });
 - Explorer: https://explorer.Mantle-sepolia.Mantle-testnet.org/
 - MNT: 0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b
 
-**Mantle Mainnet:**
+**Mantle Sepolia Testnet:**
 - Chain ID: 5003
 - RPC: https://rpc.sepolia.mantle.xyz
 - Explorer: https://Mantlescan.io/

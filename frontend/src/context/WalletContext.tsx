@@ -12,9 +12,9 @@ import { Wallet, Account } from "thirdweb/wallets";
 import { defineChain } from "thirdweb";
 
 // Define Mantle Sepolia chain
-export const MantleMainnet = defineChain({
+export const MantleSepolia Testnet = defineChain({
   id: 5003,
-  name: "Mantle Mainnet",
+  name: "Mantle Sepolia Testnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
     name: "Mantle",
@@ -47,11 +47,11 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
     setIsConnected(!!account);
   }, [account]);
 
-  // Auto-switch to Mantle Mainnet if connected to wrong chain
+  // Auto-switch to Mantle Sepolia Testnet if connected to wrong chain
   useEffect(() => {
-    if (isConnected && activeChain && activeChain.id !== MantleMainnet.id) {
-      console.log(`Wrong chain detected (${activeChain.id}). Switching to Mantle Mainnet...`);
-      switchChain(MantleMainnet).catch((err) => {
+    if (isConnected && activeChain && activeChain.id !== MantleSepolia Testnet.id) {
+      console.log(`Wrong chain detected (${activeChain.id}). Switching to Mantle Sepolia Testnet...`);
+      switchChain(MantleSepolia Testnet).catch((err) => {
         console.error("Failed to switch chain:", err);
       });
     }

@@ -1,5 +1,5 @@
 /**
- * Wagmi configuration with support for Mantle Mainnet (default) and Mantle Sepolia Testnet
+ * Wagmi configuration with support for Mantle Sepolia Testnet (default) and Mantle Sepolia Testnet
  */
 
 import { http, createConfig } from 'wagmi';
@@ -19,11 +19,11 @@ export const config = createConfig({
     [Mantle.id]: http(),
     [MantleSepolia.id]: http(),
   },
-  // Default to mainnet
+  // Default to Sepolia Testnet
   ssr: false,
 });
 
-// Export default chain (mainnet)
+// Export default chain (Sepolia Testnet)
 export const defaultChain = Mantle;
 
 declare module 'wagmi' {

@@ -54,7 +54,7 @@ export function getFarcasterProvider() {
  * Network detection utilities
  */
 export const FARCASTER_NETWORKS = {
-  MAINNET: 5003, // Mantle Mainnet
+  Sepolia Testnet: 5003, // Mantle Sepolia Testnet
   TESTNET: 5003
 , // Mantle Sepolia Testnet
 } as const;
@@ -63,10 +63,10 @@ export type FarcasterNetwork = typeof FARCASTER_NETWORKS[keyof typeof FARCASTER_
 
 /**
  * Get the current network ID
- * Defaults to mainnet
+ * Defaults to Sepolia Testnet
  */
 export function getDefaultNetwork(): FarcasterNetwork {
-  return FARCASTER_NETWORKS.MAINNET;
+  return FARCASTER_NETWORKS.Sepolia Testnet;
 }
 
 /**

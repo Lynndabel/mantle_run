@@ -30,7 +30,7 @@ MiniPay is a **stablecoin wallet** built into Opera Mini browser and available a
 ### ✅ **MNT Balance Checking** (Available)
 - Utility function to check MNT (Mantle Dollar) balance
 - Uses Mantle's stable token contract
-- Supports both testnet and mainnet
+- Supports both testnet and Sepolia Testnet
 
 ### ✅ **Transaction Support**
 - MiniPay users can make transactions through thirdweb

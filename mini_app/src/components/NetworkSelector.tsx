@@ -33,7 +33,7 @@ export function NetworkSelector() {
             : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
         }`}
       >
-        Mainnet
+        Sepolia Testnet
       </button>
       <button
         onClick={() => handleSwitch(MantleSepolia.id)}

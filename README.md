@@ -127,7 +127,7 @@ ETHERSCAN_API_KEY=your_blockscout_api_key
 
 1. **Deploy Smart Contracts**
    ```bash
-   # Deploy to Mantle Mainnet
+   # Deploy to Mantle Sepolia Testnet
    forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https://rpc.sepolia.mantle.xyz --broadcast
    
    # Deploy Marketplace

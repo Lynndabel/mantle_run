@@ -10,9 +10,9 @@ import { RUNNER_BADGE_ABI } from '@/config/abis';
 import { getBadgeImage, getBadgeNameByStage } from '@/config/badgeMetadata';
 import { NFTCard } from './NFTCard';
 
-const MantleMainnet = defineChain({
+const MantleSepolia Testnet = defineChain({
   id: 5003,
-  name: "Mantle Mainnet",
+  name: "Mantle Sepolia Testnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
     name: "Mantle",
@@ -45,7 +45,7 @@ export function MarketplaceGrid() {
   const getBadgeContract = () => {
     return getContract({
       client,
-      chain: MantleMainnet,
+      chain: MantleSepolia Testnet,
       address: CONTRACTS.RUNNER_BADGE,
       abi: RUNNER_BADGE_ABI,
     });

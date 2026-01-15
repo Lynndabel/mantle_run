@@ -12,7 +12,7 @@ Next.js frontend for Mantle Run game. Built with thirdweb, React, and Tailwind C
 - Leaderboard system
 - Mobile-responsive design
 - MiniPay integration with MNT support
-- Network support for Mainnet and Testnet
+- Network support for Sepolia Testnet and Testnet
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ npm install
 Create a `.env.local` file (or copy from `.env.local.example`):
 
 ```env
-# Contract Addresses (Mantle Mainnet)
+# Contract Addresses (Mantle Sepolia Testnet)
 NEXT_PUBLIC_QUEST_TOKEN_ADDRESS=0x7B61f8EadD960a2e676f26E6968F5f65FebE1341
 NEXT_PUBLIC_RUNNER_BADGE_ADDRESS=0xe0Aad78b3615ce64469518f4E406B580de5cABaA
 NEXT_PUBLIC_Mantle_run_ADDRESS=0x553efD80A0ADEd286Ed49F78Ba5051846db91B37
@@ -40,7 +40,7 @@ NEXT_PUBLIC_CHAIN_ID=5003
 NEXT_PUBLIC_RPC_URL=https://rpc.sepolia.mantle.xyz
 ```
 
-**Note:** The contract addresses are configured in `src/config/contracts.ts` with network-aware support. The app defaults to Mainnet (Chain ID: 5003) but supports both Mainnet and Testnet. Use `getContractAddresses(chainId)` to get addresses for a specific network.
+**Note:** The contract addresses are configured in `src/config/contracts.ts` with network-aware support. The app defaults to Sepolia Testnet (Chain ID: 5003) but supports both Sepolia Testnet and Testnet. Use `getContractAddresses(chainId)` to get addresses for a specific network.
 
 ## Development
 
