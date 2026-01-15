@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantle/abis": "^14.0.1",
     "@tanstack/react-query": "^5.67.2",
     "clsx": "^2.0.0",
     "ethers": "^5.7.2",

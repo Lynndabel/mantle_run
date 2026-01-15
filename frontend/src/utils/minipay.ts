@@ -47,11 +47,11 @@ export async function checkMNTBalance(
   try {
     const { createPublicClient, http, getContract, formatEther } = await import("viem");
     const { Mantle, MantleSepolia } = await import("viem/chains");
-    const { stableTokenABI } = await import("@Mantle/abis");
+    const { stableTokenABI } = await import("@mantle/abis");
 
     // MNT addresses
-    const STABLE_TOKEN_ADDRESS_TESTNET = "0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b"; // Mantle Sepolia
-    const STABLE_TOKEN_ADDRESS_Sepolia Testnet = "0x765DE816845861e75A25fCA122bb6898B8B1282a"; // Mantle Sepolia Testnet
+    const STABLE_TOKEN_ADDRESS_TESTNET = "0xc04cc072f052c2e4959de14c7a180713e1ecb18d"; // Mantle Sepolia
+    const STABLE_TOKEN_ADDRESS_Sepolia Testnet = "0xc04cc072f052c2e4959de14c7a180713e1ecb18d"; // Mantle Sepolia Testnet
 
     const publicClient = createPublicClient({
       chain: isTestnet ? MantleSepolia : Mantle,
