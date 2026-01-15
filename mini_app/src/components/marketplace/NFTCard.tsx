@@ -24,7 +24,7 @@ import { CONTRACTS } from '@/config/contracts';
 import { RUNNER_BADGE_ABI, NFT_MARKETPLACE_ABI } from '@/config/abis';
 import { useGameStore } from '@/store/gameStore';
 import { isMiniPayAvailable, checkMNTBalance } from '@/utils/minipay';
-import { stableTokenABI } from '@Mantle/abis';
+import { stableTokenABI } from '@mantle/abis';
 
 const MantleSepolia = defineChain({
   id: 5003
