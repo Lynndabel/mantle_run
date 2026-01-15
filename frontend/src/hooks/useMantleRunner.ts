@@ -162,7 +162,7 @@ export const useMantleRunner = () => {
 
       await waitForReceipt({
         client,
-        chain: MantleSepolia Testnet,
+        chain: MantleSepolia,
         transactionHash,
       });
 
