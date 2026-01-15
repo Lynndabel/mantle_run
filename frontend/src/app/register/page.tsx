@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ConnectButton } from 'thirdweb/react';
 import { client } from '@/client';
-import { MantleSepolia Testnet } from '@/context/WalletContext';
+import { MantleSepolia } from '@/context/WalletContext'
 
 export default function RegisterPage() {
   const { account, isConnected } = useWallet();

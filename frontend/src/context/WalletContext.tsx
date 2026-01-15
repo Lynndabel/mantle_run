@@ -18,7 +18,7 @@ export const MantleSepolia = defineChain({
   rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
     name: "Mantle",
-    symbol: "Mantle",
+    symbol: "MNT",
     decimals: 18
   }
 });

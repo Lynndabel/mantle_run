@@ -19,7 +19,7 @@ export function useFarcasterWallet() {
     chainId,
     balance: balance?.value ?? BigInt(0),
     balanceFormatted: balance?.formatted ?? '0',
-    symbol: balance?.symbol ?? 'Mantle',
+    symbol: balance?.symbol ?? 'MNT',
     network: chainId === 5003 ? 'Sepolia Testnet' : 'testnet',
   };
 }
