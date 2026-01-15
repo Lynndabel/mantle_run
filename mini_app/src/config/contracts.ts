@@ -39,7 +39,7 @@ export const Mantle_SEPOLIA = {
   nativeCurrency: {
     decimals: 18,
     name: 'Mantle',
-    symbol: 'Mantle',
+    symbol: 'MNTR',
   },
   rpcUrls: {
     default: {
