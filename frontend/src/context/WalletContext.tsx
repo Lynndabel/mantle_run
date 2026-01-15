@@ -1,10 +1,10 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { 
-  useActiveAccount, 
-  useActiveWallet, 
-  useActiveWalletChain, 
+import {
+  useActiveAccount,
+  useActiveWallet,
+  useActiveWalletChain,
   useSwitchActiveWalletChain,
   useDisconnect,
 } from "thirdweb/react";
@@ -12,7 +12,7 @@ import { Wallet, Account } from "thirdweb/wallets";
 import { defineChain } from "thirdweb";
 
 // Define Mantle Sepolia chain
-export const MantleSepolia Testnet = defineChain({
+export const MantleSepolia = defineChain({
   id: 5003,
   name: "Mantle Sepolia Testnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
@@ -49,9 +49,9 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
 
   // Auto-switch to Mantle Sepolia Testnet if connected to wrong chain
   useEffect(() => {
-    if (isConnected && activeChain && activeChain.id !== MantleSepolia Testnet.id) {
+    if (isConnected && activeChain && activeChain.id !== MantleSepolia.id) {
       console.log(`Wrong chain detected (${activeChain.id}). Switching to Mantle Sepolia Testnet...`);
-      switchChain(MantleSepolia Testnet).catch((err) => {
+      switchChain(MantleSepolia).catch((err) => {
         console.error("Failed to switch chain:", err);
       });
     }

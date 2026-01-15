@@ -21,12 +21,11 @@ const formatEther = (value: bigint): string => {
 };
 import { client } from '@/client';
 import { CONTRACTS } from '@/config/contracts';
-import { RUNNER_BADGE_ABI, NFT_MARKETPLACE_ABI } from '@/config/abis';
+import { RUNNER_BADGE_ABI, NFT_MARKETPLACE_ABI, STABLE_TOKEN_ABI } from '@/config/abis';
 import { useGameStore } from '@/store/gameStore';
 import { isMiniPayAvailable, checkMNTBalance } from '@/utils/minipay';
-import { stableTokenABI } from '@mantle/abis';
 
-const MantleSepolia Testnet = defineChain({
+const MantleSepolia = defineChain({
   id: 5003,
   name: "Mantle Sepolia Testnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
@@ -89,7 +88,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   const getBadgeContract = () => {
     return getContract({
       client,
-      chain: MantleSepolia Testnet,
+      chain: MantleSepolia,
       address: CONTRACTS.RUNNER_BADGE,
       abi: RUNNER_BADGE_ABI,
     });
@@ -102,7 +101,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
     }
     return getContract({
       client,
-      chain: MantleSepolia Testnet,
+      chain: MantleSepolia,
       address: CONTRACTS.MARKETPLACE,
       abi: NFT_MARKETPLACE_ABI,
     });
@@ -112,9 +111,9 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   const getMNTContract = () => {
     return getContract({
       client,
-      chain: MantleSepolia Testnet,
+      chain: MantleSepolia,
       address: CONTRACTS.MNT_TOKEN,
-      abi: stableTokenABI,
+      abi: STABLE_TOKEN_ABI,
     });
   };
 
@@ -209,7 +208,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: MantleSepolia Testnet,
+        chain: MantleSepolia,
         transactionHash,
       });
 
@@ -332,7 +331,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
         await waitForReceipt({
           client,
-          chain: MantleSepolia Testnet,
+          chain: MantleSepolia,
           transactionHash: approveHash,
         });
 

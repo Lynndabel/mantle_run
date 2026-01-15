@@ -1,3 +1,5 @@
+import { STABLE_TOKEN_ABI } from '@/config/abis';
+
 /**
  * MiniPay Integration Utilities
  * Detects MiniPay wallet and provides utilities for MiniPay-specific features
@@ -47,23 +49,21 @@ export async function checkMNTBalance(
   try {
     const { createPublicClient, http, getContract, formatEther } = await import("viem");
     const { Mantle, MantleSepolia } = await import("viem/chains");
-    const { stableTokenABI } = await import("@mantle/abis");
 
-    // MNT addresses
-    const STABLE_TOKEN_ADDRESS_TESTNET = "0xc04cc072f052c2e4959de14c7a180713e1ecb18d"; // Mantle Sepolia
-    const STABLE_TOKEN_ADDRESS_Sepolia Testnet = "0xc04cc072f052c2e4959de14c7a180713e1ecb18d"; // Mantle Sepolia Testnet
+    const STABLE_TOKEN_ADDRESS_SEPOLIA = "0xc04cc072f052c2e4959de14c7a180713e1ecb18d"; // Mantle Sepolia Testnet
+    const STABLE_TOKEN_ADDRESS_MAINNET = "0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b"; // Mantle Mainnet
 
     const publicClient = createPublicClient({
       chain: isTestnet ? MantleSepolia : Mantle,
       transport: http(),
     });
 
-    const stableTokenAddress = isTestnet 
-      ? STABLE_TOKEN_ADDRESS_TESTNET 
-      : STABLE_TOKEN_ADDRESS_Sepolia Testnet;
+    const stableTokenAddress = isTestnet
+      ? STABLE_TOKEN_ADDRESS_SEPOLIA
+      : STABLE_TOKEN_ADDRESS_MAINNET;
 
     const StableTokenContract = getContract({
-      abi: stableTokenABI,
+      abi: STABLE_TOKEN_ABI,
       address: stableTokenAddress as `0x${string}`,
       client: publicClient,
     });
