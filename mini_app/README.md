@@ -6,7 +6,7 @@ Next.js frontend for Mantle Run game as a Farcaster MiniApp. Built with Farcaste
 
 - Farcaster MiniApp support - Play directly in Farcaster clients
 - Wallet connection (Farcaster Wallet, MetaMask, WalletConnect, MiniPay)
-- Network selection (Mainnet/Testnet) with Mainnet as default
+- Network selection (Sepolia Testnet/Testnet) with Sepolia Testnet as default
 - Player registration and profile management
 - Stage-based gameplay with quiz integration
 - Token and NFT rewards claiming
@@ -34,7 +34,7 @@ npm install
 Create a `.env.local` file (or copy from `.env.local.example`):
 
 ```env
-# Contract Addresses (Mantle Mainnet)
+# Contract Addresses (Mantle Sepolia Testnet)
 NEXT_PUBLIC_QUEST_TOKEN_ADDRESS=0x7B61f8EadD960a2e676f26E6968F5f65FebE1341
 NEXT_PUBLIC_RUNNER_BADGE_ADDRESS=0xe0Aad78b3615ce64469518f4E406B580de5cABaA
 NEXT_PUBLIC_Mantle_run_ADDRESS=0x553efD80A0ADEd286Ed49F78Ba5051846db91B37
@@ -46,7 +46,7 @@ NEXT_PUBLIC_CHAIN_ID=5003
 NEXT_PUBLIC_RPC_URL=https://rpc.sepolia.mantle.xyz
 ```
 
-**Note:** The contract addresses are configured in `src/config/contracts.ts` with network-aware support. The app defaults to Mainnet (as required for Farcaster) but supports both Mainnet and Testnet. Use `getContractAddresses(chainId)` to get addresses for a specific network.
+**Note:** The contract addresses are configured in `src/config/contracts.ts` with network-aware support. The app defaults to Sepolia Testnet (as required for Farcaster) but supports both Sepolia Testnet and Testnet. Use `getContractAddresses(chainId)` to get addresses for a specific network.
 
 ## Development
 
@@ -113,7 +113,7 @@ Supports multiple wallet providers:
 - WalletConnect
 - MiniPay (with automatic detection)
 
-**Farcaster MiniApp**: When running in a Farcaster client, the wallet automatically connects. Users can switch between Mainnet (default) and Testnet using the NetworkSelector component.
+**Farcaster MiniApp**: When running in a Farcaster client, the wallet automatically connects. Users can switch between Sepolia Testnet (default) and Testnet using the NetworkSelector component.
 
 ### Game Flow
 
@@ -136,7 +136,7 @@ See `MINIPAY_INTEGRATION.md` for detailed MiniPay documentation.
 ### Farcaster MiniApp Integration
 
 - Automatic wallet connection in MiniApp mode
-- Network switching (Mainnet/Testnet)
+- Network switching (Sepolia Testnet/Testnet)
 - Batch transactions for better UX
 - Quick Auth for authenticated requests
 - Haptic feedback for interactions
@@ -179,7 +179,7 @@ See `FARCASTER_INTEGRATION.md` for detailed Farcaster documentation.
 - Check wallet has enough Mantle for gas
 - Verify contract addresses match deployed contracts
 - Check network connection
-- Ensure correct network is selected (Mainnet/Testnet)
+- Ensure correct network is selected (Sepolia Testnet/Testnet)
 
 ## Deployment
 

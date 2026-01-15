@@ -10,7 +10,7 @@ export interface FarcasterConfig {
 export interface NetworkConfig {
   id: number;
   name: string;
-  isMainnet: boolean;
+  isSepolia Testnet: boolean;
 }
 
 export interface WalletState {

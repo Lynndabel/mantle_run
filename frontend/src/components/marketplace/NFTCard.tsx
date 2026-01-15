@@ -26,9 +26,9 @@ import { useGameStore } from '@/store/gameStore';
 import { isMiniPayAvailable, checkMNTBalance } from '@/utils/minipay';
 import { stableTokenABI } from '@Mantle/abis';
 
-const MantleMainnet = defineChain({
+const MantleSepolia Testnet = defineChain({
   id: 5003,
-  name: "Mantle Mainnet",
+  name: "Mantle Sepolia Testnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
     name: "Mantle",
@@ -89,7 +89,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   const getBadgeContract = () => {
     return getContract({
       client,
-      chain: MantleMainnet,
+      chain: MantleSepolia Testnet,
       address: CONTRACTS.RUNNER_BADGE,
       abi: RUNNER_BADGE_ABI,
     });
@@ -102,7 +102,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
     }
     return getContract({
       client,
-      chain: MantleMainnet,
+      chain: MantleSepolia Testnet,
       address: CONTRACTS.MARKETPLACE,
       abi: NFT_MARKETPLACE_ABI,
     });
@@ -112,7 +112,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
   const getMNTContract = () => {
     return getContract({
       client,
-      chain: MantleMainnet,
+      chain: MantleSepolia Testnet,
       address: CONTRACTS.MNT_TOKEN,
       abi: stableTokenABI,
     });
@@ -209,7 +209,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: MantleMainnet,
+        chain: MantleSepolia Testnet,
         transactionHash,
       });
 
@@ -248,7 +248,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: MantleMainnet,
+        chain: MantleSepolia Testnet,
         transactionHash,
       });
 
@@ -288,7 +288,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: MantleMainnet,
+        chain: MantleSepolia Testnet,
         transactionHash,
       });
 
@@ -332,7 +332,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
         await waitForReceipt({
           client,
-          chain: MantleMainnet,
+          chain: MantleSepolia Testnet,
           transactionHash: approveHash,
         });
 
@@ -355,7 +355,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: MantleMainnet,
+        chain: MantleSepolia Testnet,
         transactionHash,
       });
 
@@ -401,7 +401,7 @@ export function NFTCard({ tokenId, badgeName, badgeImage, ownerAddress, isOwnedB
 
       await waitForReceipt({
         client,
-        chain: MantleMainnet,
+        chain: MantleSepolia Testnet,
         transactionHash,
       });
 

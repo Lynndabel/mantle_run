@@ -19,7 +19,7 @@ export interface QuizItem {
     { id: '10', question: 'What does Valora App allow you to do?', options: ['Mine Bitcoin', 'Send crypto to phone numbers', 'Hack servers', 'Create NFTs only'], correctAnswer: 1 },
     { id: '11', question: 'What is the average block time on Mantle?', options: ['5 seconds', '1 minute', '10 minutes', '1 hour'], correctAnswer: 0 },
     { id: '12', question: 'What is the name of Mantle’s network explorer?', options: ['Etherscan', 'Mantle Explorer', 'BscScan', 'PolygonScan'], correctAnswer: 1 },
-    { id: '13', question: 'When did Mantle mainnet launch?', options: ['2020', '2018', '2022', '2015'], correctAnswer: 0 },
+    { id: '13', question: 'When did Mantle Sepolia Testnet launch?', options: ['2020', '2018', '2022', '2015'], correctAnswer: 0 },
     { id: '14', question: 'What is Mantle mainly used for?', options: ['Governance & Fees', 'Buying groceries', 'Mining', 'Nothing'], correctAnswer: 0 },
     { id: '15', question: 'How does Mantle help financial inclusion?', options: ['By requiring expensive hardware', 'By being mobile-accessible', 'By banning cash', 'By increasing fees'], correctAnswer: 1 },
     { id: '16', question: 'Which wallet is optimized for Mantle?', options: ['Valora', 'Phantom', 'Keplr', 'Yoroi'], correctAnswer: 0 },

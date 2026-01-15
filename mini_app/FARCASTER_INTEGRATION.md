@@ -7,7 +7,7 @@ This guide explains how Mantle Run integrates with Farcaster MiniApp to provide 
 Mantle Run is now available as a Farcaster MiniApp, allowing users to play the game directly within Farcaster clients. The integration includes:
 
 - Automatic wallet connection via Farcaster Wallet
-- Network selection (Mainnet/Testnet) with Mainnet as default
+- Network selection (Sepolia Testnet/Testnet) with Sepolia Testnet as default
 - Batch transaction support (EIP-5792)
 - Quick Auth for seamless authentication
 - Haptic feedback for better UX
@@ -35,18 +35,18 @@ FarcasterErrorBoundary
 2. **FarcasterProvider**: Manages SDK state and initialization
 3. **FarcasterSDK**: Handles SDK ready() call to hide splash screen
 4. **FarcasterWallet**: Wallet connection UI for MiniApp mode
-5. **NetworkSelector**: Allows switching between Mainnet and Testnet
+5. **NetworkSelector**: Allows switching between Sepolia Testnet and Testnet
 
 ## Network Configuration
 
 ### Default Network
 
-**Mainnet (Mantle)** is set as the default network (Chain ID: 5003). Users can switch to Testnet (Mantle Sepolia, Chain ID: 5003
+**Sepolia Testnet (Mantle)** is set as the default network (Chain ID: 5003). Users can switch to Testnet (Mantle Sepolia, Chain ID: 5003
 ) using the NetworkSelector component.
 
 ### Supported Networks
 
-- **Mantle Mainnet**: Chain ID `5003`
+- **Mantle Sepolia Testnet**: Chain ID `5003`
   - MNT: `0x765DE816845861e75A25fCA122bb6898B8B1282a`
   - Production environment
 
@@ -257,9 +257,9 @@ The `manifest.json` file defines the MiniApp:
 2. Use testnet contracts
 3. Test all game features
 
-### Mainnet Testing
+### Sepolia Testnet Testing
 
-1. Ensure you're on Mainnet (default)
+1. Ensure you're on Sepolia Testnet (default)
 2. Test with small amounts first
 3. Verify all contract interactions
 
@@ -279,7 +279,7 @@ The `manifest.json` file defines the MiniApp:
 
 ### Network Issues
 
-- Verify chain IDs are correct (5003 for Mainnet, 5003
+- Verify chain IDs are correct (5003 for Sepolia Testnet, 5003
  for Testnet)
 - Check RPC endpoints are accessible
 - Ensure contract addresses match the selected network

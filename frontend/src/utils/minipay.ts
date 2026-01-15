@@ -51,7 +51,7 @@ export async function checkMNTBalance(
 
     // MNT addresses
     const STABLE_TOKEN_ADDRESS_TESTNET = "0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b"; // Mantle Sepolia
-    const STABLE_TOKEN_ADDRESS_MAINNET = "0x765DE816845861e75A25fCA122bb6898B8B1282a"; // Mantle Mainnet
+    const STABLE_TOKEN_ADDRESS_Sepolia Testnet = "0x765DE816845861e75A25fCA122bb6898B8B1282a"; // Mantle Sepolia Testnet
 
     const publicClient = createPublicClient({
       chain: isTestnet ? MantleSepolia : Mantle,
@@ -60,7 +60,7 @@ export async function checkMNTBalance(
 
     const stableTokenAddress = isTestnet 
       ? STABLE_TOKEN_ADDRESS_TESTNET 
-      : STABLE_TOKEN_ADDRESS_MAINNET;
+      : STABLE_TOKEN_ADDRESS_Sepolia Testnet;
 
     const StableTokenContract = getContract({
       abi: stableTokenABI,

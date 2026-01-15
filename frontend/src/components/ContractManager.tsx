@@ -10,9 +10,9 @@ import { useMantleRunner, usePlayerData, useGeneralLeaderboard, useStageCompleti
 import { getContractAddresses } from '@/config/contracts';
 
 // Define Mantle Sepolia chain
-const MantleMainnet = defineChain({
+const MantleSepolia Testnet = defineChain({
   id: 5003,
-  name: "Mantle Mainnet",
+  name: "Mantle Sepolia Testnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
   nativeCurrency: {
     name: "Mantle",
@@ -827,7 +827,7 @@ export function ContractManager() {
           console.log('⏳ Waiting for transaction to be confirmed on blockchain...');
           const receipt = await waitForReceipt({
             client,
-            chain: MantleMainnet,
+            chain: MantleSepolia Testnet,
             transactionHash: txHash as `0x${string}`,
           });
 
@@ -857,7 +857,7 @@ export function ContractManager() {
           console.log('⏳ Waiting for transaction to be confirmed on blockchain...');
           const receipt = await waitForReceipt({
             client,
-            chain: MantleMainnet,
+            chain: MantleSepolia Testnet,
             transactionHash: txHash as `0x${string}`,
           });
 
@@ -883,7 +883,7 @@ export function ContractManager() {
           // For Mantle, transaction confirmation is handled by thirdweb's waitForReceipt
           await waitForReceipt({
             client,
-            chain: MantleMainnet,
+            chain: MantleSepolia Testnet,
             transactionHash: transactionId as `0x${string}`,
           });
           return true; 

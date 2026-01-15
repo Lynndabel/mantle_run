@@ -1,6 +1,6 @@
 /**
  * Wagmi configuration with Farcaster MiniApp connector
- * Supports both Mantle Mainnet (default) and Mantle Sepolia Testnet
+ * Supports both Mantle Sepolia Testnet (default) and Mantle Sepolia Testnet
  */
 
 import { http, createConfig } from "wagmi";
@@ -14,9 +14,9 @@ export const wagmiConfig = createConfig({
     [MantleSepolia.id]: http(),
   },
   connectors: [miniAppConnector()],
-  // Default to mainnet
+  // Default to Sepolia Testnet
   ssr: false,
 });
 
-// Export default chain (mainnet)
+// Export default chain (Sepolia Testnet)
 export const defaultChain = Mantle;
