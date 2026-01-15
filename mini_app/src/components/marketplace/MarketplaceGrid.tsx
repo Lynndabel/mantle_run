@@ -13,7 +13,7 @@ import { NFTCard } from './NFTCard';
 const MantleSepolia = defineChain({
   id: 5003
 ,
-  name: "Mantle Sepolia",
+  name: "Mantle Sepolia Testnet",
   rpc: "https://rpc.sepolia.mantle.xyz",
   nativeCurrency: {
     name: "Mantle",
