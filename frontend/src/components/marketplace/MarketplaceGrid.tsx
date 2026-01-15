@@ -10,7 +10,7 @@ import { RUNNER_BADGE_ABI } from '@/config/abis';
 import { getBadgeImage, getBadgeNameByStage } from '@/config/badgeMetadata';
 import { NFTCard } from './NFTCard';
 
-const MantleSepolia Testnet = defineChain({
+const MantleSepolia = defineChain({
   id: 5003,
   name: "Mantle Sepolia Testnet",
   rpc: "https://rpc.sepolia.mantle.xyz/",
