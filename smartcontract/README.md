@@ -108,9 +108,9 @@ forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https:
 - [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x6937de2Cd1Ad91C4EB7e86AC22ad92c5B89d678B)
 - ✅ Verified
 
-**RunnerBadge**: `0x7b72c0e84012f868fe9a4164a8122593d0f38b84`
+**RunnerBadge**: `0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918`
 - Symbol: BADGE
-- [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x7b72c0e84012f868fe9a4164a8122593d0f38b84)
+- [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918)
 - ✅ Verified
 
 **MantleRunner**: `0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6`
@@ -149,7 +149,7 @@ forge verify-contract 0x6937de2Cd1Ad91C4EB7e86AC22ad92c5B89d678B \
 
 #### RunnerBadge (No constructor args)
 ```bash
-forge verify-contract 0x7b72c0e84012f868fe9a4164a8122593d0f38b84 \
+forge verify-contract 0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918 \
   src/RunnerBadge.sol:RunnerBadge \
   --chain-id 5003
  \
@@ -205,10 +205,10 @@ forge verify-contract 0x370f6701cFDECC0A9D744a12b156317AA3CE32D1 \
 
 **MantleRunner**: `0x00000000000000000000000048e2e16a5cfe127fbfc76f3fd85163bbae64a8610000000000000000000000007b72c0e84012f868fe9a4164a8122593d0f38b84`
 - QuestToken: `0x6937de2Cd1Ad91C4EB7e86AC22ad92c5B89d678B`
-- RunnerBadge: `0x7b72c0e84012f868fe9a4164a8122593d0f38b84`
+- RunnerBadge: `0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918`
 
 **NFTMarketplace**: `0x0000000000000000000000007b72c0e84012f868fe9a4164a8122593d0f38b84000000000000000000000000de9e4c3ce781b4ba68120d6261cbad65ce0ab00b`
-- RunnerBadge: `0x7B72c0E84012f868fe9a4164a8122593d0F38B84`
+- RunnerBadge: `0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918`
 - MNT Token: `0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b`
 
 ## Usage
