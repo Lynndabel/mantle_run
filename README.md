@@ -157,7 +157,7 @@ Contracts: See smartcontract README for setup. Deploy to Mantle Sepolia testnet.
 
 Mantle Sepolia Testnet:
 
-QuestToken: 0x48e2e16a5cfe127fbfc76f3fd85163bbae64a861
+QuestToken: 0x6937de2Cd1Ad91C4EB7e86AC22ad92c5B89d678B
 
 RunnerBadge: 0x7b72c0e84012f868fe9a4164a8122593d0f38b84
 
