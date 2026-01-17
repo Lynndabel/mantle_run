@@ -6,7 +6,7 @@ import {NFTMarketplace} from "../src/NFTMarketplace.sol";
 
 contract DeployMarketplace is Script {
     // RunnerBadge contract address on Mantle Sepolia
-    address constant RUNNER_BADGE = 0x7B72c0E84012f868fe9a4164a8122593d0F38B84;
+    address constant RUNNER_BADGE = 0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918;
     // MNT token address on Mantle Sepolia
     address constant MNT_TOKEN = 0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b;
 
