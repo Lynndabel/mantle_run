@@ -40,7 +40,7 @@
       "hash": "0xd8be390a3b92d9fc56af84664ed1413672bfe466b9e7b3cfd959c23f972cf4d9",
       "transactionType": "CREATE",
       "contractName": "MantleRunner",
-      "contractAddress": "0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6",
+      "contractAddress": "0x10877552d992559Ad1a13516AD5Ab948B2aCe554",
       "function": null,
       "arguments": [
         "0x6937de2Cd1Ad91C4EB7e86AC22ad92c5B89d678B",
@@ -64,7 +64,7 @@
       "contractAddress": "0x6937de2Cd1Ad91C4EB7e86AC22ad92c5B89d678B",
       "function": "setGameContract(address)",
       "arguments": [
-        "0x4588b0FF4016952E4391dEA6dCC7f9A1484AC7b6"
+        "0x10877552d992559Ad1a13516AD5Ab948B2aCe554"
       ],
       "transaction": {
         "from": "0xd2df53d9791e98db221842dd085f4144014bbe2a",
@@ -85,7 +85,7 @@
       "contractAddress": "0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918",
       "function": "setGameContract(address)",
       "arguments": [
-        "0x4588b0FF4016952E4391dEA6dCC7f9A1484AC7b6"
+        "0x10877552d992559Ad1a13516AD5Ab948B2aCe554"
       ],
       "transaction": {
         "from": "0xd2df53d9791e98db221842dd085f4144014bbe2a",
@@ -191,7 +191,7 @@
       "effectiveGasPrice": "0x5d22cfc40",
       "from": "0xd2df53d9791e98db221842dd085f4144014bbe2a",
       "to": null,
-      "contractAddress": "0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6",
+      "contractAddress": "0x10877552d992559Ad1a13516AD5Ab948B2aCe554",
       "l1BaseFeeScalar": "0x0",
       "l1BlobBaseFee": "0x1",
       "l1BlobBaseFeeScalar": "0x0",

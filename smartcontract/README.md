@@ -113,9 +113,9 @@ forge script script/DeployMantleRunner.s.sol:DeployMantleRunner --rpc-url https:
 - [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918)
 - ✅ Verified
 
-**MantleRunner**: `0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6`
+**MantleRunner**: `0x10877552d992559Ad1a13516AD5Ab948B2aCe554`
 - Main game contract
-- [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6)
+- [View on Explorer](https://explorer.Mantle-sepolia.Mantle-testnet.org/address/0x10877552d992559Ad1a13516AD5Ab948B2aCe554)
 - ✅ Verified
 
 **NFTMarketplace**: `0x370f6701cFDECC0A9D744a12b156317AA3CE32D1`
@@ -160,7 +160,7 @@ forge verify-contract 0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918 \
 
 #### MantleRunner (Constructor args: questToken, runnerBadge)
 ```bash
-forge verify-contract 0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6 \
+forge verify-contract 0x10877552d992559Ad1a13516AD5Ab948B2aCe554 \
   src/MantleRunner.sol:MantleRunner \
   --chain-id 5003
  \
@@ -290,7 +290,7 @@ import { getContract } from "thirdweb";
 const MantleRunnerContract = getContract({
   client: client,
   chain: MantleSepolia,
-  address: "0x4588b0ff4016952e4391dea6dcc7f9a1484ac7b6"
+  address: "0x10877552d992559Ad1a13516AD5Ab948B2aCe554"
 });
 ```
 
