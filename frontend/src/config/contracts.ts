@@ -5,7 +5,7 @@ const CONTRACTS_BY_NETWORK = {
     QUEST_TOKEN: '0x6937de2Cd1Ad91C4EB7e86AC22ad92c5B89d678B' as `0x${string}`,
     RUNNER_BADGE: '0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918' as `0x${string}`,
     Mantle_run: '0x10877552d992559Ad1a13516AD5Ab948B2aCe554' as `0x${string}`,
-    MARKETPLACE: '0xcA7eEcC451DcAc42D33463161F0c4EC62ED8E88A' as `0x${string}`, // Updated with platform fees (2.5%)
+    MARKETPLACE: '0x370f6701cFDECC0A9D744a12b156317AA3CE32D1' as `0x${string}`, // Updated with platform fees (2.5%)
     MNT_TOKEN: '0xc04cc072f052c2e4959de14c7a180713e1ecb18d' as `0x${string}`, // Mantle Sepolia MNT
   },
   // Mantle Sepolia Testnet (Chain ID: 5003)
@@ -13,7 +13,7 @@ const CONTRACTS_BY_NETWORK = {
     QUEST_TOKEN: '0x6937de2Cd1Ad91C4EB7e86AC22ad92c5B89d678B' as `0x${string}`,
     RUNNER_BADGE: '0x3A71981Ece2aE0CE6F880Bb57D5B5B2c8C95C918' as `0x${string}`,
     Mantle_run: '0x10877552d992559Ad1a13516AD5Ab948B2aCe554' as `0x${string}`,
-    MARKETPLACE: '0xcA7eEcC451DcAc42D33463161F0c4EC62ED8E88A' as `0x${string}`, // Updated with platform fees (2.5%)
+    MARKETPLACE: '0x370f6701cFDECC0A9D744a12b156317AA3CE32D1' as `0x${string}`, // Updated with platform fees (2.5%)
     MNT_TOKEN: '0xc04cc072f052c2e4959de14c7a180713e1ecb18d' as `0x${string}`, // Mantle Sepolia MNT
   },
 } as const;
